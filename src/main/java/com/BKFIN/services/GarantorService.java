@@ -3,17 +3,19 @@ package com.BKFIN.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Credit;
 import com.BKFIN.entities.Garantor;
 import com.BKFIN.repositories.CreditRepository;
 import com.BKFIN.repositories.GarantorRepository;
 
-
+@Service
 public class GarantorService implements IGarantorService {
     
 	@Autowired
 	GarantorRepository GRrepo;
+	@Autowired
 	CreditRepository Crepo;
 	
 	
@@ -26,15 +28,14 @@ public class GarantorService implements IGarantorService {
 	public Garantor addGarantor(Garantor garantor, Long idcredit) {
 		Credit credit= Crepo.findById(idcredit).orElse(null);
 		garantor.setCredit(credit);
+		GRrepo.save(garantor);
 		return garantor;
 		
 	}
 
 	@Override
-	public Garantor updateGarantor(Garantor garantor, Long idcredit) {
-		Credit credit= Crepo.findById(idcredit).orElse(null);
-		garantor.setCredit(credit);
-		return garantor;
+	public Garantor updateGarantor(Garantor garantor) {
+		return GRrepo.save(garantor);
 	}
 
 	@Override
@@ -43,9 +44,12 @@ public class GarantorService implements IGarantorService {
 		return garantor ;
 	}
 	
-	public void deleteCredit(Long id) {
-		GRrepo.deleteById(id);
-		}
+
+	@Override
+	public void DeleteGarantor(Long idGarantor) {
+		GRrepo.deleteById(idGarantor);
+		
+	}
 
     
 

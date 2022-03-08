@@ -3,16 +3,18 @@ package com.BKFIN.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Credit;
 import com.BKFIN.entities.DuesHistory;
 import com.BKFIN.repositories.CreditRepository;
 import com.BKFIN.repositories.DuesHistoryRepository;
-
-public class DuesHistoryService implements IDuesHistory {
+@Service
+public class DuesHistoryService implements IDuesHistoryService {
     
 	@Autowired
 	DuesHistoryRepository DHrepo;
+	@Autowired
 	CreditRepository Crepo;
 	
 	
@@ -25,6 +27,7 @@ public class DuesHistoryService implements IDuesHistory {
 	public DuesHistory addDuesHistory(DuesHistory DH, Long idcredit) {
 		Credit credit= Crepo.findById(idcredit).orElse(null);
 		DH.setCredits(credit);
+		DHrepo.save(DH);
 		return DH;
 	}
 
@@ -32,6 +35,7 @@ public class DuesHistoryService implements IDuesHistory {
 	public DuesHistory updateDuesHistory(DuesHistory DH, Long idcredit) {
 		Credit credit= Crepo.findById(idcredit).orElse(null);
 		DH.setCredits(credit);
+		DHrepo.save(DH);
 		return DH;
 	}
 
@@ -41,9 +45,12 @@ public class DuesHistoryService implements IDuesHistory {
 		return DH ;
 	}
 	
-	public void deleteCredit(Long id) {
-		DHrepo.deleteById(id);
-		}
+	
+
+	@Override
+	public void DeleteDuesHistory(Long idDuesHistory) {
+		DHrepo.deleteById(idDuesHistory);
+	}
 
    
 

@@ -94,6 +94,12 @@ public class Client implements Serializable {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
+	
+	
+	public Client() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Client(Long cin, String name, String secondName, Date birthDay, Long phoneNum, String email, String image,
 			String adresse) {
 		super();

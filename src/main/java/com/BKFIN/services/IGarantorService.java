@@ -11,7 +11,10 @@ public interface IGarantorService {
 
 	Garantor addGarantor (Garantor garantor,Long idcredit);
 
-	Garantor updateGarantor (Garantor garantor,Long idcredit);
+	Garantor updateGarantor (Garantor garantor);
 
 	Garantor retrieveGarantor(Long idGarantor);
+	
+	public void DeleteGarantor(Long idGarantor);
+	
 }

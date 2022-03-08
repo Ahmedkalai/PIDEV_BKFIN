@@ -3,6 +3,7 @@ package com.BKFIN.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Client;
 import com.BKFIN.entities.Credit;
@@ -15,13 +16,16 @@ import com.BKFIN.repositories.PackRepository;
 
 
 
-
+@Service
 public class CreditService implements ICreditService {
     
 	@Autowired
 	CreditRepository Crepo;
+	@Autowired
 	ClientRepository ClientRepo;
+	@Autowired
 	FundRepository FundRepo;
+	@Autowired
 	PackRepository PackRepo;
 	
 	@Override
@@ -37,6 +41,10 @@ public class CreditService implements ICreditService {
 		 credit.setClient(client);
 		 credit.setFunds(fund);
 		 credit.setPack_credit(pack);
+		 //CALCUL DU TAUX D'INTERET
+		 credit.setInterestRate(credit.getRisk()+fund.getTauxFund()+fund.getTauxGain());
+		 fund.setAmountFund(fund.getAmountFund()-credit.getAmount());
+		 Crepo.save(credit);
         return credit;
 		
 	}
@@ -49,6 +57,7 @@ public class CreditService implements ICreditService {
 		 credit.setClient(client);
 		 credit.setFunds(fund);
 		 credit.setPack_credit(pack);
+		 Crepo.save(credit);
         return credit;
 		
 	}
@@ -59,9 +68,18 @@ public class CreditService implements ICreditService {
 		return credit ;
 	}
 	
-	public void deleteCredit(Long id) {
+	@Override
+	public void DeleteCredit(Long id) {
 		Crepo.deleteById(id);
 		}
+
+	@Override
+	public Credit ArchiveCredit(Long idCredit) {
+		Credit credit= Crepo.findById(idCredit) .orElse(null) ; 
+		credit.setState(false);
+		Crepo.save(credit);
+		return credit;
+	}
    
 
 }

@@ -22,6 +22,8 @@ public class DuesHistory implements Serializable {
 	private Date DateHistory;
 	@ManyToOne
 	private Credit credits;
+	
+	//GET&SET
 	public Long getIdDues() {
 		return idDues;
 	}
@@ -40,5 +42,21 @@ public class DuesHistory implements Serializable {
 	public void setCredits(Credit credits) {
 		this.credits = credits;
 	}
+	
+	
+	//CONSTRUCTOR
+	
+	public DuesHistory(Long idDues, Date dateHistory, Credit credits) {
+		super();
+		this.idDues = idDues;
+		DateHistory = dateHistory;
+		this.credits = credits;
+	}
+	public DuesHistory() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 }

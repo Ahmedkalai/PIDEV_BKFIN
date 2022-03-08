@@ -32,8 +32,8 @@ public class Credit implements Serializable {
 	private Date monthlyPaymentDate;
 	private Long monthlyPaymentAmount;
 	private float interestRate;
-	@OneToOne(mappedBy="credit")
-	private Garantor garantor;
+	private float creditPeriod;
+	private float Risk;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="credit")
 	private Set<Notification> notifications ;
 	@ManyToOne
@@ -44,6 +44,22 @@ public class Credit implements Serializable {
 	private Set<DuesHistory> duesHistory ;
 	@ManyToOne
     private Pack pack_credit;
+	@OneToOne(mappedBy="credit")
+	private Garantor garantor;
+	
+	//GET&SET
+	public float getCreditPeriod() {
+		return creditPeriod;
+	}
+	public void setCreditPeriod(float creditPeriod) {
+		this.creditPeriod = creditPeriod;
+	}
+	public float getRisk() {
+		return Risk;
+	}
+	public void setRisk(float risk) {
+		Risk = risk;
+	}
 	public Long getIdCredit() {
 		return idCredit;
 	}
@@ -104,14 +120,14 @@ public class Credit implements Serializable {
 	public void setNotifications(Set<Notification> notifications) {
 		this.notifications = notifications;
 	}
-	public Client getClient() {
-		return client;
+	public Long getClient() {
+		return client.getCin();
 	}
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	public Fund getFunds() {
-		return funds;
+	public long getFunds() {
+		return funds.getIdFund();
 	}
 	public void setFunds(Fund funds) {
 		this.funds = funds;
@@ -122,12 +138,53 @@ public class Credit implements Serializable {
 	public void setDuesHistory(Set<DuesHistory> duesHistory) {
 		this.duesHistory = duesHistory;
 	}
-	public Pack getPack_credit() {
-		return pack_credit;
+	public long getPack_credit() {
+		return pack_credit.getIdPack();
 	}
 	public void setPack_credit(Pack pack_credit) {
 		this.pack_credit = pack_credit;
 	}
 	
-
+	//CONSTRUCTOR
+	public Credit() {
+		super();
+		
+	}
+	
+	public Credit(Long idCredit, Long amount, Date dateDemande, Date obtainingDate, Boolean state,
+			Date monthlyPaymentDate, Long monthlyPaymentAmount, float interestRate, float creditPeriod, float risk,
+			Client client, Fund funds,Garantor gr,
+			Pack pack_credit) {
+		super();
+		this.idCredit = idCredit;
+		this.amount = amount;
+		this.dateDemande = dateDemande;
+		this.obtainingDate = obtainingDate;
+		this.state = state;
+		this.monthlyPaymentDate = monthlyPaymentDate;
+		this.monthlyPaymentAmount = monthlyPaymentAmount;
+		this.interestRate = interestRate;
+		this.creditPeriod = creditPeriod;
+		this.Risk = risk;
+		this.garantor=gr;
+		this.client = client;
+		this.funds = funds;
+		this.pack_credit = pack_credit;
+	}
+	public Credit(Long idCredit, Long amount, Boolean state, Long monthlyPaymentAmount, Client client, Fund funds,
+			Pack pack_credit,Garantor gr) {
+		super();
+		this.idCredit = idCredit;
+		this.amount = amount;
+		this.state = state;
+		this.monthlyPaymentAmount = monthlyPaymentAmount;
+		this.client = client;
+		this.funds = funds;
+		this.pack_credit = pack_credit;
+		this.garantor=gr;
+	}
+	
+	
+	
+	
 }

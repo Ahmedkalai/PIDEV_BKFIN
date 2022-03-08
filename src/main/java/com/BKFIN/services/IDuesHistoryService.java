@@ -3,7 +3,7 @@ import java.util.List;
 
 import com.BKFIN.entities.DuesHistory;
 
-public interface IDuesHistory {
+public interface IDuesHistoryService {
 	List<DuesHistory> retrieveAllDuesHistorys();
 
 	DuesHistory addDuesHistory (DuesHistory p,Long idcredit);
@@ -11,4 +11,6 @@ public interface IDuesHistory {
 	DuesHistory updateDuesHistory (DuesHistory p,Long idcredit);
 
 	DuesHistory retrieveDuesHistory(Long idDuesHistory);
+	
+	public void DeleteDuesHistory(Long idDuesHistory);
 }
