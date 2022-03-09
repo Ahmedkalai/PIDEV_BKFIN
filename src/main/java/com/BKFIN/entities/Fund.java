@@ -18,10 +18,12 @@ public class Fund  implements Serializable {
 	 private long idFund ; 
 	 private float amountFund ;
 	 private float tauxFund ;
+	 
 	 @OneToMany(mappedBy="funds")
 	 private Set<Credit> credits ;
 	 @OneToMany(mappedBy="fund")
 	 private Set<Investesment> invest;
+	 
 	public long getIdFund() {
 		return idFund;
 	}

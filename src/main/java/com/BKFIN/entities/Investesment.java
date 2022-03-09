@@ -18,6 +18,7 @@ public class Investesment  implements Serializable{
 	 private String secondnnameInvestesment ;
 	 private String professionInvestesment ;
 	 private float amoutInvestesment;
+	 
 	 @ManyToOne
 	 private Fund fund;
 	public long getCinInvestesment() {

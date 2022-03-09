@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
 public class Event implements Serializable {
 
 	@Id
-	 @Column(name ="idEvent")
+	@Column(name ="idEvent")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private long idEvent ;
 	 private String nameEvent ;
