@@ -34,6 +34,8 @@ public class Credit implements Serializable {
 	private float interestRate;
 	private float creditPeriod;
 	private float Risk;
+	private Boolean Completed;
+	private String Reason;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="credit")
 	private Set<Notification> notifications ;
 	@ManyToOne
@@ -145,16 +147,20 @@ public class Credit implements Serializable {
 		this.pack_credit = pack_credit;
 	}
 	
-	//CONSTRUCTOR
+	public Boolean getCompleted() {
+		return Completed;
+	}
+	public void setCompleted(Boolean completed) {
+		Completed = completed;
+	}
 	public Credit() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
-	
 	public Credit(Long idCredit, Long amount, Date dateDemande, Date obtainingDate, Boolean state,
 			Date monthlyPaymentDate, Long monthlyPaymentAmount, float interestRate, float creditPeriod, float risk,
-			Client client, Fund funds,Garantor gr,
-			Pack pack_credit) {
+			Boolean completed, Set<Notification> notifications, Client client, Fund funds, Set<DuesHistory> duesHistory,
+			Pack pack_credit, Garantor garantor,String reason) {
 		super();
 		this.idCredit = idCredit;
 		this.amount = amount;
@@ -166,23 +172,23 @@ public class Credit implements Serializable {
 		this.interestRate = interestRate;
 		this.creditPeriod = creditPeriod;
 		this.Risk = risk;
-		this.garantor=gr;
+		this.Reason = reason;
+		this.Completed = completed;
+		this.notifications = notifications;
 		this.client = client;
 		this.funds = funds;
+		this.duesHistory = duesHistory;
 		this.pack_credit = pack_credit;
+		this.garantor = garantor;
 	}
-	public Credit(Long idCredit, Long amount, Boolean state, Long monthlyPaymentAmount, Client client, Fund funds,
-			Pack pack_credit,Garantor gr) {
-		super();
-		this.idCredit = idCredit;
-		this.amount = amount;
-		this.state = state;
-		this.monthlyPaymentAmount = monthlyPaymentAmount;
-		this.client = client;
-		this.funds = funds;
-		this.pack_credit = pack_credit;
-		this.garantor=gr;
+	public String getReason() {
+		return Reason;
 	}
+	public void setReason(String reason) {
+		Reason = reason;
+	}
+	
+	
 	
 	
 	
