@@ -15,4 +15,5 @@ void deleteEvent(Long idEvent);
 Event updateEvent(Event ev);
 
 Event retrieveEvent(Long idEvent);
+ void affectereventtoagent(Long evntid, Long agentid);
 }

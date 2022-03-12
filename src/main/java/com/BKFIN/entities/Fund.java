@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Fund  implements Serializable {
 	@Id
@@ -18,10 +20,12 @@ public class Fund  implements Serializable {
 	 private long idFund ; 
 	 private float amountFund ;
 	 private float tauxFund ;
+	 private float winPourcentage;
 	 
 	 @OneToMany(mappedBy="funds")
 	 private Set<Credit> credits ;
 	 @OneToMany(mappedBy="fund")
+	 @JsonIgnore
 	 private Set<Investesment> invest;
 	 
 	public long getIdFund() {
@@ -53,6 +57,25 @@ public class Fund  implements Serializable {
 	}
 	public void setInvest(Set<Investesment> invest) {
 		this.invest = invest;
+	}
+	public float getWinPourcentage() {
+		return winPourcentage;
+	}
+	public void setWinPourcentage(float winPourcentage) {
+		this.winPourcentage = winPourcentage;
+	}
+	public Fund(long idFund, float amountFund, float tauxFund, float winPourcentage, Set<Credit> credits,
+			Set<Investesment> invest) {
+		super();
+		this.idFund = idFund;
+		this.amountFund = amountFund;
+		this.tauxFund = tauxFund;
+		this.winPourcentage = winPourcentage;
+		this.credits = credits;
+		this.invest = invest;
+	}
+	public Fund() {
+		super();
 	}
 	 
 	 

@@ -28,15 +28,25 @@ public class InvestesmentService implements IInvestesmentService{
 	}
 
 	@Override
-	public Investesment addFund(Investesment i, Long idFund) {
+	public Investesment addInvestesment(Investesment i, Long idFund) {
 		Fund f = fundRepository.findById(idFund).orElse(null);
 		i.setFund(f);
+		//incrémentation du fund pour chaque investissement 
+		f.setAmountFund(f.getAmountFund()+i.getAmoutInvestesment());
+		//incrémentation du taux pour chaque investissement 
+		List<Investesment> listInves = (List<Investesment>) investesmentRepository.findAll();
+		float s = 0;
+		for (Investesment  inv : listInves) {
+			s=s+(inv.getAmoutInvestesment());
+		}
+		s=s+i.getAmoutInvestesment();
+		float pourc_inv = (i.getAmoutInvestesment())/s;
+		f.setTauxFund(pourc_inv*(i.getTauxInves())+(1-pourc_inv)*f.getTauxFund());
 		investesmentRepository.save(i);
 		return i;
 	}
-
-
-
+	
+	
 	@Override
 	public Investesment updateInvestesment(Investesment inv, Long idFund) {
 		Fund f = fundRepository.findById(idFund).orElse(null);

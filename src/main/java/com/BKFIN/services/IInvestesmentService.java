@@ -8,7 +8,7 @@ import com.BKFIN.entities.Investesment;
 public interface IInvestesmentService {
 	List<Investesment> retrieveAllInvestesments();
 
-	Investesment addFund(Investesment i , Long idFund);
+	Investesment addInvestesment(Investesment i , Long idFund);
 
 	Investesment updateInvestesment(Investesment inv, Long idFund);
 

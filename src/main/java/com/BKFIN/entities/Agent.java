@@ -90,6 +90,10 @@ public class Agent  implements Serializable{
 		this.email = email;
 		this.adresse = adresse;
 	}
+	public Agent() {
+		super();
+	}
+	
 	
 	
 	

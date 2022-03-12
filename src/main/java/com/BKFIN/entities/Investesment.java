@@ -8,19 +8,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+@SuppressWarnings("serial")
 @Entity
 public class Investesment  implements Serializable{
+
 	@Id
-	 @Column(name ="cinInvestesment")
+	 @Column(name ="idInvestesment")
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
+	 private long idInvestesment ; 
 	 private long cinInvestesment ; 
 	 private String nameInvestesment ;
 	 private String secondnnameInvestesment ;
 	 private String professionInvestesment ;
+	 private float tauxInves;
+	 private boolean state ; 
 	 private float amoutInvestesment;
 	 
 	 @ManyToOne
 	 private Fund fund;
+	 
+	public float getTauxInves() {
+		return tauxInves;
+	}
+	public void setTauxInves(float tauxInves) {
+		this.tauxInves = tauxInves;
+	}
 	public long getCinInvestesment() {
 		return cinInvestesment;
 	}
@@ -57,6 +69,19 @@ public class Investesment  implements Serializable{
 	public void setFund(Fund fund) {
 		this.fund = fund;
 	}
+	public long getIdInvestesment() {
+		return idInvestesment;
+	}
+	public void setIdInvestesment(long idInvestesment) {
+		this.idInvestesment = idInvestesment;
+	}
+	public boolean isState() {
+		return state;
+	}
+	public void setState(boolean state) {
+		this.state = state;
+	}
+	
 	 
 
 }
