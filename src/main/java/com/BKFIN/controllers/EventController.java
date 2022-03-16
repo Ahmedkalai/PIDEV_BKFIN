@@ -68,6 +68,7 @@ public class EventController {
 		return eventService.updateEvent(event);
 		}
 
+		// http://localhost:8083/BKFIN/Event/addagev/1/1
 		// AFFECTER UN evenement A UN agent 
 		@PostMapping("/addagev/{idEvent}/{idAgent}")
 		public void assignagev(@PathVariable("idEvent") Long eventid ,@PathVariable("idAgent")Long agentid) {

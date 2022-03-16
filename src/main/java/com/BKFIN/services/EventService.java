@@ -60,10 +60,13 @@ public class EventService implements IEventService{
 		Event e = eventrepository.findById(evntid).get();
 		Agent a= ar.findById(agentid).get();
 		Set<Agent> la=e.getAgenT();
+		String addA= a.getAdresse().toUpperCase();
+		String addE = e.getRegion().toUpperCase();
+		Boolean dispo = a.getState();
+		if ((addA.equals(addE))&& ( dispo = true)){
 		la.add(a);
 		e.setAgenT(la);
 		ar.save(a);
-		
-	}
-
+		dispo = false; 
+		}}
 }

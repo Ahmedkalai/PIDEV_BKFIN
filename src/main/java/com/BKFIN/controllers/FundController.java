@@ -40,7 +40,7 @@ public class FundController {
 			return fundService.retrieveFund(fundId);
 			}
 
-			// http://localhost:8083/BKFIN/Fund/add-fund
+			// http://localhost:8083/BKFIN/Event/addagev/1/1
 			@PostMapping("/add-fund")
 			@ResponseBody
 			public Fund addFund(@RequestBody Fund f)

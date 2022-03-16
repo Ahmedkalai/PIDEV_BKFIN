@@ -29,6 +29,7 @@ public class Agent  implements Serializable{
 	private Long phoneNum;
 	private String email;
 	private String adresse;
+	private Boolean state ; 
 	
 	@OneToMany( mappedBy="agent")
 	private Set<Client> client;
@@ -79,8 +80,16 @@ public class Agent  implements Serializable{
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
+	
+	
+	public Boolean getState() {
+		return state;
+	}
+	public void setState(Boolean state) {
+		this.state = state;
+	}
 	public Agent(Long idAgent, Long localisation, String name, String secondName, Long phoneNum, String email,
-			String adresse) {
+			String adresse ,Boolean state) {
 		super();
 		this.idAgent = idAgent;
 		this.localisation = localisation;
@@ -89,7 +98,10 @@ public class Agent  implements Serializable{
 		this.phoneNum = phoneNum;
 		this.email = email;
 		this.adresse = adresse;
+		this.state = state;
+
 	}
+	
 	public Agent() {
 		super();
 	}
