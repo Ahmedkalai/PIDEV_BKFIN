@@ -9,6 +9,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -71,11 +73,26 @@ public class InvestesmentController {
 				response.setContentType("application/pdf");
 				DateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd_HH:mm");
 				String currentDateTime = dateFormater.format(new Date());
-				String headerKey = "Content-Disposition";
+				String headerKey = "Content-Disposition"; 
 				String headerValue = "Attachement;filename=inves_"+ currentDateTime + ".pdf";
 				response.setHeader(headerKey, headerValue);
 				List<Investesment> listInvestesment = investesmentService.retrieveAllInvestesments();
 				investPDFExporter exporter = new investPDFExporter(listInvestesment);
 				exporter.export(response);
 			} 
+			
+			// http://localhost:8083/BKFIN/Investesment/CalculateAmoutOfInves/1
+			@GetMapping("/CalculateAmoutOfInves/{Investesment-id}")
+			@ResponseBody
+						public float CalculateAmoutOfInves(@PathVariable("Investesment-id") Long idInvestesment) {
+						return investesmentService.CalculateAmoutOfInves(idInvestesment);
+						}
+						
+			// http://localhost:8083/BKFIN/Investesment/CalculateRateOfInves/3/2
+			@GetMapping("/CalculateRateOfInves/{Investesment-id}/{Fund-id}")
+			@ResponseBody
+						public float CalculateRateOfInves(@PathVariable("Investesment-id") Long idInvestesment,@PathVariable("Fund-id") Long idFund) {
+						return investesmentService.CalculateRateOfInves(idInvestesment,idFund);
+						}
+						
 }

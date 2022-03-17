@@ -23,6 +23,8 @@ public class Investesment  implements Serializable{
 	 private float tauxInves;
 	 private boolean state ; 
 	 private float amoutInvestesment;
+	 //j'ai ajouté un attribut 
+	 private String mailInvestesment;
 	 
 	 @ManyToOne
 	 private Fund fund;
@@ -81,6 +83,13 @@ public class Investesment  implements Serializable{
 	public void setState(boolean state) {
 		this.state = state;
 	}
+	public String getMailInvestesment() {
+		return mailInvestesment;
+	}
+	public void setMailInvestesment(String mailInvestesment) {
+		this.mailInvestesment = mailInvestesment;
+	}
+	
 	
 	 
 

@@ -2,7 +2,11 @@ package com.BKFIN.controllers;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -70,9 +74,12 @@ public class EventController {
 
 		// http://localhost:8083/BKFIN/Event/addagev/1/1
 		// AFFECTER UN evenement A UN agent 
+		//@EventListener(ApplicationReadyEvent.class)
 		@PostMapping("/addagev/{idEvent}/{idAgent}")
-		public void assignagev(@PathVariable("idEvent") Long eventid ,@PathVariable("idAgent")Long agentid) {
-			eventService.affectereventtoagent(eventid, agentid);
+		public void assignagev(@PathVariable("idEvent") Long eventid ,@PathVariable("idAgent")Long agentid) throws MessagingException {
+			eventService.affectereventtoagent(eventid, agentid,"khadija.azzouz@esprit.tn", "BKfIN Team", "Thank you for your participation,you will find your invitation attached ","C:\\Users\\Asus\\Downloads\\BKFINinvi.png");
+		//	eventService.sendEmail("khadija.azzouz@esprit.tn", "BKfIN Team", "Thank you for your participation","C:\\Users\\Asus\\Desktop\\PI\\BKFIN.png");
+			
 		}
 		
 

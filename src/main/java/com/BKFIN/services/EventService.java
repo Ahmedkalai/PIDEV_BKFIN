@@ -1,12 +1,20 @@
 package com.BKFIN.services;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+
 import org.omg.CORBA.Current;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Agent;
@@ -55,18 +63,70 @@ public class EventService implements IEventService{
 	}
 
 
-	@Override
-	public void affectereventtoagent(Long evntid, Long agentid) {
+//	@Override
+//	public void affectereventtoagent(Long evntid, Long agentid) {
+//		Event e = eventrepository.findById(evntid).get();
+//		Agent a= ar.findById(agentid).get();
+//		Set<Agent> la=e.getAgenT();
+//		String addA= a.getAdresse().toUpperCase();
+//		String addE = e.getRegion().toUpperCase();
+//		Boolean dispo = a.getState();
+//		if ((addA.equals(addE))&& ( dispo = true)){
+//		la.add(a);
+//		e.setAgenT(la);
+//		ar.save(a);
+//		dispo = false; 
+//		}
+//	}
+	
+
+//	@Autowired
+//	private JavaMailSender mailSender;
+//		public void sendEmail (String toEmail,String subject,String body,String attachment) throws MessagingException{
+//		MimeMessage mimeMessage = mailSender.createMimeMessage();
+//		MimeMessageHelper mimeMessageHealper = new MimeMessageHelper(mimeMessage,true);
+		//SimpleMailMessage message=new SimpleMailMessage();
+//		mimeMessageHealper.setFrom("khadija.azzouz@esprit.tn");
+//		mimeMessageHealper.setTo(toEmail);
+//		mimeMessageHealper.setText(body);
+//		mimeMessageHealper.setSubject(subject);
+		
+//		FileSystemResource fileSystem = new FileSystemResource(new File(attachment));
+//		mimeMessageHealper.addAttachment(fileSystem.getFilename(), fileSystem);
+//		mailSender.send(mimeMessage);
+//		System.out.println("Mail sent successfully ! ");		
+//	}
+	
+//	@Override
+	
+	@Autowired
+	private JavaMailSender mailSender;
+	
+	public void affectereventtoagent(Long evntid, Long agentid,String toEmail,String subject,String body,String attachment) throws MessagingException {
 		Event e = eventrepository.findById(evntid).get();
 		Agent a= ar.findById(agentid).get();
 		Set<Agent> la=e.getAgenT();
 		String addA= a.getAdresse().toUpperCase();
 		String addE = e.getRegion().toUpperCase();
 		Boolean dispo = a.getState();
-		if ((addA.equals(addE))&& ( dispo = true)){
+	if ((addA.equals(addE))&& ( dispo = true)){
 		la.add(a);
 		e.setAgenT(la);
 		ar.save(a);
 		dispo = false; 
-		}}
+		MimeMessage mimeMessage = mailSender.createMimeMessage();
+		MimeMessageHelper mimeMessageHealper = new MimeMessageHelper(mimeMessage,true);
+		//SimpleMailMessage message=new SimpleMailMessage();
+		mimeMessageHealper.setFrom("khadija.azzouz@esprit.tn");
+		mimeMessageHealper.setTo(toEmail);
+		mimeMessageHealper.setText(body);
+		mimeMessageHealper.setSubject(subject);
+		
+		FileSystemResource fileSystem = new FileSystemResource(new File(attachment));
+		mimeMessageHealper.addAttachment(fileSystem.getFilename(), fileSystem);
+		mailSender.send(mimeMessage);
+		System.out.println("Mail sent successfully ! ");
+		}
+	}
+
 }

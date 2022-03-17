@@ -3,6 +3,11 @@ package com.BKFIN.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.event.EventListener;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Fund;
@@ -21,15 +26,21 @@ public class InvestesmentService implements IInvestesmentService{
 	@Autowired
 	FundRepository fundRepository; 
 	
+
+	
 	@Override
 	public List<Investesment> retrieveAllInvestesments() {
 		return (List<Investesment>) investesmentRepository.findAll();
 
 	}
-
+	
+	
 	@Override
 	public Investesment addInvestesment(Investesment i, Long idFund) {
+		
 		Fund f = fundRepository.findById(idFund).orElse(null);
+		//le taux d'inves est variable selon le montant choisit 
+		i.setTauxInves((i.getAmoutInvestesment())/(pib*100));
 		i.setFund(f);
 		//incrémentation du fund pour chaque investissement 
 		f.setAmountFund(f.getAmountFund()+i.getAmoutInvestesment());
@@ -46,6 +57,8 @@ public class InvestesmentService implements IInvestesmentService{
 		return i;
 	}
 	
+
+	
 	
 	@Override
 	public Investesment updateInvestesment(Investesment inv, Long idFund) {
@@ -61,5 +74,32 @@ public class InvestesmentService implements IInvestesmentService{
 		return inves;
 
 	}
+	
+	float finalAmount;
+	//@Scheduled(cron = "0 0 0 31 12 *" )
+	@Override
+	public float CalculateAmoutOfInves(Long idInvestissement) {
+		//List<Investesment> Investesments = (List<Investesment>) investesmentRepository.findAll();	
+		Investesment inves =  investesmentRepository.findById(idInvestissement).orElse(null);
+			finalAmount=(inves.getAmoutInvestesment()+(inves.getAmoutInvestesment()*inves.getTauxInves()));
+		
+		return finalAmount;
+	}
+
+	float finalrate;
+	float pib=(float) 39.24;
+	@Override
+	public float CalculateRateOfInves(Long idInvestissement,Long idFund) {
+		Investesment inves =  investesmentRepository.findById(idInvestissement).orElse(null);
+		Fund f = fundRepository.findById(idFund).orElse(null);
+		//formule de l'investissement économique 
+		finalrate=(f.getAmountFund())/(pib*100);
+		return finalrate;
+	}
+	
+
+
+
+	
 
 }

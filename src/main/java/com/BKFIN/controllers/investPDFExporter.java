@@ -38,7 +38,7 @@ public class investPDFExporter {
 		table.addCell(cell);
 		cell.setPhrase(new Phrase("Taux"));
 		table.addCell(cell);
-		cell.setPhrase(new Phrase("Invesstissor CIN"));
+		cell.setPhrase(new Phrase("Invesstissor Email"));
 		table.addCell(cell);
 		cell.setPhrase(new Phrase("Invesstissor Name"));
 		table.addCell(cell);
@@ -52,7 +52,7 @@ public class investPDFExporter {
 		for (Investesment investesment : listInvestesment) {
 			table.addCell(String.valueOf(investesment.getAmoutInvestesment()));
 			table.addCell(String.valueOf(investesment.getTauxInves()));
-			table.addCell(String.valueOf(investesment.getCinInvestesment()));
+			table.addCell(investesment.getMailInvestesment());
 			table.addCell(investesment.getNameInvestesment());
 			table.addCell(investesment.getSecondnnameInvestesment());
 			table.addCell(investesment.getProfessionInvestesment());

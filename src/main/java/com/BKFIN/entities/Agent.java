@@ -29,7 +29,9 @@ public class Agent  implements Serializable{
 	private Long phoneNum;
 	private String email;
 	private String adresse;
+	 //j'ai ajouté un attribut 
 	private Boolean state ; 
+	
 	
 	@OneToMany( mappedBy="agent")
 	private Set<Client> client;
