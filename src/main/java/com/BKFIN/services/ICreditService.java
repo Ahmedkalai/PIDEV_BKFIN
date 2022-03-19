@@ -19,4 +19,6 @@ public interface ICreditService  {
 	
 	public void DeleteCredit(Long id);
 	
+	float Calcul_mensualite(Credit cr);
+	
 }

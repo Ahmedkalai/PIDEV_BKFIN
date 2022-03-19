@@ -1,9 +1,16 @@
 package com.BKFIN.services;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,7 +47,9 @@ public class CreditService implements ICreditService {
 	public List<Credit> retrieveAllCredits() {
 		return (List<Credit>) Crepo.findAll();
 		}
-
+	
+    
+	
 	//completed par default false
 	@Override
 	public Credit addCredit(Credit credit, Long Id_client, Long Id_fund, Long Id_pack) {
@@ -50,10 +59,9 @@ public class CreditService implements ICreditService {
 		 credit.setClient(client);
 		 credit.setFunds(fund);
 		 credit.setPack_credit(pack);
-		 
-		 //tester si le client a deja des credits approuvés
-		 if(Crepo.getApprovedCreditsByClient(Id_client).size()==0)//liste des credits approuvés =0 =>le client est nouveau 
-		 {	 //tester sur le risk(client nouveau) 
+		 //NEW CLIENT
+		 if(client.getCredit_authorization()==null)
+		 {   //tester sur le risk(client nouveau) 
 			 //NB LE TAUX DE RISQUE 1%<R<2.5%
 			 if(1.5*credit.getGarantor().getSalaryGarantor()>=credit.getAmount())
 			 {	 
@@ -64,11 +72,11 @@ public class CreditService implements ICreditService {
 			 else
 			 {credit.setState(false);
 			 credit.setReason("Salaire garant insuffisant il doit etre egale à 0.33*montant du crédit");}
-		  }
-		 else//si le client a des credits approuvés
-		 {
-			 if(Crepo.getIncompletedCreditsByClient(Id_client).size()==0)//tester si les credits sont déja payés 
-			 { //calcul jours de retard de la table dues history
+			 
+		 }
+		 //EXISTING CLIENT
+		 else if(client.getCredit_authorization()==true)
+		 {      //calcul jours de retard de la table dues history
 				float Ratio_retard=CaculateLateDays(Crepo.getIDofLatestCompletedCreditsByClient(Id_client))/Crepo.getIDofLatestCompletedCreditsByClient(Id_client).getCreditPeriod()*30;
 				//3 CAS 
 				if (Ratio_retard<0.1)
@@ -83,16 +91,21 @@ public class CreditService implements ICreditService {
 					{credit.setState(false);
 				    credit.setReason("Client trop Risqué MAuvais Historique");
 				    client.setCredit_authorization(false);	//blackLIster le client
+				    ClientRepo.save(client);
 					}
-			 }
-			 else
-			 {
-				 credit.setState(false);
-				 credit.setReason("présence de credit impayés"); 
-			 } 
+			 
 		 }
+		 //BLACK LISTED CLIENT
+		 else 
+		 {
+			 credit.setState(false);
+			 credit.setReason("présence de credit impayés");  
+		 }
+		 
+		 
+		 
 		 Crepo.save(credit);
-        return credit;
+	        return credit;
 		
 	}
 	
@@ -107,7 +120,12 @@ public class CreditService implements ICreditService {
 		 {
 	     fund.setAmountFund(fund.getAmountFund()-credit.getAmount());
 		 credit.setState(true);
+		 credit.setMonthlyPaymentAmount((long) Calcul_mensualite(credit));
+         java.util.Date date=new java.util.Date(System.currentTimeMillis());
+		 credit.setObtainingDate(date);
 		 credit.setReason(msg);
+		 FundRepo.save(fund);
+		 
 		 }
 		 else
 		 {credit.setState(false);
@@ -137,6 +155,59 @@ public class CreditService implements ICreditService {
 		return S;
 		
 	}
+	
+/************************************************************************************************************/
+	
+	//Fonction qui calcule la mensualité
+	public float Calcul_mensualite(Credit cr)
+	{
+		float montant=cr.getAmount();
+		float tauxmensuel=cr.getInterestRate()/12;
+	    float period=cr.getCreditPeriod()*12;
+	    float mensualite=(float) ((montant*tauxmensuel)/(1-(Math.pow((1+tauxmensuel),-period ))));
+		return mensualite;
+	}
+	
+/************************************************************************************************************/
+	//Fonction qui calcule le tabamortissement
+	public Amortissement[] TabAmortissement(Credit cr)
+	{   
+		
+			 
+		double interest=cr.getInterestRate()/12;
+
+		Amortissement[] ListAmortissement =new Amortissement[(int) cr.getCreditPeriod()*12];
+		
+		Amortissement amort=new Amortissement() ;
+		
+		
+		
+		amort.setMontantR(cr.getAmount());
+		amort.setMensualité(Calcul_mensualite(cr));
+		amort.setInterest(amort.getMontantR()*interest);
+		amort.setAmortissement(amort.getMensualité()-amort.getInterest());
+		
+		ListAmortissement[0]=amort;
+		for (int i=1;i< cr.getCreditPeriod()*12;i++) {
+			Amortissement amortPrecedant=ListAmortissement[i-1];
+			Amortissement amortNEW=new Amortissement() ;
+			amortNEW.setMontantR(amortPrecedant.getMontantR()-amortPrecedant.getAmortissement());
+			amortNEW.setInterest(amortNEW.getMontantR()*interest);
+			amortNEW.setMensualité(Calcul_mensualite(cr));
+			amortNEW.setAmortissement(amortNEW.getMensualité()-amortNEW.getInterest());
+			ListAmortissement[i]=amortNEW;
+			
+		}
+		
+		
+		
+		return ListAmortissement;
+	}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -172,6 +243,8 @@ public class CreditService implements ICreditService {
 		Crepo.save(credit);
 		return credit;
 	}
+
+	
    
 
 }

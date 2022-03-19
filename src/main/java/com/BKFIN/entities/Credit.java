@@ -31,7 +31,9 @@ public class Credit implements Serializable {
 	@Temporal (TemporalType.DATE)
 	private Date monthlyPaymentDate;
 	private Long monthlyPaymentAmount;
+	//taux d'interet en année
 	private float interestRate;
+	//periode de credit en année
 	private float creditPeriod;
 	private float Risk;
 	private Boolean Completed;
@@ -122,8 +124,8 @@ public class Credit implements Serializable {
 	public void setNotifications(Set<Notification> notifications) {
 		this.notifications = notifications;
 	}
-	public Long getClient() {
-		return client.getCin();
+	public Client getClient() {
+		return client;
 	}
 	public void setClient(Client client) {
 		this.client = client;

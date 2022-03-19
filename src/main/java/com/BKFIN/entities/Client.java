@@ -32,6 +32,7 @@ public class Client implements Serializable {
 	private String email;
 	private String image;
 	private String adresse;
+	//null par defaut / true autorisé/false non autorisé
 	private Boolean Credit_authorization;
 	
 	public Boolean getCredit_authorization() {

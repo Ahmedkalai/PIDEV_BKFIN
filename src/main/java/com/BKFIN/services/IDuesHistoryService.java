@@ -13,4 +13,6 @@ public interface IDuesHistoryService {
 	DuesHistory retrieveDuesHistory(Long idDuesHistory);
 	
 	public void DeleteDuesHistory(Long idDuesHistory);
+	
+	float PayedAmount(Long idcredit);
 }

@@ -1,6 +1,14 @@
 package com.BKFIN.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,7 +21,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.BKFIN.entities.Credit;
+import com.BKFIN.services.Amortissement;
+import com.BKFIN.services.CreditService;
 import com.BKFIN.services.ICreditService;
+
+
 
 
 @RestController
@@ -21,7 +33,8 @@ import com.BKFIN.services.ICreditService;
 public class CreditController {
 	
 	@Autowired
-	ICreditService creditservice;
+	CreditService creditservice;
+	
 	
 	
 	// http://localhost:8083/BKFIN/Credit/retrieve-all-Credit
@@ -68,6 +81,49 @@ public class CreditController {
 		public Credit modifycredit(@PathVariable("credit-id") Long idcredit) {
 		return creditservice.ArchiveCredit(idcredit);
 		}
+		
+		
+	//http://localhost:8083/BKFIN/Credit/calculm
+	@PostMapping("/calculm")
+	@ResponseBody
+	public float mensualite(@RequestBody Credit c)
+	{
+		float Credit = creditservice.Calcul_mensualite(c);
+		return Credit;
+	}	
+	
+	//http://localhost:8083/BKFIN/Credit/calcultabamortissement
+		@PostMapping("/calcultabamortissement")
+		@ResponseBody
+		public Amortissement[] TabAmortissement(@RequestBody Credit cr)
+		{   
+			Amortissement[] Credit = creditservice.TabAmortissement(cr);
+			//ByteArrayInputStream stream = ExcelFileExporter.contactListToExcelFile(creditservice.TabAmortissement(cr));
+			
+			return Credit;
+		}
+		//http://localhost:8083/BKFIN/Credit/export/excel
+		@GetMapping("/export/excel")
+		@ResponseBody
+		public void exportToExcel(HttpServletResponse response,@RequestBody Credit cr) throws IOException {
+			response.setContentType("application/octet-stream");
+			String headerKey = "Content-Disposition";
+			
+			String headervalue = "attachment; filename=Tableau Credit ";
+			response.setHeader(headerKey, headervalue);
+			Amortissement[] Credit = creditservice.TabAmortissement(cr);
+			List<Amortissement> list = Arrays.asList(Credit);
+			com.BKFIN.services.UserExcelExporter exp =new com.BKFIN.services.UserExcelExporter(list);
+			//UserExcelExporter exp = new UserExcelExporter(list);
+			exp.export(response);
+
+		}	
+		
+		
+	
+		
+		
+		
 	
 	
 	
