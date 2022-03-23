@@ -20,8 +20,7 @@ public class Agent  implements Serializable{
 	
 	
 	@Id 
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	@Column(name="idAgent")
+	@GeneratedValue (strategy = GenerationType.IDENTITY)	@Column(name="idAgent")
 	private Long idAgent;
 	private Long localisation;
 	private String name;

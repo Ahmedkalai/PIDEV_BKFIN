@@ -37,6 +37,7 @@ public class EventService implements IEventService{
 
 	@Override
 	public Event addEvent(Event e) {
+//on ne peut pas creer un event ayant une date inf à la date actuelle 
 		Date d2 = e.getDateEvent() ;
 		Date d=new Date();
 		if (d2.after(d)) {
@@ -62,46 +63,10 @@ public class EventService implements IEventService{
 		return eventrepository.findById(idEvent).orElse(null);	
 	}
 
-
-//	@Override
-//	public void affectereventtoagent(Long evntid, Long agentid) {
-//		Event e = eventrepository.findById(evntid).get();
-//		Agent a= ar.findById(agentid).get();
-//		Set<Agent> la=e.getAgenT();
-//		String addA= a.getAdresse().toUpperCase();
-//		String addE = e.getRegion().toUpperCase();
-//		Boolean dispo = a.getState();
-//		if ((addA.equals(addE))&& ( dispo = true)){
-//		la.add(a);
-//		e.setAgenT(la);
-//		ar.save(a);
-//		dispo = false; 
-//		}
-//	}
 	
-
-//	@Autowired
-//	private JavaMailSender mailSender;
-//		public void sendEmail (String toEmail,String subject,String body,String attachment) throws MessagingException{
-//		MimeMessage mimeMessage = mailSender.createMimeMessage();
-//		MimeMessageHelper mimeMessageHealper = new MimeMessageHelper(mimeMessage,true);
-		//SimpleMailMessage message=new SimpleMailMessage();
-//		mimeMessageHealper.setFrom("khadija.azzouz@esprit.tn");
-//		mimeMessageHealper.setTo(toEmail);
-//		mimeMessageHealper.setText(body);
-//		mimeMessageHealper.setSubject(subject);
-		
-//		FileSystemResource fileSystem = new FileSystemResource(new File(attachment));
-//		mimeMessageHealper.addAttachment(fileSystem.getFilename(), fileSystem);
-//		mailSender.send(mimeMessage);
-//		System.out.println("Mail sent successfully ! ");		
-//	}
-	
-//	@Override
-	
+//	@Override	
 	@Autowired
 	private JavaMailSender mailSender;
-	
 	public void affectereventtoagent(Long evntid, Long agentid,String toEmail,String subject,String body,String attachment) throws MessagingException {
 		Event e = eventrepository.findById(evntid).get();
 		Agent a= ar.findById(agentid).get();
@@ -109,19 +74,22 @@ public class EventService implements IEventService{
 		String addA= a.getAdresse().toUpperCase();
 		String addE = e.getRegion().toUpperCase();
 		Boolean dispo = a.getState();
+//l'event n'est ajouté si seulement si l'agent et l'event appart à la meme region
+//l'agent est disponible
 	if ((addA.equals(addE))&& ( dispo = true)){
 		la.add(a);
 		e.setAgenT(la);
 		ar.save(a);
+//l'agent devient donc indispo
 		dispo = false; 
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 		MimeMessageHelper mimeMessageHealper = new MimeMessageHelper(mimeMessage,true);
-		//SimpleMailMessage message=new SimpleMailMessage();
+//SimpleMailMessage message=new SimpleMailMessage();
 		mimeMessageHealper.setFrom("khadija.azzouz@esprit.tn");
 		mimeMessageHealper.setTo(toEmail);
 		mimeMessageHealper.setText(body);
 		mimeMessageHealper.setSubject(subject);
-		
+		//ajouté l'invitation de l'event 
 		FileSystemResource fileSystem = new FileSystemResource(new File(attachment));
 		mimeMessageHealper.addAttachment(fileSystem.getFilename(), fileSystem);
 		mailSender.send(mimeMessage);
@@ -129,4 +97,36 @@ public class EventService implements IEventService{
 		}
 	}
 
+/*	@Override
+	public void affectereventtoagent(Long evntid, Long agentid) {
+		Event e = eventrepository.findById(evntid).get();
+		Agent a= ar.findById(agentid).get();
+		Set<Agent> la=e.getAgenT();
+		String addA= a.getAdresse().toUpperCase();
+		String addE = e.getRegion().toUpperCase();
+		Boolean dispo = a.getState();
+		if ((addA.equals(addE))&& ( dispo = true)){
+		la.add(a);
+		e.setAgenT(la);
+		ar.save(a);
+		dispo = false; 
+		}
+	}
+*/	
+
+/*	@Autowired
+	private JavaMailSender mailSender;
+		public void sendEmail (String toEmail,String subject,String body,String attachment) throws MessagingException{
+		MimeMessage mimeMessage = mailSender.createMimeMessage();
+		MimeMessageHelper mimeMessageHealper = new MimeMessageHelper(mimeMessage,true);
+		mimeMessageHealper.setFrom("khadija.azzouz@esprit.tn");
+		mimeMessageHealper.setTo(toEmail);
+		mimeMessageHealper.setText(body);
+		mimeMessageHealper.setSubject(subject);		
+		FileSystemResource fileSystem = new FileSystemResource(new File(attachment));
+		mimeMessageHealper.addAttachment(fileSystem.getFilename(), fileSystem);
+		mailSender.send(mimeMessage);
+		System.out.println("Mail sent successfully ! ");		
+	}
+*/	
 }

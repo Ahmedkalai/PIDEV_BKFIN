@@ -87,6 +87,7 @@ public class InvestesmentController {
 						public float CalculateAmoutOfInves(@PathVariable("Investesment-id") Long idInvestesment) {
 						return investesmentService.CalculateAmoutOfInves(idInvestesment);
 						}
+			
 						
 			// http://localhost:8083/BKFIN/Investesment/CalculateRateOfInves/3/2
 			@GetMapping("/CalculateRateOfInves/{Investesment-id}/{Fund-id}")
@@ -94,5 +95,6 @@ public class InvestesmentController {
 						public float CalculateRateOfInves(@PathVariable("Investesment-id") Long idInvestesment,@PathVariable("Fund-id") Long idFund) {
 						return investesmentService.CalculateRateOfInves(idInvestesment,idFund);
 						}
+			
 						
 }

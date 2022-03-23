@@ -15,8 +15,7 @@ public interface IInvestesmentService {
 	Investesment retrieveInvestesment(Long cinInvestesment);
 	
 	float CalculateAmoutOfInves(Long idInvestissement);
+	
 	float CalculateRateOfInves(Long idInvestissement,Long idFund);
-
-	//float CalculateAmoutOfInves(Investesment i , Long idInvestissement);
 
 }

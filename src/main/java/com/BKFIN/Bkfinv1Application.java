@@ -18,15 +18,9 @@ import com.BKFIN.services.InvestesmentService;
 @SpringBootApplication
 public class Bkfinv1Application {
 
-
-	@Autowired
-	private EventService eventService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(Bkfinv1Application.class, args);
 	}
-//	@EventListener(ApplicationReadyEvent.class)
-	//public void sendMail() throws MessagingException {
-		//eventService.sendEmail("khadija.azzouz@esprit.tn", "BKfIN Team", "Thank you for your participation","C:\\Users\\Asus\\Desktop\\PI\\BKFIN.png");
-	//}
+
 }

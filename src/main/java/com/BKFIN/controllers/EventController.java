@@ -3,6 +3,7 @@ package com.BKFIN.controllers;
 import java.util.List;
 
 import javax.mail.MessagingException;
+import javax.swing.plaf.synth.Region;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -18,7 +19,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.BKFIN.entities.Event;
+import com.BKFIN.entities.unemployedpopulation;
 import com.BKFIN.services.EventService;
+
 
 
 
@@ -81,6 +84,9 @@ public class EventController {
 		//	eventService.sendEmail("khadija.azzouz@esprit.tn", "BKfIN Team", "Thank you for your participation","C:\\Users\\Asus\\Desktop\\PI\\BKFIN.png");
 			
 		}
+		
+	
+			
 		
 
 
