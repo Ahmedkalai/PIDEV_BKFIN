@@ -17,6 +17,7 @@ public interface UPopulationRepository extends CrudRepository<unemployedpopulati
 	@Query(value = "SELECT DISTINCT regions FROM unemployedpopulation WHERE environment= ?1", nativeQuery = true)
 	List<String> getRegionByEnvironment(String environment);
 	
-	
+	@Query(value = "SELECT DISTINCT regions FROM unemployedpopulation WHERE unemployment_rate= ?1", nativeQuery = true)
+	List<String> getRegionByRate(Float unemployment_rate);
 		
 }

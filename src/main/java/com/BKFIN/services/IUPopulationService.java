@@ -8,4 +8,7 @@ public interface IUPopulationService {
 
 	
 	List<String> getRegionByEnvironmentF();
+	List<String> getRegionByRateF();
+
+	
 }

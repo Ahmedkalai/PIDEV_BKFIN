@@ -24,7 +24,14 @@ public class UPopulationController {
 	//http://localhost:8083/BKFIN/UPopulation/getRegionByEnvironment
 		@GetMapping("/getRegionByEnvironment")
 	    @ResponseBody
-	    public  List<String> getFacturesByClient() {
+	    public  List<String> getRegionByEnvironment() {
 	       return UPopulationService.getRegionByEnvironmentF();
+	    }
+		
+		//http://localhost:8083/BKFIN/UPopulation/getRegionByRate
+		@GetMapping("/getRegionByRate")
+	    @ResponseBody
+	    public  List<String> getRegionByRate() {
+	       return UPopulationService.getRegionByRateF();
 	    }
 }

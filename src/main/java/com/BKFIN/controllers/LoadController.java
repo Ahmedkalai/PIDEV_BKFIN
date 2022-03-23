@@ -33,6 +33,8 @@ public class LoadController {
 	    @Autowired
 	    Job job;
 	    
+	    
+	 // http://localhost:8083/BKFIN/load
 	    @GetMapping
 	    public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
 
