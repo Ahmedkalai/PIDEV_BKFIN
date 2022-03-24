@@ -80,15 +80,27 @@ le fund sera automatiquement mis à jour (montant + taux)
 		return inves;
 	}
 	
-//Calcul du Montant recu par l'investisseur apres avoir investit (Montant initial + gain ) 
-//Calcul annuel 
-	float finalAmount;
+	//Calcul annuel 
 //	@Scheduled(cron = "0 0 0 31 12 *" )
+	
+	//Calcul du Montant recu par l'investisseur apres avoir investit (Montant initial + gain ) 
+	float finalA;
 	@Override
 	public float CalculateAmoutOfInves(Long idInvestissement) {
 		Investesment inves =  investesmentRepository.findById(idInvestissement).orElse(null);
-			finalAmount=(inves.getAmoutInvestesment()+(inves.getAmoutInvestesment()*inves.getTauxInves()));
-		return finalAmount;
+			finalA=(inves.getAmoutInvestesment()+(inves.getAmoutInvestesment()*inves.getTauxInves()));
+		return finalA;
+	}
+	
+	@Scheduled(cron = "0 0 0 31 12 *" )
+	@Override
+	public void finalAmount() {
+		List<Investesment> listInves = (List<Investesment>) investesmentRepository.findAll();
+		for (Investesment  inv : listInves)
+		{	
+			inv.setFinalAmount((inv.getAmoutInvestesment()*(1+inv.getTauxInves())));
+			investesmentRepository.save(inv);
+		}
 	}
 	
 //Calcul rate d'investissement  
@@ -113,4 +125,6 @@ float finalrate;
 		return finalrate;
 	}
 */
+
+		
 }

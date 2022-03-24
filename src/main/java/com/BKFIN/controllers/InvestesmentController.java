@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +27,7 @@ import com.BKFIN.services.InvestesmentService;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 
-
+@EnableScheduling
 @RestController
 @RequestMapping("/Investesment")
 public class InvestesmentController {
@@ -51,11 +52,12 @@ public class InvestesmentController {
 			}
 			
 			
-			// http://localhost:8083/BKFIN/Investesment/add-investesment/1
-			@PostMapping("/add-investesment/{Fund-id}")
+			// http://localhost:8083/BKFIN/Investesment/add_investesment/1
+			@PostMapping("/add_investesment/{Fund-id}")
 			@ResponseBody
 			public Investesment addInvestesment(@RequestBody Investesment i,@PathVariable("Fund-id") Long idFund)
 			{
+				System.out.println(idFund);
 				Investesment investesment = investesmentService.addInvestesment(i,idFund);
 			return investesment; 
 			}
@@ -88,6 +90,12 @@ public class InvestesmentController {
 						return investesmentService.CalculateAmoutOfInves(idInvestesment);
 						}
 			
+			// http://localhost:8083/BKFIN/Investesment/finalAmount
+			@GetMapping("/finalAmount")
+			@ResponseBody
+						public void finalAmount() {
+						investesmentService.finalAmount();
+						}
 						
 			// http://localhost:8083/BKFIN/Investesment/CalculateRateOfInves/3/2
 			@GetMapping("/CalculateRateOfInves/{Investesment-id}/{Fund-id}")

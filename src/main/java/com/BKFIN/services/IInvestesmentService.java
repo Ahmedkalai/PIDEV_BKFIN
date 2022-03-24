@@ -18,4 +18,5 @@ public interface IInvestesmentService {
 	
 	float CalculateRateOfInves(Long idInvestissement,Long idFund);
 
+	void finalAmount();
 }

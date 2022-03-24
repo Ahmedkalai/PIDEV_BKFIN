@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Investesment  implements Serializable{
 
-	@Id
+	 @Id
 	 @Column(name ="idInvestesment")
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private long idInvestesment ; 
@@ -25,10 +25,20 @@ public class Investesment  implements Serializable{
 	 private float amoutInvestesment;
 	 //j'ai ajouté un attribut 
 	 private String mailInvestesment;
+	 private float finalAmount;
 	 
 	 @ManyToOne
 	 private Fund fund;
 	 
+	
+	 
+	 
+	public float getFinalAmount() {
+		return finalAmount;
+	}
+	public void setFinalAmount(float finalAmount) {
+		this.finalAmount = finalAmount;
+	}
 	public float getTauxInves() {
 		return tauxInves;
 	}
@@ -88,6 +98,26 @@ public class Investesment  implements Serializable{
 	}
 	public void setMailInvestesment(String mailInvestesment) {
 		this.mailInvestesment = mailInvestesment;
+	}
+	public Investesment(long idInvestesment, long cinInvestesment, String nameInvestesment,
+			String secondnnameInvestesment, String professionInvestesment, float tauxInves, boolean state,
+			float amoutInvestesment, String mailInvestesment, float finalAmount, Fund fund) {
+		super();
+		this.idInvestesment = idInvestesment;
+		this.cinInvestesment = cinInvestesment;
+		this.nameInvestesment = nameInvestesment;
+		this.secondnnameInvestesment = secondnnameInvestesment;
+		this.professionInvestesment = professionInvestesment;
+		this.tauxInves = tauxInves;
+		this.state = state;
+		this.amoutInvestesment = amoutInvestesment;
+		this.mailInvestesment = mailInvestesment;
+		this.finalAmount = finalAmount;
+		this.fund = fund;
+	}
+	public Investesment() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	
