@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFFont;
@@ -63,6 +64,7 @@ public class UserExcelExporter {
 		font.setFontHeight(20);
 		style.setFont(font);
 		style.setAlignment(HorizontalAlignment.CENTER);
+		style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
 		createCell(row,0,"Credit Information",style);
 		sheet.addMergedRegion(new CellRangeAddress(0,0,0,4));
 		font.setFontHeightInPoints((short)(10));
@@ -71,6 +73,8 @@ public class UserExcelExporter {
 		font.setBold(true);
         font.setFontHeight(16);
         style.setFont(font);
+        
+        
         createCell(row, 0, "Echéance N°", style);
         createCell(row, 1, "Montant restant dù\r\n", style);
         createCell(row, 2, "Interet", style);

@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class DuesHistory implements Serializable {
 	
@@ -21,6 +23,7 @@ public class DuesHistory implements Serializable {
 	@Temporal (TemporalType.DATE)
 	private Date DateHistory;
 	@ManyToOne
+	@JsonIgnore
 	private Credit credits;
 	
 	

@@ -12,6 +12,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,11 +20,13 @@ import com.BKFIN.entities.Client;
 import com.BKFIN.entities.Credit;
 import com.BKFIN.entities.DuesHistory;
 import com.BKFIN.entities.Fund;
+import com.BKFIN.entities.Garantor;
 import com.BKFIN.entities.Pack;
 import com.BKFIN.repositories.ClientRepository;
 import com.BKFIN.repositories.CreditRepository;
 import com.BKFIN.repositories.DuesHistoryRepository;
 import com.BKFIN.repositories.FundRepository;
+import com.BKFIN.repositories.GarantorRepository;
 import com.BKFIN.repositories.PackRepository;
 
 
@@ -31,7 +34,8 @@ import com.BKFIN.repositories.PackRepository;
 
 @Service
 public class CreditService implements ICreditService {
-    
+	@Autowired
+	GarantorRepository GRrepo;
 	@Autowired
 	CreditRepository Crepo;
 	@Autowired
@@ -51,14 +55,18 @@ public class CreditService implements ICreditService {
     
 	
 	//completed par default false
+	
 	@Override
-	public Credit addCredit(Credit credit, Long Id_client, Long Id_fund, Long Id_pack) {
+	public Credit addCredit(Credit credit, Long Id_client, Long Id_fund, Long Id_pack ,Long Id_garantor) {
 		Client client= ClientRepo.findById(Id_client).orElse(null);
 		Fund fund=FundRepo.findById(Id_fund).orElse(null);
 		Pack pack=PackRepo.findById(Id_pack).orElse(null);
-		 credit.setClient(client);
+		Garantor Garant= GRrepo.findById(Id_garantor).orElse(null);
+		credit.setGarantor(Garant);
+		credit.setClient(client);
 		 credit.setFunds(fund);
 		 credit.setPack_credit(pack);
+		
 		 //NEW CLIENT
 		 if(client.getCredit_authorization()==null)
 		 {   //tester sur le risk(client nouveau) 
@@ -66,8 +74,9 @@ public class CreditService implements ICreditService {
 			 if(1.5*credit.getGarantor().getSalaryGarantor()>=credit.getAmount())
 			 {	 
 				//CALCUL RISK
-				 credit.setRisk((float) (0.01+credit.getAmount()/credit.getGarantor().getSalaryGarantor()));
+				 credit.setRisk((float) (0.01+credit.getAmount()/(credit.getGarantor().getSalaryGarantor()*100)));
 				 Acceptation(credit,fund,"NouveauClient avec garant certifié");
+				 
 		     }
 			 else
 			 {credit.setState(false);
@@ -77,7 +86,11 @@ public class CreditService implements ICreditService {
 		 //EXISTING CLIENT
 		 else if(client.getCredit_authorization()==true)
 		 {      //calcul jours de retard de la table dues history
+			 System.out.println(CaculateLateDays(Crepo.getIDofLatestCompletedCreditsByClient(Id_client)));
+			 System.out.println(Crepo.getIDofLatestCompletedCreditsByClient(Id_client).getCreditPeriod()*12*30);
+			 
 				float Ratio_retard=CaculateLateDays(Crepo.getIDofLatestCompletedCreditsByClient(Id_client))/Crepo.getIDofLatestCompletedCreditsByClient(Id_client).getCreditPeriod()*30;
+				System.out.println(Ratio_retard);
 				//3 CAS 
 				if (Ratio_retard<0.1)
 					{credit.setRisk((float) 0.1);
@@ -89,7 +102,7 @@ public class CreditService implements ICreditService {
 					}
 				else 
 					{credit.setState(false);
-				    credit.setReason("Client trop Risqué MAuvais Historique");
+				    credit.setReason("Client trop Risqué Mauvais Historique");
 				    client.setCredit_authorization(false);	//blackLIster le client
 				    ClientRepo.save(client);
 					}
@@ -99,7 +112,7 @@ public class CreditService implements ICreditService {
 		 else 
 		 {
 			 credit.setState(false);
-			 credit.setReason("présence de credit impayés");  
+			 credit.setReason("Interdiction de Crédit");  
 		 }
 		 
 		 
@@ -120,12 +133,15 @@ public class CreditService implements ICreditService {
 		 {
 	     fund.setAmountFund(fund.getAmountFund()-credit.getAmount());
 		 credit.setState(true);
-		 credit.setMonthlyPaymentAmount((long) Calcul_mensualite(credit));
+		 System.out.println(Calcul_mensualite(credit));
+		 credit.setMonthlyPaymentAmount( Calcul_mensualite(credit));
          java.util.Date date=new java.util.Date(System.currentTimeMillis());
 		 credit.setObtainingDate(date);
 		 credit.setReason(msg);
+		 credit.getClient().setCredit_authorization(false);
+		 credit.setCompleted(false);
 		 FundRepo.save(fund);
-		 
+		
 		 }
 		 else
 		 {credit.setState(false);
@@ -203,17 +219,9 @@ public class CreditService implements ICreditService {
 		
 		return ListAmortissement;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 	@Override
-	public Credit updateCredit(Credit credit, Long Id_client, Long Id_fund, Long Id_pack) {
+	public Credit updateCredit(Credit credit, Long Id_client, Long Id_fund, Long Id_pack ) {
 		Client client= ClientRepo.findById(Id_client).orElse(null);
 		Fund fund=FundRepo.findById(Id_fund).orElse(null);
 		Pack pack=PackRepo.findById(Id_pack).orElse(null);
@@ -243,6 +251,9 @@ public class CreditService implements ICreditService {
 		Crepo.save(credit);
 		return credit;
 	}
+
+
+
 
 	
    

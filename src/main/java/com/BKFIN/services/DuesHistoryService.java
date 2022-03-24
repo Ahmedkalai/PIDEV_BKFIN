@@ -36,13 +36,14 @@ public class DuesHistoryService implements IDuesHistoryService {
 	public DuesHistory addDuesHistory(DuesHistory DH, Long idcredit) {
 		Credit credit= Crepo.findById(idcredit).orElse(null);
 		DH.setCredits(credit);
-		//credit incomplete save the dueshistory
+		//credit incomplete save the dues history
 		if(DH.getCredits().getCompleted()==false)
 		{
 		//calcul du montant total du credit 
 		float amount_topay=(CRService.Calcul_mensualite(credit)*(int) (credit.getCreditPeriod()*12));
+
 		//compare payed amount with creditamount to pay
-		  if(amount_topay==(PayedAmount(idcredit)+DH.getCredits().getMonthlyPaymentAmount()))
+		  if(amount_topay<=(PayedAmount(idcredit)+DH.getCredits().getMonthlyPaymentAmount()))
 			{DH.getCredits().setCompleted(true);
 			Crepo.save(credit);
 			DH.getCredits().getClient().setCredit_authorization(true);

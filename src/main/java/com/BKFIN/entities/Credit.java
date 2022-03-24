@@ -15,6 +15,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Credit implements Serializable {
 	
@@ -22,7 +24,7 @@ public class Credit implements Serializable {
 	@Column(name ="idCredit")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCredit; 
-	private Long amount;
+	private float amount;
 	@Temporal (TemporalType.DATE)
 	private Date dateDemande;
 	@Temporal (TemporalType.DATE)
@@ -30,7 +32,7 @@ public class Credit implements Serializable {
 	private Boolean state;
 	@Temporal (TemporalType.DATE)
 	private Date monthlyPaymentDate;
-	private Long monthlyPaymentAmount;
+	private float monthlyPaymentAmount;
 	//taux d'interet en année
 	private float interestRate;
 	//periode de credit en année
@@ -41,6 +43,7 @@ public class Credit implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="credit")
 	private Set<Notification> notifications ;
 	@ManyToOne
+	@JsonIgnore
 	private Client client;
 	@ManyToOne
 	private Fund funds;
@@ -70,10 +73,10 @@ public class Credit implements Serializable {
 	public void setIdCredit(Long idCredit) {
 		this.idCredit = idCredit;
 	}
-	public Long getAmount() {
+	public float getAmount() {
 		return amount;
 	}
-	public void setAmount(Long amount) {
+	public void setAmount(float amount) {
 		this.amount = amount;
 	}
 	public Date getDateDemande() {
@@ -100,10 +103,10 @@ public class Credit implements Serializable {
 	public void setMonthlyPaymentDate(Date monthlyPaymentDate) {
 		this.monthlyPaymentDate = monthlyPaymentDate;
 	}
-	public Long getMonthlyPaymentAmount() {
+	public float getMonthlyPaymentAmount() {
 		return monthlyPaymentAmount;
 	}
-	public void setMonthlyPaymentAmount(Long monthlyPaymentAmount) {
+	public void setMonthlyPaymentAmount(float monthlyPaymentAmount) {
 		this.monthlyPaymentAmount = monthlyPaymentAmount;
 	}
 	public float getInterestRate() {

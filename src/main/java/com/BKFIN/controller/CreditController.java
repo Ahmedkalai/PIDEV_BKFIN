@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.BKFIN.entities.Credit;
+import com.BKFIN.entities.Garantor;
 import com.BKFIN.services.Amortissement;
 import com.BKFIN.services.CreditService;
 import com.BKFIN.services.ICreditService;
@@ -52,19 +53,24 @@ public class CreditController {
 	return creditservice.retrieveCredit(CreditId);
 	}
 	
-	//http://localhost:8083/BKFIN/Credit/add-Credit/1/1/1
-	@PostMapping("/add-Credit/{Credit-Id_client}/{Credit-Id_fund}/{Credit-Id_pack}")
+	//http://localhost:8083/BKFIN/Credit/add-Credit/1/1/1/1
+	@PostMapping("/add-Credit/{Credit-Id_client}/{Credit-Id_fund}/{Credit-Id_pack}/{credit_idgarant}")
 	@ResponseBody
-	public Credit addcredit(@RequestBody Credit c,@PathVariable("Credit-Id_client") Long Id_client,@PathVariable("Credit-Id_fund") Long Id_fund,@PathVariable("Credit-Id_pack") Long Id_pack)
+	public Credit addcredit(@RequestBody Credit c,@PathVariable("Credit-Id_client") Long Id_client,
+			                @PathVariable("Credit-Id_fund") Long Id_fund,
+			                @PathVariable("Credit-Id_pack") Long Id_pack,@PathVariable("credit_idgarant") Long Id_garant)
 	{
-		Credit Credit = creditservice.addCredit(c,Id_client,Id_fund,Id_pack);
+		Credit Credit = creditservice.addCredit(c,Id_client,Id_fund,Id_pack,Id_garant);
 	return Credit;
 	}
 	
 	//http://localhost:8083/BKFIN/Credit/modify-credit/1/1/1
 	@PutMapping("/modify-credit/{Credit-Id_client}/{Credit-Id_fund}/{Credit-Id_pack}")
 	@ResponseBody
-	public Credit modifycredit(@RequestBody Credit credit,@PathVariable("Credit-Id_client") Long Id_client,@PathVariable("Credit-Id_fund") Long Id_fund,@PathVariable("Credit-Id_pack") Long Id_pack) {
+	public Credit modifycredit(@RequestBody Credit credit,@PathVariable("Credit-Id_client") Long Id_client,
+			                   @PathVariable("Credit-Id_fund") Long Id_fund,
+			                   @PathVariable("Credit-Id_pack") Long Id_pack) 
+	{
 	return creditservice.updateCredit(credit,Id_client,Id_fund,Id_pack);
 	}
 	
@@ -109,7 +115,7 @@ public class CreditController {
 			response.setContentType("application/octet-stream");
 			String headerKey = "Content-Disposition";
 			
-			String headervalue = "attachment; filename=Tableau Credit ";
+			String headervalue = "attachment; filename=Tableau_Credit_N_"+cr.getIdCredit()+".xlsx";
 			response.setHeader(headerKey, headervalue);
 			Amortissement[] Credit = creditservice.TabAmortissement(cr);
 			List<Amortissement> list = Arrays.asList(Credit);

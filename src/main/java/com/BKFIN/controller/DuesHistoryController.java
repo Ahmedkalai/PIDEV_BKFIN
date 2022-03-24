@@ -39,12 +39,12 @@ public class DuesHistoryController {
 	return DuesHistoryservice.retrieveDuesHistory(DuesHistoryId);
 	}
 	
-	//http://localhost:8083/BKFIN/DuesHistory/add-DuesHistory/1/1/1
-	@PostMapping("/add-DuesHistory/{DuesHistory-Id_client}")
+	//http://localhost:8083/BKFIN/DuesHistory/add-DuesHistory/1
+	@PostMapping("/add-DuesHistory/{DuesHistory-id_credit}")
 	@ResponseBody
-	public DuesHistory addDuesHistory(@RequestBody DuesHistory c,@PathVariable("DuesHistory-Id_client") Long Id_client)
+	public DuesHistory addDuesHistory(@RequestBody DuesHistory c,@PathVariable("DuesHistory-id_credit") Long id_credit)
 	{
-		DuesHistory DuesHistory = DuesHistoryservice.addDuesHistory(c,Id_client);
+		DuesHistory DuesHistory = DuesHistoryservice.addDuesHistory(c,id_credit);
 	return DuesHistory;
 	}
 	
