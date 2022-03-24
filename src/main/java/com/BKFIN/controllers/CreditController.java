@@ -1,4 +1,4 @@
-package com.BKFIN.controller;
+package com.BKFIN.controllers;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
