@@ -26,7 +26,7 @@ import org.springframework.core.io.FileSystemResource;
 
 @Configuration
 @EnableBatchProcessing
-public class SpringBatchConfig {
+public class SpringBatchConfigKhadija {
 		
    @Bean
     public Job job(JobBuilderFactory jobBuilderFactory,

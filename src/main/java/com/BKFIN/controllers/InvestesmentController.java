@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,12 +21,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.BKFIN.entities.Event;
 import com.BKFIN.entities.Investesment;
 import com.BKFIN.services.InvestesmentService;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 
-@EnableScheduling
+
 @RestController
 @RequestMapping("/Investesment")
 public class InvestesmentController {
@@ -62,12 +62,13 @@ public class InvestesmentController {
 			return investesment; 
 			}
 			
-			// http://localhost:8083/BKFIN/Investesment/modify-investesment
-			@PutMapping("/investesment-fund")
+			// http://localhost:8083/BKFIN/Investesment/modify-investesment/1
+			@PutMapping("/modify-investesment/{Fund-id}")
 			@ResponseBody
-			public Investesment modifyInvestesment(@RequestBody Investesment investesment,Long idFund) {
+			public Investesment modifyInvestesment(@RequestBody Investesment investesment,@PathVariable("Fund-id") Long idFund) {
 			return investesmentService.updateInvestesment(investesment,idFund);
 			}
+			
 			
 			 //http://localhost:8083/BKFIN/Investesment/export
 			@GetMapping("/export")

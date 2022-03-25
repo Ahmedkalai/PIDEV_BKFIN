@@ -60,7 +60,7 @@ public class EventController {
 		}
 		
 		
-		// http://localhost:8083/BKFIN/Event/remove-event/{event-id}
+		// http://localhost:8083/BKFIN/Event/remove-event/1
 		@DeleteMapping("/remove-event/{event-id}")
 		@ResponseBody
 		public void removeEvent(@PathVariable("event-id") Long eventId) {
@@ -77,7 +77,7 @@ public class EventController {
 
 		// http://localhost:8083/BKFIN/Event/addagev/1/1
 		// AFFECTER UN evenement A UN agent 
-		//@EventListener(ApplicationReadyEvent.class)
+	//	@EventListener(ApplicationReadyEvent.class)
 		@PostMapping("/addagev/{idEvent}/{idAgent}")
 		public void assignagev(@PathVariable("idEvent") Long eventid ,@PathVariable("idAgent")Long agentid) throws MessagingException {
 			eventService.affectereventtoagent(eventid, agentid,"khadija.azzouz@esprit.tn", "BKfIN Team", "Thank you for your participation,you will find your invitation attached ","C:\\Users\\Asus\\Downloads\\BKFINinvi.png");

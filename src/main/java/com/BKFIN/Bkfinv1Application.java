@@ -13,8 +13,6 @@ import com.BKFIN.services.EventService;
 import com.BKFIN.services.InvestesmentService;
 
 
-
-@EnableScheduling
 @SpringBootApplication
 public class Bkfinv1Application {
 

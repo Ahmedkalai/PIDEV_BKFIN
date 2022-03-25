@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class Processor implements ItemProcessor<unemployedpopulation, unemployedpopulation> {
+public class ProcessorKhadija implements ItemProcessor<unemployedpopulation, unemployedpopulation> {
 
     
     private static final Map<String, String> environment =
             new HashMap<>();
     
-    public Processor() {
+    public ProcessorKhadija() {
     	
                 
     }

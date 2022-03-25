@@ -8,7 +8,7 @@ import com.BKFIN.entities.unemployedpopulation;
 import com.BKFIN.repositories.UPopulationRepository;
 
 @Component
-public class DbWriter implements ItemWriter<unemployedpopulation> {
+public class DbWriterKhadija implements ItemWriter<unemployedpopulation> {
 
 	
 
