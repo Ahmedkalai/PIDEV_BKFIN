@@ -46,36 +46,14 @@ public class Client implements Serializable,UserDetails {
 	private String adresse;
 	private String password;
 	//null par defaut / true autorisé/false non autorisé
-		private Boolean Credit_authorization;
-		
-		public Boolean getCredit_authorization() {
-			return Credit_authorization;
-		}
-		public void setCredit_authorization(Boolean credit_authorization) {
-			Credit_authorization = credit_authorization;
-		}
-	public Set<Role> getRoles() {
-		return roles;
-	}
-
-
-	public void setRoles(Set<Role> roles) {
-		
-		this.roles = roles;
-	}
-
-
+	private Boolean Credit_authorization;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private Set<Credit> credits;
-	
 	@ManyToOne
 	@JsonIgnore
 	private Agent agent;
-	
 	@OneToMany( mappedBy="clientAcc")
 	private Set<Account> account;
-
-	
 	@OneToMany(mappedBy="clientcomp")
 	private Set<Complaint> complaints;
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
@@ -85,7 +63,21 @@ public class Client implements Serializable,UserDetails {
 
 
 	
+	public Set<Role> getRoles() {
+		return roles;
+	}
 
+
+	public void setRoles(Set<Role> roles) {
+		
+		this.roles = roles;
+	}
+	public Boolean getCredit_authorization() {
+		return Credit_authorization;
+	}
+	public void setCredit_authorization(Boolean credit_authorization) {
+		Credit_authorization = credit_authorization;
+	}
 	
 	public Long getId() {
 		return id;

@@ -28,6 +28,7 @@ import com.BKFIN.repositories.DuesHistoryRepository;
 import com.BKFIN.repositories.FundRepository;
 import com.BKFIN.repositories.GarantorRepository;
 import com.BKFIN.repositories.PackRepository;
+import com.itextpdf.text.log.SysoCounter;
 
 
 
@@ -66,7 +67,7 @@ public class CreditService implements ICreditService {
 		credit.setClient(client);
 		 credit.setFunds(fund);
 		 credit.setPack_credit(pack);
-		
+	     credit.setDateDemande(new Date()); 
 		 //NEW CLIENT
 		 if(client.getCredit_authorization()==null)
 		 {   //tester sur le risk(client nouveau) 
@@ -85,12 +86,8 @@ public class CreditService implements ICreditService {
 		 }
 		 //EXISTING CLIENT
 		 else if(client.getCredit_authorization()==true)
-		 {      //calcul jours de retard de la table dues history
-			 System.out.println(CaculateLateDays(Crepo.getIDofLatestCompletedCreditsByClient(Id_client)));
-			 System.out.println(Crepo.getIDofLatestCompletedCreditsByClient(Id_client).getCreditPeriod()*12*30);
-			 
-				float Ratio_retard=CaculateLateDays(Crepo.getIDofLatestCompletedCreditsByClient(Id_client))/Crepo.getIDofLatestCompletedCreditsByClient(Id_client).getCreditPeriod()*30;
-				System.out.println(Ratio_retard);
+		 {      //Ratio retard=late_days/period_of credit			
+				float Ratio_retard=(CaculateLateDays(Crepo.getIDofLatestCompletedCreditsByClient(Id_client)))/(Crepo.getIDofLatestCompletedCreditsByClient(Id_client).getCreditPeriod()*12*30);
 				//3 CAS 
 				if (Ratio_retard<0.1)
 					{credit.setRisk((float) 0.1);
@@ -114,9 +111,6 @@ public class CreditService implements ICreditService {
 			 credit.setState(false);
 			 credit.setReason("Interdiction de Crédit");  
 		 }
-		 
-		 
-		 
 		 Crepo.save(credit);
 	        return credit;
 		
@@ -154,13 +148,14 @@ public class CreditService implements ICreditService {
 	
 	//Fonction qui calcule les retards enregistré dans le history dues
 	public int CaculateLateDays(Credit  cr) {
+		
 		 int _MS_PER_DAY = 1000 * 60 * 60 * 24;
 		int S=0;
-		Date begin=cr.getMonthlyPaymentDate();
 		
 		List<DuesHistory> ListDH =DHrepo.getCredit_DuesHistory(cr.getIdCredit());
 		for (DuesHistory DH : ListDH) {
 			Date end=DH.getDateHistory();
+			Date begin=DH.getSupposedDate();
 			//difference entre deux dates en jours
 			int diffInDays = (int)( (end.getTime() - begin.getTime()) 
 	                 / (1000 * 60 * 60 * 24) );

@@ -22,6 +22,9 @@ public class DuesHistory implements Serializable {
 	private Long idDues; 
 	@Temporal (TemporalType.DATE)
 	private Date DateHistory;
+	@Temporal (TemporalType.DATE)
+	private Date SupposedDate;
+	
 	@ManyToOne
 	@JsonIgnore
 	private Credit credits;
@@ -40,6 +43,12 @@ public class DuesHistory implements Serializable {
 	public void setDateHistory(Date dateHistory) {
 		DateHistory = dateHistory;
 	}
+	public Date getSupposedDate() {
+		return SupposedDate;
+	}
+	public void setSupposedDate(Date supposedDate) {
+		SupposedDate = supposedDate;
+	}
 	public Credit getCredits() {
 		return credits;
 	}
@@ -55,11 +64,12 @@ public class DuesHistory implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public DuesHistory(Long idDues, Date dateHistory, Credit credits) {
+	public DuesHistory(Long idDues, Date dateHistory, Credit credits,Date supposedDate) {
 		super();
 		this.idDues = idDues;
-		DateHistory = dateHistory;
+		this.DateHistory = dateHistory;
 		this.credits = credits;
+		this.SupposedDate = supposedDate;
 	}
 	
 	

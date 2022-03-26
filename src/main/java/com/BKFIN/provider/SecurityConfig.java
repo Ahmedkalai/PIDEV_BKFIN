@@ -67,12 +67,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/logout","/resources/**").permitAll()
-                .antMatchers("/Agent/**").access("hasRole('AGENT')")
-                .antMatchers("/Client/**").access("hasRole('CLIENT')")
+                
                 .antMatchers("/Admin/**").access("hasRole('ADMIN')")
                 .anyRequest().permitAll()
                 .and();
-    }
+    }           //.antMatchers("/Agent/**").access("hasRole('AGENT')")
+                //.antMatchers("/Client/**").access("hasRole('CLIENT')")
+                
 
     private class AuthentificationLoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
