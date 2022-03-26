@@ -21,7 +21,7 @@ public class Partner implements Serializable {
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private long idPartner ; 
 	 private String activitePartner ; 
-	 private Float pricePartner ; 
+	 
 	 private String namePartner ;
 	 private String sectorPartner ;
 	 private String urlPartner; 
@@ -40,12 +40,7 @@ public class Partner implements Serializable {
 	public void setActivitePartner(String activitePartner) {
 		this.activitePartner = activitePartner;
 	}
-	public Float getPricePartner() {
-		return pricePartner;
-	}
-	public void setPricePartner(Float pricePartner) {
-		this.pricePartner = pricePartner;
-	}
+	
 	public String getNamePartner() {
 		return namePartner;
 	}
