@@ -33,9 +33,6 @@ public class Agent  implements Serializable,UserDetails{
 	private Long phoneNum;
 	private String email;
 	private String adresse;
-<<<<<<< Updated upstream
-	
-=======
 	private String password;
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	 private Set<Role> roles;
@@ -78,7 +75,6 @@ public class Agent  implements Serializable,UserDetails{
 	public void setPassword(String password) {
 		this.password = password;
 	}
->>>>>>> Stashed changes
 	@OneToMany( mappedBy="agent")
 	private Set<Client> client;
 	@ManyToMany(mappedBy="agenT")
@@ -130,10 +126,6 @@ public class Agent  implements Serializable,UserDetails{
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-<<<<<<< Updated upstream
-	public Agent(Long idAgent, Long localisation, String name, String secondName, Long phoneNum, String email,
-			String adresse) {
-=======
 	
 	public Set<Client> getClient() {
 		return client;
@@ -160,7 +152,6 @@ public class Agent  implements Serializable,UserDetails{
 	public Agent(Long idAgent, Long localisation, String name, String secondName, Long phoneNum, String email,
 			String adresse, String password, Set<Role> roles, String fullLocation, String ipAddress, Double latitude,
 			Double longitude, Boolean state, Set<Client> client, Set<Event> event, Admin admin) {
->>>>>>> Stashed changes
 		super();
 		this.idAgent = idAgent;
 		this.localisation = localisation;
@@ -169,21 +160,6 @@ public class Agent  implements Serializable,UserDetails{
 		this.phoneNum = phoneNum;
 		this.email = email;
 		this.adresse = adresse;
-<<<<<<< Updated upstream
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-=======
 		this.password = password;
 		this.roles = roles;
 		this.fullLocation = fullLocation;
@@ -242,7 +218,6 @@ public class Agent  implements Serializable,UserDetails{
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}
->>>>>>> Stashed changes
 	
 	
 	

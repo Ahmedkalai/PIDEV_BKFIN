@@ -44,9 +44,6 @@ public class Client implements Serializable,UserDetails {
 	private String email;
 	private String image;
 	private String adresse;
-<<<<<<< Updated upstream
-	
-=======
 	private String password;
 	//null par defaut / true autorisé/false non autorisé
 		private Boolean Credit_authorization;
@@ -68,22 +65,16 @@ public class Client implements Serializable,UserDetails {
 	}
 
 
->>>>>>> Stashed changes
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private Set<Credit> credits;
 	
 	@ManyToOne
-<<<<<<< Updated upstream
-=======
 	@JsonIgnore
->>>>>>> Stashed changes
 	private Agent agent;
 	
 	@OneToMany( mappedBy="clientAcc")
 	private Set<Account> account;
 
-<<<<<<< Updated upstream
-=======
 	
 	@OneToMany(mappedBy="clientcomp")
 	private Set<Complaint> complaints;
@@ -127,7 +118,6 @@ public class Client implements Serializable,UserDetails {
 		super();
 		// TODO Auto-generated constructor stub
 	}
->>>>>>> Stashed changes
 	
 	
 	public Long getCin() {
@@ -178,19 +168,6 @@ public class Client implements Serializable,UserDetails {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-<<<<<<< Updated upstream
-	public Client(Long cin, String name, String secondName, Date birthDay, Long phoneNum, String email, String image,
-			String adresse) {
-		super();
-		this.cin = cin;
-		this.name = name;
-		this.secondName = secondName;
-		this.birthDay = birthDay;
-		this.phoneNum = phoneNum;
-		this.email = email;
-		this.image = image;
-		this.adresse = adresse;
-=======
 	public Set<Credit> getCredits() {
 		return credits;
 	}
@@ -232,7 +209,6 @@ public class Client implements Serializable,UserDetails {
 
 	@Override
 	public String getPassword() {
->>>>>>> Stashed changes
 		
 		return this.password;
 	}

@@ -18,10 +18,19 @@ public class Fund  implements Serializable {
 	 private long idFund ; 
 	 private float amountFund ;
 	 private float tauxFund ;
+	 private float tauxGain ;
 	 @OneToMany(mappedBy="funds")
 	 private Set<Credit> credits ;
 	 @OneToMany(mappedBy="fund")
 	 private Set<Investesment> invest;
+	 
+	 
+	public float getTauxGain() {
+		return tauxGain;
+	}
+	public void setTauxGain(float tauxGain) {
+		this.tauxGain = tauxGain;
+	}
 	public long getIdFund() {
 		return idFund;
 	}
@@ -52,6 +61,8 @@ public class Fund  implements Serializable {
 	public void setInvest(Set<Investesment> invest) {
 		this.invest = invest;
 	}
+	
+	
 	 
 	 
 }
