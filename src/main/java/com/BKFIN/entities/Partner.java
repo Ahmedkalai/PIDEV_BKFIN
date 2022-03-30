@@ -26,7 +26,14 @@ public class Partner implements Serializable {
 	 private String sectorPartner ;
 	 private String urlPartner; 
 	 private String logoPartner;
-	 @OneToMany(cascade = CascadeType.ALL, mappedBy="partner_product")
+	 private String emailPartner;
+	 public String getEmailPartner() {
+		return emailPartner;
+	}
+	public void setEmailPartner(String emailPartner) {
+		this.emailPartner = emailPartner;
+	}
+	@OneToMany(cascade = CascadeType.ALL, mappedBy="partner_product")
 		private Set<Product> products;
 	public long getIdPartner() {
 		return idPartner;

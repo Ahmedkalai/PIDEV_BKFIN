@@ -34,6 +34,13 @@ public class PackRestController {
 		List<Pack> lp=PCI.retrieveAllPacks();
 		return lp;
 	}
+//AFFICHAGE LISTE PACK ACTIFS
+@GetMapping("/viewPacksActif")
+@ResponseBody
+	public List<Pack> getPacksActifs(){
+		List<Pack> lp=PCI.retrieveAllActivePacks();
+		return lp;
+	}
 
 //AFFICHAGE PACK
 @GetMapping("/viewPack/{idPack}")
@@ -54,6 +61,13 @@ public void deletePack(@PathVariable("idPack") Long IdPack) {
 @ResponseBody
 public Pack updatePack(@RequestBody Pack p) {
 	Pack pack =PCI.updatePack(p);
+	return pack;
+}
+//state 
+@PutMapping("/statepack/{idPack}/{statePack}")
+@ResponseBody
+public Pack statePack(@PathVariable("idPack") Long id,@PathVariable("statePack") Boolean valeur ) {
+	Pack pack =PCI.setState(id, valeur);
 	return pack;
 	
 }

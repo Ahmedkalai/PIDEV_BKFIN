@@ -1,6 +1,6 @@
 package com.BKFIN.controllers;
 
-import java.awt.PageAttributes.MediaType;
+
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
@@ -77,7 +77,7 @@ List<Product> p = (List<Product>) PSI.retrieveAllProducts();
 
 ByteArrayInputStream bis = PDFGeneratorService.employeePDFReport(p);
 HttpHeaders headers = new HttpHeaders();
-headers.add("Content-Disposition", "inline; filename=employees.pdf");
+headers.add("Content-Disposition", "inline; filename=Products.pdf");
 
 return ResponseEntity.ok().headers(headers)
   .body(new InputStreamResource(bis));
