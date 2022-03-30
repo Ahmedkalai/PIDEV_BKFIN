@@ -19,6 +19,8 @@ public class Garantor implements Serializable {
 	 private String secondnameGarantor ;
 	 private float salaryGarantor ;
 	 private String workGarantor ;
+	 private String urlimage ;
+	 
 	 @OneToOne
 	 private Credit credit;
 	 
@@ -52,6 +54,12 @@ public class Garantor implements Serializable {
 	}
 	public void setWorkGarantor(String workGarantor) {
 		this.workGarantor = workGarantor;
+	}
+	public String geturlimage() {
+		return urlimage;
+	}
+	public void seturlimage(String urlimage) {
+		this.urlimage = urlimage;
 	}
 	public Credit getCredit() {
 		return credit;

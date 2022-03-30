@@ -39,7 +39,7 @@ public class GarantorController {
 	return Garantorservice.retrieveGarantor(GarantorId);
 	}
 	
-	//http://localhost:8083/BKFIN/Garantor/add-Garantor/1/1/1
+	//http://localhost:8083/BKFIN/Garantor/add-Garantor/1
 	@PostMapping("/add-Garantor/{Garantor-Id_client}")
 	@ResponseBody
 	public Garantor addGarantor(@RequestBody Garantor c,@PathVariable("Garantor-Id_client") Long Id_client)

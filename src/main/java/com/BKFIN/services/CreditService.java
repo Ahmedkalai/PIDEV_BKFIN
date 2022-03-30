@@ -2,9 +2,11 @@ package com.BKFIN.services;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Iterator;
@@ -124,17 +126,36 @@ public class CreditService implements ICreditService {
 		 credit.setInterestRate(credit.getRisk()+fund.getTauxFund()+fund.getTauxGain());
 		//changement du fond de la banque
 		 if(fund.getAmountFund()-credit.getAmount()>0)
-		 {
-	     fund.setAmountFund(fund.getAmountFund()-credit.getAmount());
-		 credit.setState(true);
-		 System.out.println(Calcul_mensualite(credit));
-		 credit.setMonthlyPaymentAmount( Calcul_mensualite(credit));
-         java.util.Date date=new java.util.Date(System.currentTimeMillis());
-		 credit.setObtainingDate(date);
-		 credit.setReason(msg);
-		 credit.getClient().setCredit_authorization(false);
-		 credit.setCompleted(false);
-		 FundRepo.save(fund);
+		 {   
+			 fund.setAmountFund(fund.getAmountFund()-credit.getAmount());
+		     credit.setState(true);
+		     java.util.Date date=new java.util.Date(System.currentTimeMillis());
+			 credit.setObtainingDate(date);
+		     
+			 if(credit.getDifféré()==false) 
+			 { //System.out.println(Calcul_mensualite(credit));
+				 credit.setMonthlyPaymentAmount(Calcul_mensualite(credit));
+				 credit.setReason(msg);
+				 credit.getClient().setCredit_authorization(false);
+				 credit.setCompleted(false);
+				 FundRepo.save(fund);
+				 
+	        }
+			 //si credit avec différé
+			 else if(credit.getDifféré()==true)
+			 {   credit.setAmount(credit.getAmount()+(1+(credit.getCreditPeriod()*credit.getInterestRate())));
+				 credit.setMonthlyPaymentAmount(Calcul_mensualite(credit));
+				 //changement de la date de paiement prevue selon la periode du differe
+				 
+				 credit.setMonthlyPaymentDate(java.sql.Date.valueOf(Instant.ofEpochMilli(credit.getMonthlyPaymentDate().getTime())
+					      .atZone(ZoneId.systemDefault())
+					      .toLocalDate().plusMonths((long) (credit.getCreditPeriod()*12))));
+				 credit.setReason(msg);
+				 credit.getClient().setCredit_authorization(false);
+				 credit.setCompleted(false);
+				 FundRepo.save(fund);
+			 }
+	     
 		
 		 }
 		 else
@@ -246,6 +267,7 @@ public class CreditService implements ICreditService {
 		Crepo.save(credit);
 		return credit;
 	}
+
 
 
 
