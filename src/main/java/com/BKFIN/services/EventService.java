@@ -82,6 +82,7 @@ public class EventService implements IEventService{
 		ar.save(a);
 //l'agent devient donc indispo
 		dispo = false; 
+		//save 
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 		MimeMessageHelper mimeMessageHealper = new MimeMessageHelper(mimeMessage,true);
 //SimpleMailMessage message=new SimpleMailMessage();

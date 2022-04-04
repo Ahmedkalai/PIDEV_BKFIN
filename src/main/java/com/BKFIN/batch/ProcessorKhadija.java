@@ -16,8 +16,7 @@ public class ProcessorKhadija implements ItemProcessor<unemployedpopulation, une
             new HashMap<>();
     
     public ProcessorKhadija() {
-    	
-                
+    	            
     }
 
 	@Override

@@ -10,8 +10,6 @@ import com.BKFIN.repositories.UPopulationRepository;
 @Component
 public class DbWriterKhadija implements ItemWriter<unemployedpopulation> {
 
-	
-
 	@Autowired
 	private UPopulationRepository uPopulationRepository;
 

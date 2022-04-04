@@ -92,6 +92,8 @@ le fund sera automatiquement mis à jour (montant + taux)
 		return finalA;
 	}
 	
+	//pour des besoins de test 
+	//@Scheduled(cron = "* * * 4 * *" )
 	@Scheduled(cron = "0 0 0 31 12 *" )
 	@Override
 	public void finalAmount() {

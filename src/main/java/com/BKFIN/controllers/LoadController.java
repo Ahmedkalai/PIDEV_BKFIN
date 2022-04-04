@@ -25,10 +25,8 @@ import java.util.Map;
 public class LoadController {
 	
 	
-	 
 	    @Autowired
 	    JobLauncher jobLauncher;	 
-	 
 	 
 	    @Autowired
 	    Job job;
