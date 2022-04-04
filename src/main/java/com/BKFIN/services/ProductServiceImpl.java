@@ -1,10 +1,14 @@
 package com.BKFIN.services;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.BKFIN.entities.Pack;
 import com.BKFIN.entities.Partner;
@@ -91,6 +95,26 @@ public class ProductServiceImpl implements IProductService {
 		PackRepository.save(pack);
 		
 	}
-}
+	@Scheduled(cron = "* * * 05 * *" )
+	public void exclusivitePrix() {
+	List<Product> pr=(List)(ProductRepository.findAll());
+	for (Iterator iterator = pr.iterator(); iterator.hasNext();) {
+		Product product = (Product) iterator.next();
+		if(product.getValueProduct()<100) {
+		product.setValueEXC(product.getValueProduct()*90/100);
+		ProductRepository.save(product);}
+		else if ((product.getValueProduct()<1000) && (product.getValueProduct()>100)) {
+		product.setValueEXC(product.getValueProduct()*92/100);
+		ProductRepository.save(product);}
+		else {
+			product.setValueEXC(product.getValueProduct()*94/100);
+			ProductRepository.save(product);
+		}
+		}
+	}
+	
+
+	}
+
 
 

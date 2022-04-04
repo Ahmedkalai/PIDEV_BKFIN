@@ -72,5 +72,12 @@ public Pack statePack(@PathVariable("idPack") Long id,@PathVariable("statePack")
 	
 }
 
+@PutMapping("/priceP")
+@ResponseBody
+public void affecter() {
+PCI.prixPack();
+	
+}
+
 
 }

@@ -26,7 +26,14 @@ public class Pack implements Serializable {
 	 private String descriptionPack ; 
 	 private String secteurPack ;
 	 private Boolean statePack ;
-	 private String imagePack; 
+	 private Float priceP ;
+	 public Float getPriceP() {
+		return priceP;
+	}
+	public void setPriceP(Float priceP) {
+		this.priceP = priceP;
+	}
+	private String imagePack; 
 	 @OneToMany(cascade = CascadeType.ALL, mappedBy="pack_credit")
 		private Set<Credit> credit;
 	 @ManyToMany(cascade = CascadeType.ALL)

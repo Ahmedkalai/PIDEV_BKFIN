@@ -1,11 +1,15 @@
 package com.BKFIN.services;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Pack;
+import com.BKFIN.entities.Product;
 import com.BKFIN.repositories.PackRepository;
 @Service
 public class PackServiceImpl implements IPackService  {
@@ -56,5 +60,24 @@ public class PackServiceImpl implements IPackService  {
 		 return PackRepository.save(pack);
 	}
 	
+	public void prixPack() {
+		List<Pack> pc=(List<Pack>) PackRepository.findAll();
+		float c=0;
+		for (Pack pack2 : pc) {
+			Set<Product> p=pack2.getProduct_pack();
+			for(Product pr:p) {
+				c=c+pr.getValueProduct();
+				}
+			pack2.setPriceP(c);
+			PackRepository.save(pack2);
+			c=0;
+			
+				 
+			
+			
+			}
+		}
+	}
 	
-}
+	
+

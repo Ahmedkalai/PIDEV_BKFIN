@@ -19,7 +19,14 @@ public class Product implements Serializable {
 	 private long idProduct ; 
 	 private String nameProduct ;
 	 private Float valueProduct ;
-	 @ManyToMany(mappedBy="product_pack", cascade = CascadeType.ALL)
+	 private Float valueEXC ;
+	 public Float getValueEXC() {
+		return valueEXC;
+	}
+	public void setValueEXC(Float valueEXC) {
+		this.valueEXC = valueEXC;
+	}
+	@ManyToMany(mappedBy="product_pack", cascade = CascadeType.ALL)
 	 private Set<Pack> packs;
 	 @ManyToOne
 		private Partner partner_product;
