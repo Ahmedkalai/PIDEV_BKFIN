@@ -207,19 +207,22 @@ public class CreditService implements ICreditService {
 		
 			 
 		double interest=cr.getInterestRate()/12;
-
-		Amortissement[] ListAmortissement =new Amortissement[(int) cr.getCreditPeriod()*12];
+        //System.out.println(interest);
+        int leng=(int) (cr.getCreditPeriod()*12);
+        
+		Amortissement[] ListAmortissement =new Amortissement[leng];
 		
 		Amortissement amort=new Amortissement() ;
-		
+		//System.out.println(cr.getAmount());
 		
 		
 		amort.setMontantR(cr.getAmount());
 		amort.setMensualité(Calcul_mensualite(cr));
 		amort.setInterest(amort.getMontantR()*interest);
 		amort.setAmortissement(amort.getMensualité()-amort.getInterest());
-		
 		ListAmortissement[0]=amort;
+		
+		//System.out.println(ListAmortissement[0]);
 		for (int i=1;i< cr.getCreditPeriod()*12;i++) {
 			Amortissement amortPrecedant=ListAmortissement[i-1];
 			Amortissement amortNEW=new Amortissement() ;

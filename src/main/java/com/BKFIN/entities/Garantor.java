@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Garantor implements Serializable {
 	
@@ -20,7 +22,7 @@ public class Garantor implements Serializable {
 	 private float salaryGarantor ;
 	 private String workGarantor ;
 	 private String urlimage ;
-	 
+	 @JsonIgnore
 	 @OneToOne
 	 private Credit credit;
 	 
