@@ -25,7 +25,7 @@ import com.maxmind.geoip2.exception.GeoIp2Exception;
 public class AgentController {
 	@Autowired
 	IAgentService AgentService;
-	
+	//geolocalisation
 
 	@GetMapping("/Agents")
 	@ResponseBody
