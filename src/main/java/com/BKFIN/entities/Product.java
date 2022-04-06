@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Product implements Serializable {
 	@Id
@@ -19,15 +21,10 @@ public class Product implements Serializable {
 	 private long idProduct ; 
 	 private String nameProduct ;
 	 private Float valueProduct ;
-	 private Float valueEXC ;
-	 public Float getValueEXC() {
-		return valueEXC;
-	}
-	public void setValueEXC(Float valueEXC) {
-		this.valueEXC = valueEXC;
-	}
-	@ManyToMany(mappedBy="product_pack", cascade = CascadeType.ALL)
+	 @ManyToMany(mappedBy="product_pack", cascade = CascadeType.ALL)
+	 @JsonIgnore
 	 private Set<Pack> packs;
+	 @JsonIgnore
 	 @ManyToOne
 		private Partner partner_product;
 	public long getIdProduct() {
