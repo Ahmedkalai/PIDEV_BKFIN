@@ -17,14 +17,14 @@ import javax.persistence.TemporalType;
 public class Event implements Serializable {
 
 	@Id
-	 @Column(name ="idEvent")
+	@Column(name ="idEvent")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	 private long idEvent ;
 	 private String nameEvent ;
 	 @Temporal (TemporalType.DATE)
 	 private Date dateEvent ;
 	 private String region ;
-	 private String description ;
+	 private String description;
 	@ManyToMany()
 	private Set<Agent> agenT;
 	public long getIdEvent() {
@@ -62,6 +62,19 @@ public class Event implements Serializable {
 	}
 	public void setAgenT(Set<Agent> agenT) {
 		this.agenT = agenT;
+	}
+	public Event(long idEvent, String nameEvent, Date dateEvent, String region, String description, Set<Agent> agenT) {
+		super();
+		this.idEvent = idEvent;
+		this.nameEvent = nameEvent;
+		this.dateEvent = dateEvent;
+		this.region = region;
+		this.description = description;
+		this.agenT = agenT;
+	}
+	public Event() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	
