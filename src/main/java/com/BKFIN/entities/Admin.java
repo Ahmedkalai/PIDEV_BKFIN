@@ -23,7 +23,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 public class Admin implements Serializable,UserDetails {
-	
+	//ajouter le role admin
 	@Id
 	 @Column(name ="idAdmin")
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
