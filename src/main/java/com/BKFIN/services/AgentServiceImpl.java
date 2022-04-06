@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Agent;
+import com.BKFIN.entities.ClassEnum;
 import com.BKFIN.entities.Client;
 import com.BKFIN.entities.Role;
 //import com.BKFIN.entities.Client;
@@ -42,7 +44,7 @@ public class AgentServiceImpl implements IAgentService,UserDetailsService {
 	
 	private final DatabaseReader databaseReader;
 	
-    private static final String UNKNOWN = "UNKNOWN";
+    
     
 	
 	public AgentServiceImpl(DatabaseReader databaseReader) {
@@ -131,6 +133,79 @@ public class AgentServiceImpl implements IAgentService,UserDetailsService {
         }
         return position;
     }
+
+	@Override
+	public Agent SaveClassification9box(String per, String pot , Long id) {
+		Agent user = agentR.findUserWithID(id);
+		user.setPerformance(per);
+		user.setPotentiel(pot);
+		agentR.save(user);
+          
+		return user;
+	}
+
+	@Override
+	public ClassEnum GetClassification9box(Long id) {
+		Agent user = agentR.findUserWithID(id);
+		
+		
+		if ((user.getPerformance().equals("below expected"))&&(user.getPotentiel().equals("low")))
+		{
+			user.setClassification(ClassEnum.Underperformer);
+			agentR.save(user);
+		}
+		else if ((user.getPerformance().equals("below expected"))&&(user.getPotentiel().equals("moderate")))
+		{
+			user.setClassification(ClassEnum.InconsistentPlayer);
+			agentR.save(user);
+		}
+		else if ((user.getPerformance().equals("below expected"))&&(user.getPotentiel().equals("high")))
+		{
+			user.setClassification(ClassEnum.RoughDiamond);
+			agentR.save(user);
+		}
+		else if ((user.getPerformance().equals("moderate"))&&(user.getPotentiel().equals("low")))
+		{
+			user.setClassification(ClassEnum.Underperformer);
+			agentR.save(user);
+		}
+		else if ((user.getPerformance().equals("moderate"))&&(user.getPotentiel().equals("moderate")))
+		{
+			user.setClassification(ClassEnum.InconsistentPlayer);
+			agentR.save(user);
+		}
+		else if ((user.getPerformance().equals("moderate"))&&(user.getPotentiel().equals("high")))
+		{
+			user.setClassification(ClassEnum.RoughDiamond);
+			agentR.save(user);
+		}
+		else if ((user.getPerformance().equals("above expected"))&&(user.getPotentiel().equals("low")))
+		{
+			user.setClassification(ClassEnum.Underperformer);
+			agentR.save(user);
+		}
+		else if ((user.getPerformance().equals("above expected"))&&(user.getPotentiel().equals("moderate")))
+		{
+			user.setClassification(ClassEnum.InconsistentPlayer);
+			agentR.save(user);
+		}
+		else if ((user.getPerformance().equals("above expected"))&&(user.getPotentiel().equals("high")))
+		{
+			user.setClassification(ClassEnum.RoughDiamond);
+			agentR.save(user);
+		}
+		else
+		{user.setClassification(ClassEnum.notbeenTested);
+		agentR.save(user);
+			
+		}
+		return user.getClassification();
+	}
+
+	@Override
+	public List<Agent> retrieveAgentByClass(ClassEnum c) {
+		return (List<Agent>)agentR.findAgentClass(c);
+	}
 
 	/*@Override
 	public Agent assignUserToAgent(Long idAgent) {

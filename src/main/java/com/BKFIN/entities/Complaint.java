@@ -17,7 +17,7 @@ public class Complaint implements Serializable {
 	@Id
 	 @Column(name ="idComplaint")
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private Long idComplaint ; 
+	 private long idComplaint ; 
 	 private String informationText ; 
 	 private Boolean state ; 
 	 @Temporal (TemporalType.DATE)
@@ -25,15 +25,12 @@ public class Complaint implements Serializable {
 	 private String object ; 
 	@ManyToOne
      private Client clientcomp;
-	
-	
-	public Long getIdComplaint() {
+	public long getIdComplaint() {
 		return idComplaint;
 	}
 	public void setIdComplaint(long idComplaint) {
 		this.idComplaint = idComplaint;
 	}
-	
 	public String getInformationText() {
 		return informationText;
 	}
@@ -62,27 +59,6 @@ public class Complaint implements Serializable {
 		return clientcomp;
 	}
 	public void setClientcomp(Client clientcomp) {
-		this.clientcomp = clientcomp;
-	}
-	public Complaint(Long idComplaint, String informationText, Boolean state, Date dateComplaint, String object,
-			Client clientcomp) {
-		super();
-		this.idComplaint = idComplaint;
-		this.informationText = informationText;
-		this.state = state;
-		this.dateComplaint = dateComplaint;
-		this.object = object;
-		this.clientcomp = clientcomp;
-	}
-	public Complaint() {
-		super();
-	}
-	public Complaint(String informationText, Boolean state, Date dateComplaint, String object, Client clientcomp) {
-		super();
-		this.informationText = informationText;
-		this.state = state;
-		this.dateComplaint = dateComplaint;
-		this.object = object;
 		this.clientcomp = clientcomp;
 	}
 	

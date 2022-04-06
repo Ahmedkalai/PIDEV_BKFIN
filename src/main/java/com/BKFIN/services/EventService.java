@@ -76,12 +76,14 @@ public class EventService implements IEventService{
 		Boolean dispo = a.getState();
 //l'event n'est ajouté si seulement si l'agent et l'event appart à la meme region
 //l'agent est disponible
-	if ((addA.equals(addE))&& ( dispo = true)){
+	if ((addA.equals(addE))&& ( dispo == true)){
 		la.add(a);
 		e.setAgenT(la);
 		ar.save(a);
 //l'agent devient donc indispo
 		dispo = false; 
+		a.setState(dispo);
+		ar.save(a);
 		MimeMessage mimeMessage = mailSender.createMimeMessage();
 		MimeMessageHelper mimeMessageHealper = new MimeMessageHelper(mimeMessage,true);
 //SimpleMailMessage message=new SimpleMailMessage();

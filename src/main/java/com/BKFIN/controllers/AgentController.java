@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.BKFIN.entities.Agent;
+import com.BKFIN.entities.ClassEnum;
 import com.BKFIN.services.IAgentService;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 
@@ -32,8 +33,25 @@ public class AgentController {
 	public List<Agent> getAgents() {
 	List<Agent> list= AgentService.retrieveAllAgent();
 	return list;
+	}	  
+	@GetMapping("/Agents9box/{class}")
+	@ResponseBody
+	public List<Agent> getAgentsClasse(@PathVariable("class") ClassEnum Per) {
+	List<Agent> list= AgentService.retrieveAgentByClass(Per);
+	return list;
+	}	  
+	@GetMapping("/9box/{id}/{per}/{pot}")
+	@ResponseBody
+	public Agent Talent(@PathVariable("id") long IdAgent,@PathVariable("per") String Per,@PathVariable("pot") String Pot) {
+	Agent user= AgentService.SaveClassification9box(Per,Pot, IdAgent);
+	return user;
 	}	    
-    
+	@GetMapping("/9boxClass/{id}")
+	@ResponseBody
+	public ClassEnum Classification(@PathVariable("id") long IdAgent) {
+	ClassEnum user = AgentService.GetClassification9box( IdAgent);
+	return user;
+	}	  
 	//http://localhost:8083/BKFIN/Agent/AddAgent
 	@PostMapping("/AddAgent")
 	@ResponseBody

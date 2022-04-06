@@ -45,7 +45,7 @@ le fund sera automatiquement mis à jour (montant + taux)
 		if (Amount >= 7000) {
 		Fund f = fundRepository.findById(idFund).orElse(null);
 		//Si le montant atteint 200000 le tau reste fixe à 12%
-		double Rate = 12*(1- Math.exp(-(Amount)/10000));
+		double Rate = 0.12*(1- Math.exp(-(Amount)/10000));
 		i.setTauxInves((float) Rate);
 		i.setFund(f);
 		//incrémentation du fund pour chaque investissement 
@@ -91,7 +91,8 @@ le fund sera automatiquement mis à jour (montant + taux)
 			finalA=(inves.getAmoutInvestesment()+(inves.getAmoutInvestesment()*inves.getTauxInves()));
 		return finalA;
 	}
-	
+	//test
+	//@Scheduled(cron = "0 0 0 4 * *" )
 	@Scheduled(cron = "0 0 0 31 12 *" )
 	@Override
 	public void finalAmount() {
@@ -110,7 +111,7 @@ le fund sera automatiquement mis à jour (montant + taux)
 			Investesment inves =  investesmentRepository.findById(idInvestissement).orElse(null);
 			Fund f = fundRepository.findById(idFund).orElse(null);
 			float Amount = inves.getAmoutInvestesment();
-			double Rate = 12*(1- Math.exp(-(Amount)/10000));
+			double Rate = 0.12*(1- Math.exp(-(Amount)/10000));
 			inves.setTauxInves((float) Rate);
 			return (float) Rate;
 		}		

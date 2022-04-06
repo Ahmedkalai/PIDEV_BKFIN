@@ -1,4 +1,4 @@
-package com.BKFIN.Controllers;
+package com.BKFIN.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

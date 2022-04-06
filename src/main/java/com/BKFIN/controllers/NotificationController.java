@@ -1,4 +1,4 @@
-package com.BKFIN.Controllers;
+package com.BKFIN.controllers;
 
 import java.util.List;
 
@@ -17,6 +17,8 @@ import com.BKFIN.entities.Notification;
 import com.BKFIN.services.INotificationService;
 
 @RestController
+
+
 @RequestMapping("/Notification")
 public class NotificationController {
 	

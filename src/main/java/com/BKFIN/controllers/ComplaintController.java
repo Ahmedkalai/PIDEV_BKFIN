@@ -1,4 +1,4 @@
-package com.BKFIN.Controllers;
+package com.BKFIN.controllers;
 
 import java.util.List;
 

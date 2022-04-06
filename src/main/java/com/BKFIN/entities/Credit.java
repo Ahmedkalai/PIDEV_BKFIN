@@ -30,6 +30,10 @@ public class Credit implements Serializable {
 	@Temporal (TemporalType.DATE)
 	private Date obtainingDate ;
 	private Boolean state;
+	//0 PAS DE DIFFERE 1 SI CREDIT A DIFFERE TOTAL
+	private Boolean différé; 
+	// PERIODE DE DIFFERE 
+	private float DIFF_period;
 	@Temporal (TemporalType.DATE)
 	private Date monthlyPaymentDate;
 	private float monthlyPaymentAmount;
@@ -158,27 +162,42 @@ public class Credit implements Serializable {
 	public void setCompleted(Boolean completed) {
 		Completed = completed;
 	}
+	public Boolean getDifféré() {
+		return différé;
+	}
+	public void setDifféré(Boolean différé) {
+		this.différé = différé;
+	}
+	public float getDIFF_period() {
+		return DIFF_period;
+	}
+	public void setDIFF_period(float dIFF_period) {
+		DIFF_period = dIFF_period;
+	}
 	public Credit() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Credit(Long idCredit, Long amount, Date dateDemande, Date obtainingDate, Boolean state,
-			Date monthlyPaymentDate, Long monthlyPaymentAmount, float interestRate, float creditPeriod, float risk,
-			Boolean completed, Set<Notification> notifications, Client client, Fund funds, Set<DuesHistory> duesHistory,
-			Pack pack_credit, Garantor garantor,String reason) {
+	
+	public Credit(Long idCredit, float amount, Date dateDemande, Date obtainingDate, Boolean state, Boolean différé,
+			float dIFF_period, Date monthlyPaymentDate, float monthlyPaymentAmount, float interestRate,
+			float creditPeriod, float risk, Boolean completed, String reason, Set<Notification> notifications,
+			Client client, Fund funds, Set<DuesHistory> duesHistory, Pack pack_credit, Garantor garantor) {
 		super();
 		this.idCredit = idCredit;
 		this.amount = amount;
 		this.dateDemande = dateDemande;
 		this.obtainingDate = obtainingDate;
 		this.state = state;
+		this.différé = différé;
+		DIFF_period = dIFF_period;
 		this.monthlyPaymentDate = monthlyPaymentDate;
 		this.monthlyPaymentAmount = monthlyPaymentAmount;
 		this.interestRate = interestRate;
 		this.creditPeriod = creditPeriod;
-		this.Risk = risk;
-		this.Reason = reason;
-		this.Completed = completed;
+		Risk = risk;
+		Completed = completed;
+		Reason = reason;
 		this.notifications = notifications;
 		this.client = client;
 		this.funds = funds;

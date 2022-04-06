@@ -26,11 +26,11 @@ public class LoadController {
 	
 	
 	 
-	    @Autowired
+	    //@Autowired
 	    JobLauncher jobLauncher;	 
 	 
 	 
-	    @Autowired
+	    //@Autowired
 	    Job job;
 	    
 	    

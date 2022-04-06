@@ -51,12 +51,12 @@ public class NotificationService implements INotificationService {
 	
 	
 	@Override
-	@Scheduled(cron="10 * * * * *")
+	@Scheduled(cron="0 0 * * * *")
 	public void addNotification () {
 		
 		
 		 
-		 //long miliseconds = System.currentTimeMillis();
+		 long miliseconds = System.currentTimeMillis();
 		 Date date = new Date();
 	       
 		 //long diff = ChronoUnit.DAYS.between(date, dAfter);
@@ -85,7 +85,7 @@ public class NotificationService implements INotificationService {
 			 LocalDateTime localDate1 = Instant.ofEpochMilli(t.getMonthlyPaymentDate().getTime())
 				      .atZone(ZoneId.systemDefault())
 				      .toLocalDateTime();
-			 System.out.println(ChronoUnit.DAYS.between(localDate,localDate1));
+			 System.out.println("test3");
 			 
 			if (ChronoUnit.DAYS.between(localDate,localDate1)==2)	
 			{

@@ -27,7 +27,6 @@ import com.BKFIN.services.InvestesmentService;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 
-@EnableScheduling
 @RestController
 @RequestMapping("/Investesment")
 public class InvestesmentController {
@@ -62,12 +61,11 @@ public class InvestesmentController {
 			return investesment; 
 			}
 			
-			// http://localhost:8083/BKFIN/Investesment/modify-investesment
-			@PutMapping("/investesment-fund")
-			@ResponseBody
-			public Investesment modifyInvestesment(@RequestBody Investesment investesment,Long idFund) {
-			return investesmentService.updateInvestesment(investesment,idFund);
-			}
+			// http://localhost:8083/BKFIN/Investesment/modify-investesment/1
+						@PutMapping("/modify-investesment/{Fund-id}")
+						@ResponseBody
+						public Investesment modifyInvestesment(@RequestBody Investesment investesment,@PathVariable("Fund-id") Long idFund) {
+						return investesmentService.updateInvestesment(investesment,idFund);}
 			
 			 //http://localhost:8083/BKFIN/Investesment/export
 			@GetMapping("/export")
