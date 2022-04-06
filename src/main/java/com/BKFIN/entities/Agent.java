@@ -41,6 +41,7 @@ public class Agent  implements Serializable,UserDetails{
 	private Double latitude;
 	private Double longitude;
 	private Boolean state ; 
+///magher classification
 	public Boolean getState() {
 		return state;
 	}
