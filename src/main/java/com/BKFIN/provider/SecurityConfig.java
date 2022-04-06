@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
     ClientServiceImpl userDetailsService;
 	@Autowired
     AdminServiceImpl userDetailsService1;
-
+// implementer la securite pour les 3 tables
     
 
 
