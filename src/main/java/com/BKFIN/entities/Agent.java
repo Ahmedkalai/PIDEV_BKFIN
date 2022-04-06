@@ -22,7 +22,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 public class Agent  implements Serializable,UserDetails{
 	
 	
-	
+	//ajouter le role agent pour l agent
 	@Id 
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column(name="idAgent")
