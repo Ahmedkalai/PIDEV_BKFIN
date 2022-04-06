@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFormat;
 @Entity
 public class Credit implements Serializable {
 	
@@ -24,30 +24,21 @@ public class Credit implements Serializable {
 	@Column(name ="idCredit")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCredit; 
-	private float amount;
+	private Long amount;
 	@Temporal (TemporalType.DATE)
 	private Date dateDemande;
 	@Temporal (TemporalType.DATE)
 	private Date obtainingDate ;
 	private Boolean state;
-	//0 PAS DE DIFFERE 1 SI CREDIT A DIFFERE TOTAL
-	private Boolean différé; 
-	// PERIODE DE DIFFERE 
-	private float DIFF_period;
 	@Temporal (TemporalType.DATE)
 	private Date monthlyPaymentDate;
-	private float monthlyPaymentAmount;
-	//taux d'interet en année
+	private Long monthlyPaymentAmount;
 	private float interestRate;
-	//periode de credit en année
-	private float creditPeriod;
-	private float Risk;
-	private Boolean Completed;
-	private String Reason;
+	@OneToOne(mappedBy="credit")
+	private Garantor garantor;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="credit")
 	private Set<Notification> notifications ;
 	@ManyToOne
-	@JsonIgnore
 	private Client client;
 	@ManyToOne
 	private Fund funds;
@@ -55,32 +46,16 @@ public class Credit implements Serializable {
 	private Set<DuesHistory> duesHistory ;
 	@ManyToOne
     private Pack pack_credit;
-	@OneToOne(mappedBy="credit")
-	private Garantor garantor;
-	
-	//GET&SET
-	public float getCreditPeriod() {
-		return creditPeriod;
-	}
-	public void setCreditPeriod(float creditPeriod) {
-		this.creditPeriod = creditPeriod;
-	}
-	public float getRisk() {
-		return Risk;
-	}
-	public void setRisk(float risk) {
-		Risk = risk;
-	}
 	public Long getIdCredit() {
 		return idCredit;
 	}
 	public void setIdCredit(Long idCredit) {
 		this.idCredit = idCredit;
 	}
-	public float getAmount() {
+	public Long getAmount() {
 		return amount;
 	}
-	public void setAmount(float amount) {
+	public void setAmount(Long amount) {
 		this.amount = amount;
 	}
 	public Date getDateDemande() {
@@ -107,10 +82,10 @@ public class Credit implements Serializable {
 	public void setMonthlyPaymentDate(Date monthlyPaymentDate) {
 		this.monthlyPaymentDate = monthlyPaymentDate;
 	}
-	public float getMonthlyPaymentAmount() {
+	public Long getMonthlyPaymentAmount() {
 		return monthlyPaymentAmount;
 	}
-	public void setMonthlyPaymentAmount(float monthlyPaymentAmount) {
+	public void setMonthlyPaymentAmount(Long monthlyPaymentAmount) {
 		this.monthlyPaymentAmount = monthlyPaymentAmount;
 	}
 	public float getInterestRate() {
@@ -137,8 +112,8 @@ public class Credit implements Serializable {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	public long getFunds() {
-		return funds.getIdFund();
+	public Fund getFunds() {
+		return funds;
 	}
 	public void setFunds(Fund funds) {
 		this.funds = funds;
@@ -149,72 +124,35 @@ public class Credit implements Serializable {
 	public void setDuesHistory(Set<DuesHistory> duesHistory) {
 		this.duesHistory = duesHistory;
 	}
-	public long getPack_credit() {
-		return pack_credit.getIdPack();
+	public Pack getPack_credit() {
+		return pack_credit;
 	}
 	public void setPack_credit(Pack pack_credit) {
 		this.pack_credit = pack_credit;
 	}
-	
-	public Boolean getCompleted() {
-		return Completed;
-	}
-	public void setCompleted(Boolean completed) {
-		Completed = completed;
-	}
-	public Boolean getDifféré() {
-		return différé;
-	}
-	public void setDifféré(Boolean différé) {
-		this.différé = différé;
-	}
-	public float getDIFF_period() {
-		return DIFF_period;
-	}
-	public void setDIFF_period(float dIFF_period) {
-		DIFF_period = dIFF_period;
-	}
-	public Credit() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	public Credit(Long idCredit, float amount, Date dateDemande, Date obtainingDate, Boolean state, Boolean différé,
-			float dIFF_period, Date monthlyPaymentDate, float monthlyPaymentAmount, float interestRate,
-			float creditPeriod, float risk, Boolean completed, String reason, Set<Notification> notifications,
-			Client client, Fund funds, Set<DuesHistory> duesHistory, Pack pack_credit, Garantor garantor) {
+	public Credit(Long idCredit, Long amount, Date dateDemande, Date obtainingDate, Boolean state,
+			Date monthlyPaymentDate, Long monthlyPaymentAmount, float interestRate, Garantor garantor,
+			Set<Notification> notifications, Client client, Fund funds, Set<DuesHistory> duesHistory,
+			Pack pack_credit) {
 		super();
 		this.idCredit = idCredit;
 		this.amount = amount;
 		this.dateDemande = dateDemande;
 		this.obtainingDate = obtainingDate;
 		this.state = state;
-		this.différé = différé;
-		DIFF_period = dIFF_period;
 		this.monthlyPaymentDate = monthlyPaymentDate;
 		this.monthlyPaymentAmount = monthlyPaymentAmount;
 		this.interestRate = interestRate;
-		this.creditPeriod = creditPeriod;
-		Risk = risk;
-		Completed = completed;
-		Reason = reason;
+		this.garantor = garantor;
 		this.notifications = notifications;
 		this.client = client;
 		this.funds = funds;
 		this.duesHistory = duesHistory;
 		this.pack_credit = pack_credit;
-		this.garantor = garantor;
 	}
-	public String getReason() {
-		return Reason;
-	}
-	public void setReason(String reason) {
-		Reason = reason;
+	public Credit() {
+		super();
 	}
 	
-	
-	
-	
-	
-	
+
 }
