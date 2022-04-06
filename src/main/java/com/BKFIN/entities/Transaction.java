@@ -28,6 +28,7 @@ public class Transaction implements Serializable {
 	private Date dateTransaction ;
 	private String RibRecipient;
 	private String RibEmetteur;
+//cet atribut nous permet de spécifier le montant à transferer qui sera ajouter au compte destination et //soustrait du compte émetteur
 	private float amount;
 	
 	
