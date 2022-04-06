@@ -1,9 +1,7 @@
 package com.BKFIN.services;
 
-import java.util.List;
-import java.time.Instant;
-import java.time.ZoneId;
 import java.util.Date;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -40,42 +38,25 @@ public class DuesHistoryService implements IDuesHistoryService {
 		DH.setCredits(credit);
 		//credit incomplete save the dues history
 		if(DH.getCredits().getCompleted()==false)
-		{  
-			//add supposed date ++
-			if (DHrepo.getLast_date(idcredit).get(0)==null)
-			   { DH.setSupposedDate(java.sql.Date.valueOf(Instant.ofEpochMilli(credit.getMonthlyPaymentDate().getTime())
-					      .atZone(ZoneId.systemDefault())
-					      .toLocalDate()));		   
-			   }
-			else {
-			DH.setSupposedDate(java.sql.Date.valueOf(Instant.ofEpochMilli(DHrepo.getLast_date(idcredit).get(0).getTime())
-				      .atZone(ZoneId.systemDefault())
-				      .toLocalDate().plusMonths(1)));}
-				
-			
-			
-			//calcul du montant total du credit 
+		{
+		//calcul du montant total du credit 
 		float amount_topay=(CRService.Calcul_mensualite(credit)*(int) (credit.getCreditPeriod()*12));
 
 		//compare payed amount with creditamount to pay
 		  if(amount_topay<=(PayedAmount(idcredit)+DH.getCredits().getMonthlyPaymentAmount()))
-			{//add supposed date ++
-			  
-			DH.getCredits().setCompleted(true);
+			{DH.getCredits().setCompleted(true);
 			Crepo.save(credit);
 			DH.getCredits().getClient().setCredit_authorization(true);
 			Client_repo.save(DH.getCredits().getClient());
 			DHrepo.save(DH);
 			}
 		  else 
-		  {
-			  DHrepo.save(DH);
-		  }
+		  {DHrepo.save(DH); }
 		
 		}
 		else
 		{System.out.println("credit payé deja");}
-		
+	
 		return DH;
 	}
 	

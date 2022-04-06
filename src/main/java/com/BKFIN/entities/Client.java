@@ -32,7 +32,57 @@ public class Client implements Serializable {
 	private String email;
 	private String image;
 	private String adresse;
+	//null par defaut / true autorisé/false non autorisé
+	private Boolean Credit_authorization;
 	
+	public Boolean getCredit_authorization() {
+		return Credit_authorization;
+	}
+	public void setCredit_authorization(Boolean credit_authorization) {
+		Credit_authorization = credit_authorization;
+	}
+	public Set<Credit> getCredits() {
+		return credits;
+	}
+	public void setCredits(Set<Credit> credits) {
+		this.credits = credits;
+	}
+	public Agent getAgent() {
+		return agent;
+	}
+	public void setAgent(Agent agent) {
+		this.agent = agent;
+	}
+	public Set<Account> getAccount() {
+		return account;
+	}
+	public void setAccount(Set<Account> account) {
+		this.account = account;
+	}
+	public Set<Complaint> getComplaints() {
+		return complaints;
+	}
+	public void setComplaints(Set<Complaint> complaints) {
+		this.complaints = complaints;
+	}
+	public Client(Long cin, String name, String secondName, Date birthDay, Long phoneNum, String email, String image,
+			String adresse, Boolean credit_authorization, Set<Credit> credits, Agent agent, Set<Account> account,
+			Set<Complaint> complaints) {
+		super();
+		this.cin = cin;
+		this.name = name;
+		this.secondName = secondName;
+		this.birthDay = birthDay;
+		this.phoneNum = phoneNum;
+		this.email = email;
+		this.image = image;
+		this.adresse = adresse;
+		Credit_authorization = credit_authorization;
+		this.credits = credits;
+		this.agent = agent;
+		this.account = account;
+		this.complaints = complaints;
+	}
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="client")
 	private Set<Credit> credits;
 	
@@ -93,6 +143,12 @@ public class Client implements Serializable {
 	}
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
+	}
+	
+	
+	public Client() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	public Client(Long cin, String name, String secondName, Date birthDay, Long phoneNum, String email, String image,
 			String adresse) {

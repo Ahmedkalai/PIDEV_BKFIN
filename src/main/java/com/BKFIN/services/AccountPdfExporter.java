@@ -19,8 +19,7 @@ import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 
 public class AccountPdfExporter {
-
-//cette classe nous sera utile pour l'impréssion de l'identité bancaire pour un client détérminé  	
+	
 	
 	Account acc ; 
 	public AccountPdfExporter(Account acc) {

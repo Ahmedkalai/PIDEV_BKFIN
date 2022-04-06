@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Credit implements Serializable {
 	
@@ -24,7 +24,7 @@ public class Credit implements Serializable {
 	@Column(name ="idCredit")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCredit; 
-	private Long amount;
+	private float amount;
 	@Temporal (TemporalType.DATE)
 	private Date dateDemande;
 	@Temporal (TemporalType.DATE)
@@ -32,13 +32,18 @@ public class Credit implements Serializable {
 	private Boolean state;
 	@Temporal (TemporalType.DATE)
 	private Date monthlyPaymentDate;
-	private Long monthlyPaymentAmount;
+	private float monthlyPaymentAmount;
+	//taux d'interet en année
 	private float interestRate;
-	@OneToOne(mappedBy="credit")
-	private Garantor garantor;
+	//periode de credit en année
+	private float creditPeriod;
+	private float Risk;
+	private Boolean Completed;
+	private String Reason;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="credit")
 	private Set<Notification> notifications ;
 	@ManyToOne
+	@JsonIgnore
 	private Client client;
 	@ManyToOne
 	private Fund funds;
@@ -46,16 +51,32 @@ public class Credit implements Serializable {
 	private Set<DuesHistory> duesHistory ;
 	@ManyToOne
     private Pack pack_credit;
+	@OneToOne(mappedBy="credit")
+	private Garantor garantor;
+	
+	//GET&SET
+	public float getCreditPeriod() {
+		return creditPeriod;
+	}
+	public void setCreditPeriod(float creditPeriod) {
+		this.creditPeriod = creditPeriod;
+	}
+	public float getRisk() {
+		return Risk;
+	}
+	public void setRisk(float risk) {
+		Risk = risk;
+	}
 	public Long getIdCredit() {
 		return idCredit;
 	}
 	public void setIdCredit(Long idCredit) {
 		this.idCredit = idCredit;
 	}
-	public Long getAmount() {
+	public float getAmount() {
 		return amount;
 	}
-	public void setAmount(Long amount) {
+	public void setAmount(float amount) {
 		this.amount = amount;
 	}
 	public Date getDateDemande() {
@@ -82,10 +103,10 @@ public class Credit implements Serializable {
 	public void setMonthlyPaymentDate(Date monthlyPaymentDate) {
 		this.monthlyPaymentDate = monthlyPaymentDate;
 	}
-	public Long getMonthlyPaymentAmount() {
+	public float getMonthlyPaymentAmount() {
 		return monthlyPaymentAmount;
 	}
-	public void setMonthlyPaymentAmount(Long monthlyPaymentAmount) {
+	public void setMonthlyPaymentAmount(float monthlyPaymentAmount) {
 		this.monthlyPaymentAmount = monthlyPaymentAmount;
 	}
 	public float getInterestRate() {
@@ -112,8 +133,8 @@ public class Credit implements Serializable {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	public Fund getFunds() {
-		return funds;
+	public long getFunds() {
+		return funds.getIdFund();
 	}
 	public void setFunds(Fund funds) {
 		this.funds = funds;
@@ -124,16 +145,27 @@ public class Credit implements Serializable {
 	public void setDuesHistory(Set<DuesHistory> duesHistory) {
 		this.duesHistory = duesHistory;
 	}
-	public Pack getPack_credit() {
-		return pack_credit;
+	public long getPack_credit() {
+		return pack_credit.getIdPack();
 	}
 	public void setPack_credit(Pack pack_credit) {
 		this.pack_credit = pack_credit;
 	}
+	
+	public Boolean getCompleted() {
+		return Completed;
+	}
+	public void setCompleted(Boolean completed) {
+		Completed = completed;
+	}
+	public Credit() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public Credit(Long idCredit, Long amount, Date dateDemande, Date obtainingDate, Boolean state,
-			Date monthlyPaymentDate, Long monthlyPaymentAmount, float interestRate, Garantor garantor,
-			Set<Notification> notifications, Client client, Fund funds, Set<DuesHistory> duesHistory,
-			Pack pack_credit) {
+			Date monthlyPaymentDate, Long monthlyPaymentAmount, float interestRate, float creditPeriod, float risk,
+			Boolean completed, Set<Notification> notifications, Client client, Fund funds, Set<DuesHistory> duesHistory,
+			Pack pack_credit, Garantor garantor,String reason) {
 		super();
 		this.idCredit = idCredit;
 		this.amount = amount;
@@ -143,16 +175,27 @@ public class Credit implements Serializable {
 		this.monthlyPaymentDate = monthlyPaymentDate;
 		this.monthlyPaymentAmount = monthlyPaymentAmount;
 		this.interestRate = interestRate;
-		this.garantor = garantor;
+		this.creditPeriod = creditPeriod;
+		this.Risk = risk;
+		this.Reason = reason;
+		this.Completed = completed;
 		this.notifications = notifications;
 		this.client = client;
 		this.funds = funds;
 		this.duesHistory = duesHistory;
 		this.pack_credit = pack_credit;
+		this.garantor = garantor;
 	}
-	public Credit() {
-		super();
+	public String getReason() {
+		return Reason;
+	}
+	public void setReason(String reason) {
+		Reason = reason;
 	}
 	
-
+	
+	
+	
+	
+	
 }

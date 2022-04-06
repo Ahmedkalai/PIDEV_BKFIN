@@ -117,8 +117,8 @@ public class CreditController {
 			
 			String headervalue = "attachment; filename=Tableau_Credit_N_"+cr.getIdCredit()+".xlsx";
 			response.setHeader(headerKey, headervalue);
-			Amortissement[] credit = creditservice.TabAmortissement(cr);
-			List<Amortissement> list = Arrays.asList(credit);
+			Amortissement[] Credit = creditservice.TabAmortissement(cr);
+			List<Amortissement> list = Arrays.asList(Credit);
 			com.BKFIN.services.UserExcelExporter exp =new com.BKFIN.services.UserExcelExporter(list);
 			//UserExcelExporter exp = new UserExcelExporter(list);
 			exp.export(response);

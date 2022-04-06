@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -24,11 +26,17 @@ public class Transaction implements Serializable {
 	private Long idTransaction ; 
 	@Temporal (TemporalType.DATE)
 	private Date dateTransaction ;
-	private Long RibRecipient;
-	private Long amount;
-	 @ManyToMany(mappedBy="accountT")
-	 private Set<Account> accounts;
-	public Long getIdTransaction() {
+	private String RibRecipient;
+	private String RibEmetteur;
+	private float amount;
+	
+	
+	
+	@ManyToOne()
+	Account compte_bancaire ; 
+	
+	
+	 public Long getIdTransaction() {
 		return idTransaction;
 	}
 	public void setIdTransaction(Long idTransaction) {
@@ -40,24 +48,58 @@ public class Transaction implements Serializable {
 	public void setDateTransaction(Date dateTransaction) {
 		this.dateTransaction = dateTransaction;
 	}
-	public Long getRibRecipient() {
-		return RibRecipient;
-	}
-	public void setRibRecipient(Long ribRecipient) {
-		RibRecipient = ribRecipient;
-	}
-	public Long getAmount() {
+	
+	public float getAmount() {
 		return amount;
 	}
 	public void setAmount(Long amount) {
 		this.amount = amount;
 	}
-	public Set<Account> getAccounts() {
-		return accounts;
+	public Account getCompte_Bancaire() {
+		return compte_bancaire;
 	}
-	public void setAccounts(Set<Account> accounts) {
-		this.accounts = accounts;
+	public void setCompte_Bancaire(Account compte_Bancaire) {
+		this.compte_bancaire = compte_Bancaire;
 	}
+	public void setAmount(float amount) {
+		this.amount = amount;
+	}
+	public String getRibRecipient() {
+		return RibRecipient;
+	}
+	public void setRibRecipient(String ribRecipient) {
+		RibRecipient = ribRecipient;
+	}
+	public String getRibEmetteur() {
+		return RibEmetteur;
+	}
+	public void setRibEmetteur(String ribEmetteur) {
+		RibEmetteur = ribEmetteur;
+	}
+	public Account getCompte_bancaire() {
+		return compte_bancaire;
+	}
+	public void setCompte_bancaire(Account compte_bancaire) {
+		this.compte_bancaire = compte_bancaire;
+	}
+	public Transaction(Long idTransaction, Date dateTransaction, String ribRecipient, String ribEmetteur, float amount,
+			Account compte_bancaire) {
+		super();
+		this.idTransaction = idTransaction;
+		this.dateTransaction = dateTransaction;
+		this.RibRecipient = ribRecipient;
+		this.RibEmetteur = ribEmetteur;
+		this.amount = amount;
+		this.compte_bancaire = compte_bancaire;
+	}
+	public Transaction() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	
+	
 	
 	
 	

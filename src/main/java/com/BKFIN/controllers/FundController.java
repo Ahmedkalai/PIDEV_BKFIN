@@ -50,8 +50,8 @@ public class FundController {
 			}
 			
 			
-			// http://localhost:8083/BKFIN/Fund/remove_fund/3
-			@DeleteMapping("/remove_fund/{fund-id}")
+			// http://localhost:8083/BKFIN/Fund/remove-fund/3
+			@DeleteMapping("/remove-fund/{fund-id}")
 			@ResponseBody
 			public void removeFund(@PathVariable("fund-id") Long fundId) {
 				fundService.deleteFund(fundId);

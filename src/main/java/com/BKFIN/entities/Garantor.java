@@ -21,6 +21,8 @@ public class Garantor implements Serializable {
 	 private String workGarantor ;
 	 @OneToOne
 	 private Credit credit;
+	 
+	//GET&SET
 	public long getIdGarantor() {
 		return idGarantor;
 	}
@@ -57,5 +59,25 @@ public class Garantor implements Serializable {
 	public void setCredit(Credit credit) {
 		this.credit = credit;
 	}
+	
+	//CONSTRUCTORS
+	public Garantor() {
+		super();
+		
+	}
+	
+	public Garantor(long idGarantor, String nameGarantor, String secondnameGarantor, float salaryGarantor,
+			String workGarantor, Credit credit) {
+		super();
+		this.idGarantor = idGarantor;
+		this.nameGarantor = nameGarantor;
+		this.secondnameGarantor = secondnameGarantor;
+		this.salaryGarantor = salaryGarantor;
+		this.workGarantor = workGarantor;
+		this.credit = credit;
+	}
+	
+	
+	
 	 
 }
