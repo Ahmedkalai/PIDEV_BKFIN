@@ -42,8 +42,8 @@ public class Notification implements Serializable {
 	public void setObject(String object) {
 		this.object = object;
 	}
-	public Credit getCredit() {
-		return credit;
+	public Long getCredit() {
+		return credit.getIdCredit();
 	}
 	public void setCredit(Credit credit) {
 		this.credit = credit;
