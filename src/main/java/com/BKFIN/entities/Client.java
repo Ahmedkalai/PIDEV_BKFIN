@@ -60,7 +60,7 @@ public class Client implements Serializable,UserDetails {
 			 private Set<Role> roles;
 	
 	
-
+     //ajouter les roles pour les clients
 
 	
 	public Set<Role> getRoles() {
