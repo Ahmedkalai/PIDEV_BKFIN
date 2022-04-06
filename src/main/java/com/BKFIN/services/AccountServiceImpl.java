@@ -224,7 +224,8 @@ cet algorithme nous permet de faire la géneration d'un rib selon les normes ban
 	//“At 00:00.” nxet at 2022-03-23 00:00:00
 
 	@Scheduled(cron = "0 0 0 * * *", zone="Africa/Tunis" ) 
-	
+//ce cron est mis pour tester la fonctionnalité de spring scheduler lors de la validation 	
+//@Scheduled(cron = "10 0 0 * * *", zone="Africa/Tunis" ) 
 	    @Transactional
 		public void GetInterestAmount()
 	    {   
