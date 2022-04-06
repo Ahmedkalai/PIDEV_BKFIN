@@ -6,7 +6,6 @@ import com.BKFIN.entities.Pack;
 
 public interface IPackService {
 	List<Pack> retrieveAllPacks();
-    List<Pack> retrieveAllActivePacks();
 
 	Pack addPack (Pack pr);
 	
@@ -16,5 +15,4 @@ public interface IPackService {
 	Pack updatePack (Pack pr);
 
 	Pack retrievePack (Long id);
-	Pack setState(Long id,Boolean val);
 }

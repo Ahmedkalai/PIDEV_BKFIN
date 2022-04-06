@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.BKFIN.repositories.PartnerRepository;
+import com.BKFIN.repository.PartnerRepository;
 import com.BKFIN.entities.Partner;
 @Service
 public class PartnerServiceImpl implements IPartnerService {
