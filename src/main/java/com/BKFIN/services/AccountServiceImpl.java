@@ -102,7 +102,10 @@ public class AccountServiceImpl implements IAccountService {
 		//}
 		return liste ; 
 	}
-	
+/*
+cet algorithme nous permet de faire la géneration d'un rib selon les normes bancaires standard de manière bien sécurisée 
+*/	
+
 	///////---------------------Generation Du Rib-------------------------------------------- /////////
 	/*
 	Chaque lettre est remplacée par son équivalent numérique :
