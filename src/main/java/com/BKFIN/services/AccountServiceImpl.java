@@ -219,7 +219,7 @@ cet algorithme nous permet de faire la géneration d'un rib selon les normes ban
 		
 	}
 	
-	//calcul du taux d'interet pour les comptes epargne 
+	//calcul du taux d'interet pour les comptes epargnes 
 	//chaque jour à minuit
 	//“At 00:00.” nxet at 2022-03-23 00:00:00
 
