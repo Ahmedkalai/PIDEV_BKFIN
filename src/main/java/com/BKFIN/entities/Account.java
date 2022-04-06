@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 //import java.util.Date;
+//
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -31,7 +32,9 @@ public class Account implements Serializable {
 	@Column(name="Rib")
 	private String Rib ; 
 	private float sold ;
+//ces deux attributs nous serons utiles pour le calcul du taux d'interet 
 	private float interest;
+//cette variable s'incremente à chaque fois que le cron programmé s'execute 
 	private int index_interest;
 	//@DateTimeFormat(pattern = "yyyy-MM-dd")
 	//@Temporal (TemporalType.DATE)

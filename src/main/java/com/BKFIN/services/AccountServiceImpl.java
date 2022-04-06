@@ -102,7 +102,10 @@ public class AccountServiceImpl implements IAccountService {
 		//}
 		return liste ; 
 	}
-	
+/*
+cet algorithme nous permet de faire la géneration d'un rib selon les normes bancaires standard de manière bien sécurisée 
+*/	
+
 	///////---------------------Generation Du Rib-------------------------------------------- /////////
 	/*
 	Chaque lettre est remplacée par son équivalent numérique :
@@ -216,12 +219,13 @@ public class AccountServiceImpl implements IAccountService {
 		
 	}
 	
-	//calcul du taux d'interet pour les comptes epargne 
+	//calcul du taux d'interet pour les comptes epargnes 
 	//chaque jour à minuit
 	//“At 00:00.” nxet at 2022-03-23 00:00:00
 
 	@Scheduled(cron = "0 0 0 * * *", zone="Africa/Tunis" ) 
-	
+//ce cron est mis pour tester la fonctionnalité de spring scheduler lors de la validation 	
+//@Scheduled(cron = "10 0 0 * * *", zone="Africa/Tunis" ) 
 	    @Transactional
 		public void GetInterestAmount()
 	    {   
