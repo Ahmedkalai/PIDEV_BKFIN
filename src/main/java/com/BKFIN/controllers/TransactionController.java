@@ -70,6 +70,13 @@ public class TransactionController {
 		return TransactionService.retrieveAllTransactionsEmisesByRib(rib) ; 
 	}
 	
+	//localhost:8083/BKFIN/Transaction/retrieve-Transaction-by-rib/2828
+		@GetMapping("/retrieve-Transaction-by-rib/{ribEmet}")
+		@ResponseBody
+		public List<Transaction> getTransactions (@PathVariable("rib") String rib)
+		{
+			return TransactionService.retrieveTransactions(rib) ; 
+		}
 	
 	// http://localhost:8083/bkfin/Transaction/modify-Transaction
 	//@PutMapping("/modify-Transaction")

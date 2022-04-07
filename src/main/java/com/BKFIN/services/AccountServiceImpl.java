@@ -220,8 +220,8 @@ public class AccountServiceImpl implements IAccountService {
 	//chaque jour à minuit
 	//“At 00:00.” nxet at 2022-03-23 00:00:00
 
-	@Scheduled(cron = "0 0 0 * * *", zone="Africa/Tunis" ) 
-	
+	//@Scheduled(cron = "0 0 0 * * *", zone="Africa/Tunis" ) 
+	@Scheduled(cron = "10 * * * * *", zone="Africa/Tunis" ) 
 	    @Transactional
 		public void GetInterestAmount()
 	    {   
@@ -242,10 +242,10 @@ public class AccountServiceImpl implements IAccountService {
 	    	else acc.setindex_interest(acc.getindex_interest()+1);
 	    	accountrepository.save(acc);
 
-
+           
 	    	
 	        }
-	        
+	    	 System.out.println("testtttt"); 
 
 	    }
 	

@@ -157,6 +157,12 @@ public class TransactionServiceImpl implements ITransactionService {
 		return (List<Transaction>) transrepo.getTransactionEmiseByRibAccount(rib);
 	}
 	
+	@Override
+	public List<Transaction> retrieveTransactions(String rib) {
+	
+		return (List<Transaction>) transrepo.getTransactionByRibAccount(rib);
+	}
+	
 	
 	
 	

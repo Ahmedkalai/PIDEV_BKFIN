@@ -18,4 +18,5 @@ public interface ITransactionService {
 	Transaction retrieveTransaction(Long id);
 	List<Transaction> retrieveAllTransactions();
 	public List<Transaction> retrieveAllTransactionsEmisesByRib(Long rib) ; 
+	public List<Transaction> retrieveTransactions(String rib) ;
 }
