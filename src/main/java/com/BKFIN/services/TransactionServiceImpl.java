@@ -147,15 +147,18 @@ public class TransactionServiceImpl implements ITransactionService {
 		return (List<Transaction>) transrepo.findAll();	
 	}
 	
-	///tkharajli lista toufessshhhh !! 
+	
+	
 	@Override
-	public List<Transaction> retrieveAllTransactionsEmisesByRib(Long rib) {
-		List<Transaction> ltr=transrepo.getTransactionEmiseByRibAccount(rib);
-		//for (Transaction tr: ltr) {
-			//System.out.println("Transactions Emises :" + ltr);
-		//}
-		return (List<Transaction>) transrepo.getTransactionEmiseByRibAccount(rib);
-	}
+		public List<Transaction> AllTransactionsEmisesByRib(String rib) {
+			List<Transaction> ltr=transrepo.getTransactionByRibAccount(rib);
+			//for (Transaction tr: ltr) {
+				//System.out.println("Transactions Emises :" + ltr);
+			//}
+			return (List<Transaction>) transrepo.getTransactionEmiseByRibAccount(rib);
+		}
+
+		
 	
 	@Override
 	public List<Transaction> retrieveTransactions(String rib) {

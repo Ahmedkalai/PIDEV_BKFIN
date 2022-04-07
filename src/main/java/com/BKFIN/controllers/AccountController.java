@@ -38,14 +38,14 @@ public class AccountController {
 	IAccountService AccSercice ; 
 	
 	
-	//http://localhost:8083/bkfin/Account/Listaccounts
+	//http://localhost:8083/BKFIN/Account/Listaccounts
 	@GetMapping("/Listaccounts")
 	@ResponseBody
 	public List<Account> getAllAcounts() {
 		List <Account> list=AccSercice.retrieveAllAccounts();
 		return list ; 
 	} 
-	//http://localhost:8083/bkfin/Account/AddAccount
+	//http://localhost:8083/BKFIN/Account/AddAccount
 	@PostMapping("/AddAccount/{cinClient}")
 	@ResponseBody
 	public Account AddAccount (@RequestBody Account a ,@PathVariable ("cinClient")  Long cinClient)
@@ -53,14 +53,14 @@ public class AccountController {
 		return AccSercice.addAccount(a,cinClient) ;
 	}
 	
-	//http://localhost:8083/bkfin/Account/DeleteAccount/1
+	//http://localhost:8083/BKFIN/Account/DeleteAccount/1
 	@DeleteMapping("/DeleteAccount/{idacc}")
 	@ResponseBody
 	public void deleteAcc (@PathVariable("idacc") String idacc ) {
 		AccSercice.deleteAccount(idacc);
 	}
 	/*
-	//http://localhost:8083/bkfin/Account/retrieve-TransactionsEmises/1
+	//http://localhost:8083/BKFIN/Account/retrieve-TransactionsEmises/1
 	@GetMapping("/retrieve-TransactionsEmises/{RibEmet}")
 	@ResponseBody
 	public List<Transaction> getTransactionsEmisesByRib (@PathVariable("ribEmet") Long rib)
@@ -72,7 +72,7 @@ public class AccountController {
 	
 	
 	*/
-	    //http://localhost:8083/bkfin/Account/retrieve-TransactionsEmises/2
+	    //http://localhost:8083/BKFIN/Account/retrieve-TransactionsEmises/2
 		@GetMapping("/retrieve-TransactionsEmises/{Ribemis}")
 		@ResponseBody
 		public Set<Transaction> getTransactionsEmisesByRib (@PathVariable("Ribemis") String rib)
@@ -81,14 +81,14 @@ public class AccountController {
 		}
 		
 		
-	    // http://localhost:8083/bkfin/Account/modify-Account
+	    // http://localhost:8083/BKFIN/Account/modify-Account
 		@PutMapping("/modify-Account")
 		@ResponseBody
 		public Account modifyAccount(@RequestBody Account account) {
 		return AccSercice.updateAccount(account);
 		}
 		
-		//http://localhost:8083/bkfin/Account/jereb/""
+		//http://localhost:8083/BKFIN/Account/jereb/""
 		
 		
 /*
@@ -100,7 +100,7 @@ public class AccountController {
 		}
 	
 		*/
-		//http://localhost:8083/bkfin/Account/jereb1/	
+		//http://localhost:8083/BKFIN/Account/jereb1/	
 		/*@GetMapping("/jereb1")
 				@ResponseBody
 				public String generateRib ()
@@ -110,14 +110,14 @@ public class AccountController {
 		*/
 		
 		//te3 taux d'interet ly bel cron
-		//http://localhost:8083/bkfin/Account/interethehy
+		//http://localhost:8083/BKFIN/Account/interethehy
 		@PostMapping("/interethehy")
 		@ResponseBody
 		public void jaraaab () {
 		AccSercice.GetInterestAmount() ; 
 		}		
 		
-		//http://localhost:8083/bkfin/Account/export/pdf
+		//http://localhost:8083/BKFIN/Account/port/pdf
 		@GetMapping("/export/pdf")
 		public void exportToPDF(HttpServletResponse response , @RequestBody Account c) throws DocumentException, IOException {
 	    response.setContentType("application/pdf");

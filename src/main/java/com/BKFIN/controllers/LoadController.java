@@ -26,13 +26,14 @@ public class LoadController {
 	
 	
 	 
-	    //@Autowired
+	    @Autowired
 	    JobLauncher jobLauncher;	 
 	 
 	 
-	    //@Autowired
+	    @Autowired
 	    Job job;
 	    
+
 	    
 	 // http://localhost:8083/BKFIN/load
 	    @GetMapping

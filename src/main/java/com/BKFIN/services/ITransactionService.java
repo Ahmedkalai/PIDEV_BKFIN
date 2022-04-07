@@ -17,6 +17,11 @@ public interface ITransactionService {
 
 	Transaction retrieveTransaction(Long id);
 	List<Transaction> retrieveAllTransactions();
+<<<<<<< Updated upstream
 	public List<Transaction> retrieveAllTransactionsEmisesByRib(Long rib) ; 
 	public List<Transaction> retrieveTransactions(String rib) ;
+=======
+	public List<Transaction> AllTransactionsEmisesByRib(String rib) ; 
+	
+>>>>>>> Stashed changes
 }

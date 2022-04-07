@@ -1,4 +1,4 @@
-package com.BKFIN.config;
+/*package com.BKFIN.config;
 import com.BKFIN.entities.unemployedpopulation;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemReader;
@@ -104,4 +104,4 @@ public class SpringBatchConfigKhadija {
         return defaultLineMapper;
     }
 
-}
+}*/
