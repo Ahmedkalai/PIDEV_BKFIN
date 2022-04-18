@@ -149,7 +149,7 @@ public class CreditService implements ICreditService {
 				 
 				 credit.setMonthlyPaymentDate(java.sql.Date.valueOf(Instant.ofEpochMilli(credit.getMonthlyPaymentDate().getTime())
 					      .atZone(ZoneId.systemDefault())
-					      .toLocalDate().plusMonths((long) (credit.getCreditPeriod()*12))));
+					      .toLocalDate().plusMonths((long) (credit.getDIFF_period()*12))));
 				 credit.setReason(msg);
 				 credit.getClient().setCredit_authorization(false);
 				 credit.setCompleted(false);
