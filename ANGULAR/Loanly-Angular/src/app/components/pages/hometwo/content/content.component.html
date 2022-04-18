@@ -1,0 +1,2773 @@
+<!-- Start Slider -->
+<div class="slider video-banner">
+    <div class="side-lines"> <span class="box"></span>
+        <span class="text">Loanly</span>
+        <span class="line"></span>
+    </div>
+    <video playsinline="playsinline" class="jarallax" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="assets/images/video-bg.mp4" type="video/mp4">
+    </video>
+    <div class="transform-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ngx-slick-carousel #slickModal="slick-carousel" [config]="bannerConfig" class="banner-slider">
+                        <div ngxSlickItem class="slide-item" *ngFor="let item of banner">
+                            <div class="banner-text">
+                                <h1 class="text-custom-white fw-700">{{item.title}}</h1>
+                                <p class="text-custom-white">{{item.text}}</p>
+                                <a routerLink="/contact" class="btn-first btn-submit-fill"> Explore </a>
+                            </div>
+                        </div>
+                    </ngx-slick-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Slider -->
+<!-- Start Intro -->
+<section class="genmed-intro">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-sm-6" *ngFor="let item of intropost">
+                <div class="intro-box bg-dark-brown {{item.resClass}}" data-wow-duration="1s">
+                    <div class="intro-wrapper text-center"> <i class="flaticon-flag"></i>
+                        <h6 class="text-custom-white fw-700">{{item.title}}</h6>
+                        <p class="text-custom-white">{{item.text}}</p>
+                        <a routerLink="/service" class="btn-first btn-submit fw-600">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Intro -->
+<!-- Start About -->
+<!-- start aboutus-2 -->
+<section class="section-padding lw-about-section p-relative">
+    <div class="side-lines right-side"> <span class="box"></span>
+        <span class="text">Loanly</span>
+        <span class="line"></span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ln-about-left-side p-relative full-height">
+                    <div class="first-img full-height">
+                        <img src="assets/images/homepage/about2.jpg" class="image-fit" alt="img">
+                    </div>
+                    <div class="second-img">
+                        <img src="assets/images/homepage/about1.jpg" class="image-fit" alt="img">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="lw-about-section-right">
+                    <h3 class="p-relative lw-about-right-heading">Not Fast Decision But Good Decision Fast.</h3>
+                    <div class="lw-about-right-content">
+                        <p>Our menu is a nod to
+                            <span class="text-gold">
+                                <strong>street food vendors</strong>
+                            </span>
+                            who help their customers stay on-the-go by delivering quick tasty bites. We incorporated
+                            flavors from around the world to offer a unique menu featuring items like Banh Mi, a
+                            flavorful sandwich staple from Vietnam, and the classic American Burger.
+                        </p>
+                        <div class="lw-about-right-list">
+                            <ul>
+                                <li> <i class="fas fa-check"></i>
+                                    Fast Loan</li>
+                                <li> <i class="fas fa-check"></i>
+                                    Less Fee </li>
+                                <li> <i class="fas fa-check"></i>
+                                    Less Paperwork </li>
+                                <li> <i class="fas fa-check"></i>
+                                    Less Interest </li>
+                            </ul>
+                        </div>
+                        <div class="lw-about-right-author">
+                            <div class="lw-about-signature">
+                                <h5>Hamza Shatela</h5>
+                                <p>Founder of LOANLY</p>
+                            </div>
+                            <div class="lw-about-sign-image">
+                                <img src="assets/images/signature.png" alt="sign">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End aboutus-2 -->
+<!-- Start Main Services -->
+<section class="main-services section-padding p-relative">
+    <div class="side-lines"> <span class="box"></span>
+        <span class="text">Loanly</span>
+        <span class="line"></span>
+    </div>
+    <div class="container">
+        <div class="section-header">
+            <div class="section-heading">
+                <h3 class="text-custom-black fw-700">Our Services</h3>
+                <div class="section-description">
+                    <p class="text-light-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                </div>
+            </div>
+            <div class="section-btn"> <a routerLink="/service" class="btn-first btn-submit text-light-blue">View
+                    More</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6" *ngFor="let item of serviceblock">
+                <div class="main-services-box p-relative mb-xl-30">
+                    <div class="main-service-wrapper padding-20">
+                        <div class="icon-box"> <i class="{{item.icon}}"></i>
+                        </div>
+                        <h5 class="fw-700"><a routerLink="/service-detail/{{item.id}}"
+                                class="text-custom-black">{{item.title}}</a></h5>
+                        <p class="text-light-white no-margin">{{item.shortdesc}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Main Services -->
+<!-- start Loan Calculator -->
+<section class="section-padding pb-0 exp-cal2">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-heading">
+                <h3 class="text-white fw-700">Loan Calculator</h3>
+                <div class="section-description">
+                    <p class="text-light-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-2 col-lg-8 ">
+                <div class="exp-cal2-loan">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <p class="fw-600 text-center">Enter your loan amount</p>
+                            <div class="exp-cal2-input">
+                                <input placeholder="$0" maxlength="10" name="calculator" type="number" value="100"
+                                    id="num1">
+                                <input placeholder="$0" maxlength="10" class="d-none" name="calculator" value="2"
+                                    type="text" id="num2">
+                            </div>
+                            <p class="fw-600 mt-2 fs-13">please enter amount $100 to $1000</p>
+                        </div>
+                        <div class="col-md-2 align-self-center">
+                            <div class=exp-cal-icon>
+                                <button type="button" id="calculate"><i class="fa fa-angle-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <p class="fw-600 text-center exp-cal2-content">You could be saving</p>
+                            <div class="ex-calculate-value">
+                                <input type="text" name="sum" id="sum" value="$50" readonly> <a href="#">How do we
+                                    calculate this?</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 text-center"> <a routerLink="/loan-step"
+                                class="btn-first btn-submit-fill ">Find my Rates</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Loan Calculator -->
+<!-- start lw-tab -->
+<div class="section-padding lw-tab-section p-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="lw-mega-tab">
+                    <ul ngbNav #navplans="ngbNav" class="nav lw-nav-tabs">
+                        <li [ngbNavItem]="1">
+                            <a ngbNavLink>
+                                Most Popular
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="table-responsive">
+                                    <table class="lw-tab-table">
+                                        <tr class="lw-table-row-1">
+                                            <th>Rank</th>
+                                            <th>Agencies</th>
+                                            <th>Bonus</th>
+                                            <th>Features</th>
+                                            <th>Free Plans</th>
+                                            <th>Rating</th>
+                                            <th>Get it</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">1</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $200 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">2</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">3</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo3.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">4</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo4.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$1900 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">5</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo5.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$2200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">6</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">7</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$600 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">8</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="2">
+                            <a ngbNavLink>
+                                Highest Bonus
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="table-responsive">
+                                    <table class="lw-tab-table">
+                                        <tr class="lw-table-row-1">
+                                            <th>Rank</th>
+                                            <th>Agencies</th>
+                                            <th>Bonus</th>
+                                            <th>Features</th>
+                                            <th>Free Plans</th>
+                                            <th>Rating</th>
+                                            <th>Get it</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">1</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $200 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">2</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">3</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo3.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">4</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo4.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$1900 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">5</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo5.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$2200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">6</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">7</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$600 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">8</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="3">
+                            <a ngbNavLink>
+                                Most Popular
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="table-responsive">
+                                    <table class="lw-tab-table">
+                                        <tr class="lw-table-row-1">
+                                            <th>Rank</th>
+                                            <th>Agencies</th>
+                                            <th>Bonus</th>
+                                            <th>Features</th>
+                                            <th>Free Plans</th>
+                                            <th>Rating</th>
+                                            <th>Get it</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">1</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $200 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">2</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">3</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo3.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">4</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo4.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$1900 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">5</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo5.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$2200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">6</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">7</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$600 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">8</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="4">
+                            <a ngbNavLink>
+                                Highest Bonus
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="table-responsive">
+                                    <table class="lw-tab-table">
+                                        <tr class="lw-table-row-1">
+                                            <th>Rank</th>
+                                            <th>Agencies</th>
+                                            <th>Bonus</th>
+                                            <th>Features</th>
+                                            <th>Free Plans</th>
+                                            <th>Rating</th>
+                                            <th>Get it</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">1</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $200 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">2</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">3</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo3.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">4</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo4.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$1900 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">5</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo5.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$2200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">6</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">7</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$600 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">8</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </ng-template>
+                        </li>
+                        <li [ngbNavItem]="5">
+                            <a ngbNavLink>
+                                Most Popular
+                            </a>
+                            <ng-template ngbNavContent>
+                                <div class="table-responsive">
+                                    <table class="lw-tab-table">
+                                        <tr class="lw-table-row-1">
+                                            <th>Rank</th>
+                                            <th>Agencies</th>
+                                            <th>Bonus</th>
+                                            <th>Features</th>
+                                            <th>Free Plans</th>
+                                            <th>Rating</th>
+                                            <th>Get it</th>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">1</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $200 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">2</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">3</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo3.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">4</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo4.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$1900 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">5</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo5.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$2200 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">6</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo2.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$500 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">7</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$600 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lw-table-data-1">8</td>
+                                            <td class="lw-table-data-2">
+                                                <img src="assets/images/homepage/logo1.png" alt="img">
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>$100 Bonus</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            100% up to $100
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-4">
+                                                <ul>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $100 free Plan</li>
+                                                    <li> <span>
+                                                            <i class="fas fa-check"></i>
+                                                        </span>
+                                                        $220 Monthly Plan</li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3">
+                                                <ul>
+                                                    <li> <strong>10 Free Plans</strong>
+                                                    </li>
+                                                    <li> <span>
+                                                            with no Desopits
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                            <td class="lw-table-data-3 company-rating"> <span
+                                                    class="rating-number">5/5</span>
+                                                <div class="ratings"> <span class="text-custom-yellow"><i
+                                                            class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                    <span class="text-custom-yellow"><i class="fas fa-star"></i></span>
+                                                </div>
+                                            </td>
+                                            <td class="lw-table-data-3 choose-btn"> <a href="#"
+                                                    class="btn-first btn-submit-fill">Choose</a>
+                                                <a href="#" class="Loan-content">T&C Apply</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </ng-template>
+                        </li>
+                    </ul>
+                    <div [ngbNavOutlet]="navplans" class="lw-tab-content-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End lw-tab -->
+<app-advertisement></app-advertisement>
+<!-- Start Team Doctors -->
+<section class="section-padding doctors-team-style-2 bg-gray">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-heading">
+                <h3 class="text-custom-black fw-700">Our Teams</h3>
+                <div class="section-description">
+                    <p class="text-light-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 no-padding">
+                <ngx-slick-carousel #slickModal="slick-carousel" [config]="teamConfig" class="doctors-slider">
+                    <div ngxSlickItem class="slide-item col-12" *ngFor="let item of teamblock">
+                        <div class="team-block p-relative">
+                            <div class="inner-box">
+                                <div class="image animate-img">
+                                    <img [src]="item.photo" alt="{{item.name}}" class="full-width">
+                                    <div class="overlay-box">
+                                        <div class="overlay-inner p-relative full-height">
+                                            <ul class="team-social-box custom">
+                                                <li class="{{item.iconclass}}" *ngFor="let item of item.socialmedia">
+                                                    <a routerLink="{{item.url}}" class="fab fa-{{item.icon}} fs-16"></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lower-content p-relative text-center">
+                                    <h4><a routerLink="/team" class="text-custom-black fw-600 fs-20">{{item.name}}</a>
+                                    </h4>
+                                    <p class="designation text-light-white">{{item.designation}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Team Doctors -->
+<section class="download-app parallax">
+    <div class="side-lines right-side style-2"> <span class="box"></span>
+        <span class="text">Loanly</span>
+        <span class="line"></span>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-header section-padding-top">
+                    <div class="section-heading">
+                        <h3 class="text-custom-white fw-700">Download App</h3>
+                        <div class="section-description">
+                            <p class="text-custom-white">Lorem Ipsum is simply dummy text of the printing and
+                                typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-img">
+                    <a href="#">
+                        <img src="assets/images/app.png" class="img-fluid" alt="app">
+                    </a>
+                    <a href="#">
+                        <img src="assets/images/app2.png" class="img-fluid" alt="app">
+                    </a>
+                </div>
+                <div class="app-img-btm ">
+                    <img src="assets/images/mobile.png" class="img-fluid" alt="img">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="app-img-side">
+                    <div class="section-header section-padding-top">
+                        <div class="section-heading">
+                            <h3 class="text-custom-white fw-700">App Features</h3>
+                            <div class="section-description">
+                                <p class="text-custom-white">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-features section-padding-bottom">
+                        <ul class="custom">
+                            <li *ngFor="let item of features">
+                                <i class="{{item.icon}}"></i>
+                                <h5 class="text-light-blue">{{item.title}} </h5>
+                                <p class="text-custom-white">{{item.text}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Start Blog -->
+<section class="section-padding our-articles">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-heading">
+                <h3 class="text-custom-black fw-700">Our Blog</h3>
+                <div class="section-description">
+                    <p class="text-light-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                        industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 no-padding">
+                <ngx-slick-carousel #slickModal="slick-carousel" [config]="blogConfig" class="blog-slider">
+                    <article ngxSlickItem class="post col-12" *ngFor="let item of blogbox">
+                        <div class="post-wrapper">
+                            <div class="blog-img animate-img">
+                                <a routerLink="/blog-single/{{item.id}}">
+                                    <img [src]="item.photo" class="full-width" alt="{{item.title}}">
+                                </a>
+                            </div>
+                            <div class="blog-meta padding-20">
+                                <div class="post-meta">
+                                    <div class="author-img">
+                                        <img [src]="item.author.authorphoto" class="rounded-circle"
+                                            alt="{{item.author.authorname}}">
+                                    </div>
+                                    <div class="author-meta">
+                                        <h6 class="no-margin"><a routerLink="/blog-single/{{item.id}}"
+                                                class="text-custom-white">{{item.author.authorname}}</a></h6>
+                                        <p class="no-margin text-custom-white"><a routerLink="/blog-single/{{item.id}}"
+                                                class="text-custom-white">Admin</a> | {{item.postdate}}</p>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <h2><a routerLink="/blog-single/{{item.id}}"
+                                            class="text-custom-black fw-600">{{item.title | slice:0:25}}</a></h2>
+                                    <p class="text-light-white">{{item.shortdesc}}</p>
+                                </div>
+                                <div class="blog-links">
+                                    <div class="post-metas"> <span class="mr-2 fs-14"><a
+                                                routerLink="/blog-single/{{item.id}}" class="text-custom-black"><i
+                                                    class="fas fa-eye text-light-blue"></i>
+                                                {{item.views}}</a></span>
+                                        <span class="fs-14"><a routerLink="/blog-single/{{item.id}}"
+                                                class="text-custom-black"><i class="far fa-comment text-light-blue"></i>
+                                                {{item.comments}}</a></span>
+                                    </div> <a routerLink="/blog-single/{{item.id}}" class="text-light-blue fs-14">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </ngx-slick-carousel>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Blog -->
+<!-- Start Apply Today/faqs -->
+<app-bookappointment></app-bookappointment>
+<!-- End Apply Today/faqs -->
+<!-- Start Why choose us / testimonials-->
+<section class="section-padding findrate-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="testimonials-box mb-md-80">
+                    <div class="section-header">
+                        <div class="section-heading">
+                            <h3 class="text-custom-black fw-700">Our Testimonials</h3>
+                        </div>
+                        <div class="section-description">
+                            <p class="text-light-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                        </div>
+                    </div>
+                    <div class="testimonials-wrapper">
+                        <div class="col-12">
+                            <ngx-slick-carousel #slickModal="slick-carousel" [config]="testimonialnavConfig"
+                                class="testimonial-nav row mb-xl-40">
+                                <div ngxSlickItem class="slide-item col-12" *ngFor="let item of testimonials">
+                                    <div class="testimonials-author">
+                                        <a href="javascript:void(0)">
+                                            <img [src]="item.photo" class="image-fit" alt="{{item.name}}">
+                                        </a>
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                            <ngx-slick-carousel #slickModal="slick-carousel" [config]="testimonialmainConfig"
+                                class="testimonial-for row">
+                                <div ngxSlickItem class="slide-item col-12" *ngFor="let item of testimonials">
+                                    <div class="testimonials-inner">
+                                        <div class="testimonial-content">
+                                            <h4 class="text-custom-blue fw-700 fs-20">{{item.title}}</h4>
+                                            <p class="text-light-white mb-xl-20">{{item.comment}}</p>
+                                            <p class="text-custom-black fw-700"><strong>{{item.name}}<br><span
+                                                        class="text-light-blue fw-500">{{item.designation}}</span></strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ngx-slick-carousel>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="clients-box">
+                    <div class="section-header">
+                        <div class="section-heading">
+                            <h3 class="text-custom-black fw-700">Our Clients</h3>
+                        </div>
+                        <div class="section-description">
+                            <p class="text-light-white">Lorem Ipsum is simply dummy text of the printing and typesetting
+                                industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                        </div>
+                    </div>
+                    <div class="clients-wrapper">
+                        <div class="client-box" *ngFor="let item of clients">
+                            <div class="client-item">
+                                <a href="#">
+                                    <img [src]="item.photo" class="image-fit" alt="{{item.companyname}}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Why choose us / testimonials -->
+<!-- Start Faqs -->
+<section class="section-padding loan-faqs-sec bg-light-white findrate-top">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-2 col-lg-8">
+                <div class="findratesec">
+                    <h3 class="text-custom-black">Compare personal loan rates in 2 minutes</h3>
+                    <div class="input-form-box">
+                        <form>
+                            <div class="input-group">
+                                <input type="email" name="#" class="form-control form-control-custom"
+                                    placeholder="Enter amount ($1,000 to $100,000)">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn-first btn-submit-fill">Find My Rate</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6 align-self-center">
+                <div class="section-header">
+                    <div class="section-heading">
+                        <h3 class="text-custom-black fw-700">Our FAQs</h3>
+                        <div class="section-description">
+                            <p class="text-light-white no-margin">Still have questions?
+                                <br>Our Client Success Team is always here to help
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="loan-faqs-leftside mb-md-80">
+                    <div class="support-card mb-xl-20">
+                        <div class="support-user">
+                            <img src="assets/images/faq-user.png" class="image-fit" alt="img">
+                        </div>
+                        <div class="links text-center mb-xl-20"> <a href="#">Support@domain.com</a>
+                            <a href="#">123-456-7890</a>
+                            <a href="#">Chat with us</a>
+                        </div>
+                        <div class="schdule">
+                            <ul class="custom">
+                                <li>Mon - Thurs <span class="text-light-white">6am – 6pm PT</span>
+                                </li>
+                                <li>Fri <span class="text-light-white">6am – 6pm PT</span>
+                                </li>
+                                <li>Sat - Sun <span class="text-light-white">7am – 4pm PT</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div> <a href="#" class="btn-first btn-submit-fill"> Chat With Us</a>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-6 align-self-center">
+                <ngb-accordion [closeOthers]="true" activeIds="static-1" class="faqs-accordion">
+                    <ngb-panel id="static-1">
+                        <ng-template ngbPanelTitle>
+                            What is an unsecured personal loan?
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <p class="text-light-white">Once approved for an unsecured loan, you'll make monthly
+                                payments to pay it back in full, plus interest. The loan terms and interest rate vary
+                                based on the lender and your credit.</p>
+                            <p class="text-light-white no-margin">Each lender has their own set requirements to qualify
+                                for a personal loan. A hard inquiry can impact your credit score by two to nine points,
+                                but typically by no more than five.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-2">
+                        <ng-template ngbPanelTitle>
+                            What are the requirements to qualify?
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <p class="text-light-white no-margin">Each lender has their own set requirements to qualify
+                                for a personal loan.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-3">
+                        <ng-template ngbPanelTitle>
+                            How much can I borrow with a personal loan?
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <p class="text-light-white">Many lenders also have minimum credit score requirements for
+                                credit approval.</p>
+                            <p class="text-light-white no-margin">The upper limits for personal loans vary by lender but
+                                typically fall in the $35,000 to $50,000 range.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-4">
+                        <ng-template ngbPanelTitle>
+                            Will checking my rates affect my credit score?
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <p class="text-light-white">Using Loanly to check your rates doesn’t affect your credit
+                                score. Here’s how it works: Loanly's prequalification process uses a soft credit inquiry
+                                that you having to apply for a loan.</p>
+                            <p class="text-light-white no-margin">You'll be asked to authorize a hard credit inquiry
+                                when you apply for the loan. A hard inquiry can impact your credit score by two to nine
+                                points, but typically by no more than five.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-5">
+                        <ng-template ngbPanelTitle>
+                            What rate should I expect and how can I get the best rate?
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <p class="text-light-white">Some lenders even offer an autopay discount if you authorize
+                                your monthly loan payments to be directly withdrawn from your bank account.</p>
+                            <p class="text-light-white no-margin">Qualifying for the lowest rates offered by a lender is
+                                dependent on your online application, credit approval and score, loan terms, and other
+                                factors.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-6">
+                        <ng-template ngbPanelTitle>
+                            How quickly will I receive my funds?
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <p class="text-light-white no-margin">Once you’ve completed the loan application process,
+                                most lenders can fund your loan by the next business day (though it can take up to about
+                                a week, depending on the lender and your application).</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-7">
+                        <ng-template ngbPanelTitle>
+                            Can I use personal loans for debt consolidation?
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <p class="text-light-white">Yes. In fact, personal loans offer many debt consolidation
+                                benefits.</p>
+                            <p class="text-light-white no-margin">Many credit cards also carry variable rates, which can
+                                cause the amount you pay in interest to fluctuate as rates change.</p>
+                        </ng-template>
+                    </ngb-panel>
+                    <ngb-panel id="static-8">
+                        <ng-template ngbPanelTitle>
+                            How else can I use a personal loan?
+                        </ng-template>
+                        <ng-template ngbPanelContent>
+                            <p class="text-light-white no-margin">You’re typically not limited in how you can use your
+                                personal loan funds. Personal loans can be used to pay down high-interest credit card
+                                debt, meet unexpected needs like medical bills, take care of a major purchase like a new
+                                refrigerator, or fund home improvement projects. However, some lenders only provide
+                                loans for specific purposes (and some rates vary based on what you use it for), so you
+                                will be asked for the purpose of your loan.</p>
+                        </ng-template>
+                    </ngb-panel>
+                </ngb-accordion>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Faqs -->

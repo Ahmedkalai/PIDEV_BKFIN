@@ -1,0 +1,81 @@
+<div class="sidebar_wrap">
+    <div class="sidebar">
+        <div class="sidebar_widgets mb-xl-30">
+            <div class="widget_title bg-light-blue">
+                <h5 class="no-margin text-custom-white fw-600">Search</h5>
+            </div>
+            <form>
+                <div class="form-group mb-0">
+                    <div class="search p-relative">
+                        <input type="text" name="#" class="form-control form-control-custom" placeholder="Title or keywords">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="sidebar_widgets mb-xl-30">
+            <div class="widget_title bg-light-blue">
+                <h5 class="no-margin text-custom-white fw-600"> LOANLY Services</h5>
+            </div>
+            <ul class="custom sidebar-services">
+                <li *ngFor="let item of serviceblock"> 
+                    <a routerLink="/service-detail/{{item.id}}" class="text-custom-black fs-14">
+                        {{item.title}}
+                        <span><i class="fas fa-chevron-right"></i></span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar_widgets mb-xl-30">
+            <div class="widget_title bg-light-blue">
+                <h5 class="no-margin text-custom-white fw-600">Opening Hours</h5>
+            </div>
+            <table class="table text-custom-black">
+                <tbody>
+                    <tr>
+                        <td>Mon – Wed</td>
+                        <td>-</td>
+                        <td class="text-right">9:00 AM - 7:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>-</td>
+                        <td class="text-right">9:00 AM - 6:30 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>-</td>
+                        <td class="text-right">9:00 AM - 6:00 PM</td>
+                    </tr>
+                    <tr class="last-tr">
+                        <td>Sun - Sun</td>
+                        <td>-</td>
+                        <td class="text-right">CLOSED</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="sidebar_widgets">
+            <div class="widget_title bg-light-blue">
+                <h5 class="no-margin text-custom-white fw-600">Recent News</h5>
+            </div>
+            <ul class="custom popular_post">
+                <li *ngFor="let item of blogbox | slice:0:3">
+                    <div class="post">
+                        <div class="post-wrapper">
+                            <div class="popular_post_img animate-img">
+                                <a routerLink="/blog-single/{{item.id}}">
+                                    <img [src]="item.photo" class="img-fluid image-fit" alt="{{item.title}}">
+                                </a>
+                            </div>
+                            <div class="popular_post_title">
+                                <div class="post-date">
+                                    <p class="text-light-blue no-margin">{{item.postdate}}</p>
+                                </div>
+                                <h6><a routerLink="/blog-single/{{item.id}}" class="text-custom-black fs-16 fw-600">{{item.title}}</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "icon": "/assets/images/homepage/icon1a.png",
+        "title":"Get info online",
+        "text":"Shop with less worry. We can cover a return if you need it."
+    },
+    {
+        "id":2,
+        "icon": "/assets/images/homepage/icon1b.png",
+        "title":"Apply Loan Online",
+        "text":"Shop with less worry. We can cover a return if you need it."
+    },
+    {
+        "id":3,
+        "icon": "/assets/images/homepage/icon1c.png",
+        "title":"Provide Details online",
+        "text":"Shop with less worry. We can cover a return if you need it."
+    },
+    {
+        "id":4,
+        "icon": "/assets/images/homepage/icon1d.png",
+        "title":"Get Loan Immidiately",
+        "text":"Shop with less worry. We can cover a return if you need it."
+    }
+]

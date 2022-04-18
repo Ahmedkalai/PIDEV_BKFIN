@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "Home Loan"
+    },
+    {
+        "id": 2,
+        "title": "Security Loan"
+    },
+    {
+        "id": 3,
+        "title": "Real Estate Loan"
+    },
+    {
+        "id": 4,
+        "title": "Education Loan"
+    },
+    {
+        "id": 5,
+        "title": "Personal Loan"
+    },
+    {
+        "id": 6,
+        "title": "Business Loan"
+    },
+    {
+        "id": 7,
+        "title": "Corporate Loan"
+    },
+    {
+        "id": 8,
+        "title": "Property Loan"
+    }
+]

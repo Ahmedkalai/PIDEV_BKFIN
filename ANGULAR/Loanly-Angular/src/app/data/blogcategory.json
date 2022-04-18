@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "title": "Personal Loan",
+        "count": 1
+    },
+    {
+        "id": 2,
+        "title": "Educational Loan",
+        "count": 1
+    },
+    {
+        "id": 3,
+        "title": "Business Loan",
+        "count": 3
+    },
+    {
+        "id": 4,
+        "title": "Car Loan",
+        "count": 4
+    },
+    {
+        "id": 5,
+        "title": "Corporate Loan",
+        "count": 2
+    }
+]

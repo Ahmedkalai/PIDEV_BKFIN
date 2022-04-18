@@ -1,0 +1,61 @@
+<!-- Start Blog -->
+<section class="section-padding bg-gray our-articles">
+    <div class="container">
+        <div class="row">
+            <aside class="col-lg-4 mb-md-80">
+                <app-blogsidebar></app-blogsidebar>
+            </aside>
+            <div class="col-lg-8"> 
+                <div class="row">
+                    <article class="col-lg-6 col-md-6 post mb-xl-30" *ngFor="let item of blogbox | paginate: { itemsPerPage: 6, currentPage: page }">
+                        <div class="post-wrapper">
+                            <div class="blog-img animate-img">
+                                <a routerLink="/blog-single/{{item.id}}">
+                                    <img [src]="item.photo" class="full-width" alt="{{item.title}}">
+                                </a>
+                            </div>
+                            <div class="blog-meta padding-20">
+                                <div class="post-meta">
+                                    <div class="author-img">
+                                        <img [src]="item.author.authorphoto" class="rounded-circle"
+                                            alt="{{item.author.authorname}}">
+                                    </div>
+                                    <div class="author-meta">
+                                        <h6 class="no-margin"><a routerLink="/blog-single/{{item.id}}"
+                                                class="text-custom-white">{{item.author.authorname}}</a></h6>
+                                        <p class="no-margin text-custom-white"><a routerLink="/blog-single/{{item.id}}"
+                                                class="text-custom-white">Admin</a> | {{item.postdate}}</p>
+                                    </div>
+                                </div>
+                                <div class="post-content">
+                                    <h2><a routerLink="/blog-single/{{item.id}}"
+                                            class="text-custom-black fw-600">{{item.title | slice:0:25}}</a></h2>
+                                    <p class="text-light-white">{{item.shortdesc}}</p>
+                                </div>
+                                <div class="blog-links">
+                                    <div class="post-metas"> <span class="mr-2 fs-14"><a
+                                                routerLink="/blog-single/{{item.id}}" class="text-custom-black"><i
+                                                    class="fas fa-eye text-light-blue"></i>
+                                                {{item.views}}</a></span>
+                                        <span class="fs-14"><a routerLink="/blog-single/{{item.id}}"
+                                                class="text-custom-black"><i class="far fa-comment text-light-blue"></i>
+                                                {{item.comments}}</a></span>
+                                    </div> <a routerLink="/blog-single/{{item.id}}" class="text-light-blue fs-14">Read
+                                        More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="mt-5">
+                            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Blog -->

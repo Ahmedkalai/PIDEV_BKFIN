@@ -1,0 +1,70 @@
+<!-- Start Team -->
+<section class="section-padding bg-gray">
+    <div class="container">
+        <div class="row doctors-team-style-2">
+            <div class="col-lg-3 col-md-6" *ngFor="let item of teamblock | slice:0:4">
+                <div class="team-block p-relative mb-xl-30">
+                    <div class="inner-box">
+                        <div class="image animate-img">
+                            <img [src]="item.photo" alt="{{item.name}}" class="full-width">
+                            <div class="overlay-box">
+                                <div class="overlay-inner p-relative full-height">
+                                    <ul class="team-social-box custom">
+                                        <li class="{{item.iconclass}}" *ngFor="let item of item.socialmedia">
+                                            <a routerLink="{{item.url}}" class="fab fa-{{item.icon}} fs-16"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lower-content p-relative text-center">
+                            <h4><a routerLink="/team" class="text-custom-black fw-600 fs-20"> {{item.name}}</a></h4>
+                            <p class="designation text-light-white">{{item.designation}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row doctors-team darkblue">
+            <div class="col-lg-3 col-md-6" *ngFor="let item of teamblock | slice:0:4">
+                <div class="doctor-item mb-xl-30">
+                    <div class="doctor-img mb-xl-20">
+                        <img [src]="item.photo" class="rounded-circle full-width" alt="{{item.name}}"> <a routerLink="/team" class="detail-btn"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <div class="doctor-content">
+                        <h6><a routerLink="/team" class="text-custom-black fw-700">{{item.name}}</a></h6>
+                        <p class="designation text-light-white">{{item.designation}}</p>
+                        <ul class="custom">
+                            <li *ngFor="let item of item.socialmedia">
+                                <a routerLink="{{item.url}}">
+                                    <i class="fab fa-{{item.icon}}"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row doctors-team style-2">
+            <div class="col-lg-3 col-md-6" *ngFor="let item of teamblock | slice:0:4">
+                <div class="doctor-item mb-md-30">
+                    <div class="doctor-img mb-xl-20">
+                        <img [src]="item.photo" class="full-width" alt="{{item.name}}">
+                    </div>
+                    <div class="doctor-content">
+                        <h6><a routerLink="/team" class="text-custom-black fw-700"> {{item.name}}</a></h6>
+                        <p class="designation text-light-white">{{item.designation}}</p>
+                        <ul class="custom">
+                            <li *ngFor="let item of item.socialmedia">
+                                <a routerLink="{{item.url}}">
+                                    <i class="fab fa-{{item.icon}}"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Team -->

@@ -1,0 +1,375 @@
+/* You can add global styles to this file, and also import other style files */
+.menu-item-has-children > a:after{
+    display: inline-block;
+    margin-left: .55em;
+    content: "\f107";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    transition: transform 0.4s ease;
+}
+.menu-item-has-children:hover > a:after{
+    transform: rotate(180deg);
+}
+.nav-item{
+    position: relative;
+}
+.overlapsec + app-breadcrumb .sub-header .section-padding{
+    padding-bottom: 160px;
+}
+.slick-prev{
+    left:auto;
+}
+/* Accordion */
+.accordion>.card:not(:last-of-type){
+    border-bottom: 1px solid #0070ba;
+}
+.faqs-accordion .card .card-header .btn-link:hover,
+.faqs-accordion .card .card-header .btn-link:focus{
+    outline: none;
+    box-shadow: none;
+    text-decoration: none;
+}
+/* Pagination */
+pagination-template .ngx-pagination{
+    justify-content: center;
+    margin-bottom: 0;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+}
+pagination-template .ngx-pagination li{
+    margin: 0;
+    position: relative;
+}
+pagination-template .ngx-pagination li.pagination-next,
+pagination-template .ngx-pagination li.pagination-previous{
+    padding: 0;
+    display: block;
+}
+pagination-template .ngx-pagination li.pagination-next span,
+pagination-template .ngx-pagination li.pagination-previous span,
+pagination-template .ngx-pagination li a{
+    color: #333;
+    border: 0;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 20px!important;
+    margin: 0;
+    position: relative;
+    margin-left: 0;
+    display: block;
+    line-height: 1.5;
+    border: 1px solid #efefef;
+}
+pagination-template .ngx-pagination li>a:hover,
+pagination-template .ngx-pagination li.current{
+    color: #fff!important;
+    border: 0;
+    background-color: #007bff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 8px 20px!important;
+    margin: 0;
+    position: relative;
+    margin-left: 0;
+    display: block;
+    line-height: 1.5;
+    border: 1px solid #efefef;
+}
+pagination-template .ngx-pagination li.pagination-next::after,
+pagination-template .ngx-pagination li.pagination-next a:after,
+pagination-template .ngx-pagination li.pagination-previous a::before,
+pagination-template .ngx-pagination li.pagination-previous::before{
+    display: none!important;
+}
+.sidebar_wrap .sidebar .sidebar_widgets .popular_post li .post .post-wrapper .popular_post_img{
+    height: 90px;
+}
+.extra-page{
+    height: 100vh;
+}
+/* Counter */
+.coming-soon .main .countdown {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+.coming-soon .main .countdown .measurements {
+    text-align: center;
+}
+.coming-soon .main .countdown .measurements>.measurements-number {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 0px;
+    margin: 0 auto 10px;
+}
+.coming-soon .main .countdown .measurements .measurements-text{
+    color: #fff;
+}
+/*user-info-details*/
+.user-info-tabs .step-app{
+    counter-reset: my-sec-counter;
+}
+.user-info-tabs .step-app .step-anchor {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-left: 0;
+}
+.user-info-tabs .step-app .step-anchor {
+    margin: 0 auto 80px;
+    border-bottom: none;
+}
+.user-info-tabs .step-app .step-anchor > li {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+.user-info-tabs .step-app .step-anchor > li {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.user-info-tabs .step-app .step-anchor > li:before {
+    position: absolute;
+    content: "";
+    z-index: -1;
+    width: 100%;
+    height: 8px;
+    background-color: #C4CAD2;
+    left: 45%;
+    top: 32px;
+    transition: all 0.3s;
+    display: block!important;
+}
+.user-info-tabs .step-app > .step-anchor > li > a,
+.user-info-tabs .step-app > .step-anchor > li > a > span {
+    display: block;
+}
+.user-info-tabs .step-app .step-anchor > li > a  {
+    width: 50px;
+    height: 50px;
+    background-color: #c4cad2;
+    border: 0px solid;
+    transition: all 0.3s;
+    border-radius: 50%;
+    color: #020202;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 3.8;
+    margin: 10px auto;
+    position: relative;
+    z-index: 0;
+}
+.user-info-tabs .step-app .step-anchor > li > a  {
+    border-radius: 50%;
+    color: #020202;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 3.8;
+    margin: 10px auto;
+    position: relative;
+    z-index: 0;
+}
+.user-info-tabs .step-app .step-anchor > li > a:before{
+    counter-increment: my-sec-counter;
+    content: counter(my-sec-counter);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -17px;
+}
+.user-info-tabs .step-app .step-anchor > li.active > a:before,
+.user-info-tabs .step-app .step-anchor > li.done > a:before{
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #fff;
+}
+.user-info-tabs .step-app .step-anchor > li.active > a ,
+.user-info-tabs .step-app .step-anchor > li.done > a  {
+    background-color: #0070ba;
+}
+.user-info-tabs .step-app .step-anchor > li.active > a > small,
+.user-info-tabs .step-app .step-anchor > li.done > a > small {
+    color: #0070ba;
+}
+.user-info-tabs .step-app .step-anchor > li > a > small {
+    font-weight: 600;
+    color: #020202;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    transition: all 0.3s;
+    position: absolute;
+    top: 100%;
+    line-height: normal;
+    margin-top: 20px;
+    width: auto;
+    left: 0;
+    right: 0;
+}
+.user-info-tabs .step-app  .step-anchor > li > a > small {
+    color: #000;
+    font-size: 10px;
+    font-weight: 600;
+}
+.user-info-tabs .step-app .step-anchor > li:last-child:before {
+    width: 0;
+}
+.user-info-tabs .step-app .step-anchor > li.done:before {
+    background-color: #0070ba;
+}
+.user-info-tabs .step-app > .step-content > .step-tab-panel.active {
+    display: block;
+}
+.user-info-tabs .step-app > .step-content > .step-tab-panel {
+    display: none;
+}
+.user-info-tabs .step-app .step-footer.step-tab-pager {
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-top: 0px;
+    margin-bottom: 0px;
+}
+.user-info-tabs .step-app .step-footer.step-tab-pager button {
+    width: auto;
+    padding: 0 22px;
+    height: 42px;
+}
+.user-info-tabs .step-app > .step-content > .step-tab-panel {
+    display: none;
+}
+.user-info-tabs .step-app > .step-content > .step-tab-panel.active {
+    display: block;
+}
+.user-info-tabs .step-tab-inner .radio-box{
+    display: flex;
+}
+.user-info-tabs .step-tab-inner .radio-box .custom-radio{
+    height: auto;
+    border: none;
+    padding: 0;
+    padding-right: 20px;
+}
+.user-info-tabs .step-tab-inner .form-control-custom{
+    background: #fff;
+}
+.user-info-tabs .step-tab-inner .nice-select:after{
+    border-color: #0070ba;
+}
+.user-info-tabs .step-tab-inner .nice-select:before{
+    content: '';
+    display: block;
+    height: 49px;
+    width: 30px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.user-info-tabs .ng-wizard-btn-group{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+}
+.user-info-tabs .ng-wizard-btn-group .btn-secondary{
+    color: #fff;
+    border: 1px solid #0070ba;
+    background-color: #0070ba;
+    transition: 0.5s all;
+    width: auto;
+    padding: 0 22px;
+    height: 42px;
+    display: inline-flex;
+    position: relative;
+    font-size: 14px;
+    overflow: hidden;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px;
+    flex: none;
+}
+.user-info-tabs .ng-wizard-btn-group .btn-secondary:hover,
+.user-info-tabs .ng-wizard-btn-group .btn-secondary:focus{
+    color: #fff;
+    border-color: #27346a;
+    background-color: #27346a;
+    box-shadow: none;
+}
+.user-dashboard-sec .dashboard-first-sec .left-side h5:after{
+    display: none;
+}
+.user-dashboard-sec .dashboard-first-sec .left-side h5 a:after {
+    display: inline-block;
+    margin-left: .55em;
+    content: "\f107";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #0070ba;
+    font-size: 22px;
+    line-height: 1.2;
+    position: relative;
+    top: 2px;
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+.user-dashboard-sec .dashboard-second-sec[aria-expanded="false"]:after, 
+.user-dashboard-sec .dashboard-first-sec .left-side h5 a[aria-expanded="false"]:after{
+    transform: none;
+}
+.user-dashboard-sec .dashboard-second-sec[aria-expanded="false"] .right-side{
+    opacity: 1;
+}
+.user-dashboard-sec .dashboard-second-sec-large .left-side .pie-chart-area .active-border,
+.user-dashboard-sec .dashboard-second-sec .right-side .pie-chart-box .active-border{
+    background: none;
+}
+.user-dashboard-sec .dashboard-second-sec-large .left-side .pie-chart-area .circle,
+.user-dashboard-sec .dashboard-second-sec .right-side .pie-chart-box .circle{
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+}
+circle-progress svg text tspan{
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+}
+@media (max-width:991px){
+    .menu-item-has-children > a{
+      display: flex!important;
+      align-items: center;
+      justify-content: space-between;
+    }
+}
+@media (max-width: 460px) {
+    .overlapsec + app-breadcrumb .sub-header .section-padding {
+      padding-bottom: 80px;
+    }
+    .coming-soon .main .countdown .measurements>.measurements-number {
+        width: 50px;
+        height: 50px;
+    }
+}

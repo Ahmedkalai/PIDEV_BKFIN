@@ -1,0 +1,122 @@
+<!-- Start Footer -->
+<footer class="bg-black section-padding footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-box mb-md-80">
+                    <div class="footer-heading">
+                        <h4 class="text-custom-white no-margin">Useful Links</h4>
+                    </div>
+                    <ul class="custom links">
+                        <li> <a routerLink="/about" class="text-custom-white">About Us</a>
+                        </li>
+                        <li> <a routerLink="/service" class="text-custom-white">Service</a>
+                        </li>
+                        <li> <a routerLink="/blog" class="text-custom-white">Blog</a>
+                        </li>
+                        <li> <a routerLink="/team" class="text-custom-white">Team</a>
+                        </li>
+                        <li> <a routerLink="/contact" class="text-custom-white">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-box mb-md-80">
+                    <div class="footer-heading">
+                        <h4 class="text-custom-white no-margin">Featured Post</h4>
+                    </div>
+                    <ul class="custom popular_post">
+                        <li *ngFor="let item of blogbox | slice:0:2">
+                            <div class="post">
+                                <div class="post-wrapper">
+                                    <div class="popular_post_img animate-img">
+                                        <a routerLink="/blog-single/{{item.id}}">
+                                            <img [src]="item.photo" class="img-fluid image-fit" alt="{{item.title}}">
+                                        </a>
+                                    </div>
+                                    <div class="popular_post_title">
+                                        <h6><a routerLink="/blog-single/{{item.id}}"
+                                                class="text-custom-white fs-14 fw-400">{{item.title}}</a></h6>
+                                        <div class="post-date">
+                                            <p class="text-white no-margin">{{item.postdate}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-box mb-xs-80">
+                    <div class="footer-heading">
+                        <h4 class="text-custom-white no-margin">Twitter Feeds</h4>
+                    </div>
+                    <ngx-slick-carousel #slickModal="slick-carousel" [config]="twitterConfig" class="custom twitter-feed twitter-slider">
+                        <li ngxSlickItem *ngFor="let item of twitterfeed">
+                            <p class="tweet">{{item.tweet}} <a routerLink="{{item.link}}">{{item.link}}</a>
+                            </p>
+                            <p class="timePosted"><a routerLink="{{item.link}}">Posted on {{item.tweetdate}}</a>
+                            </p>
+                        </li>
+                    </ngx-slick-carousel>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="footer-box">
+                    <div class="footer-heading">
+                        <h4 class="text-custom-white no-margin">News Letter</h4>
+                    </div>
+                    <div class="newsletter">
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-custom" placeholder="Email Id">
+                            </div>
+                            <button class="btn-first btn-submit-fill btn-height full-width"
+                                type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                    <div class="social-media">
+                        <ul class="custom social-media">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fab fa-google-plus"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="payment-logo mb-md-20"> <span class="text-custom-white fs-14 mr-3">We are accept</span>
+                    <div class="payemt-icon">
+                        <img src="assets/images/footer-bottom-img.png" alt="#">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-custom-white no-margin">© Metropolitantheme - 2021 | All Right Reserved. <a href="#"
+                        class="text-custom-white">Designed By Metropolitantheme</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Footer -->
+<div id="back-top" class="back-top d-block"> 
+    <a href="javascript:void(0)" *ngIf="isShow" (click)="gotoTop()" (window:scroll)="ScrolltoTop()">
+        <i class="flaticon-up-arrow"></i>
+    </a>
+</div>

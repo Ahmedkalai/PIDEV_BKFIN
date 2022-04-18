@@ -1,0 +1,31 @@
+<!-- Start Service -->
+<section class="section-padding bg-gray service-page">
+    <div class="container">
+        <div class="row">
+            <aside class="col-lg-4 mb-md-80">
+                <app-servicesidebar></app-servicesidebar>
+            </aside>
+            <div class="col-lg-8">
+                <div class="col-12">
+                    <div class="service-detail-sec bg-custom-white bx-wrapper" *ngFor="let item of servicedetails">
+                        <ngx-slick-carousel #slickModal="slick-carousel" [config]="settingsConfig"  class="services-detail-slider mb-xl-30">
+                            <div ngxSlickItem class="service-image" *ngFor="let item of item.slider">
+                                <img [src]="item.img" class="image-fit" alt="{{item.text}}">
+                                <div class="overlay overlay-bg-black"></div>
+                                <div class="service-text-wrapper transform-center">
+                                    <h3 class="text-custom-white">{{item.text}}</h3>
+                                    <a routerLink="/finance" class="btn-first btn-submit">Make Apply Today</a>
+                                </div>
+                            </div>
+                        </ngx-slick-carousel>
+                        <div class="service-meta mb-xl-30">
+                            <h2 class="text-custom-black fw-600">{{item.title}}</h2>
+                            <div [innerHtml]="item.longdescription"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Service -->

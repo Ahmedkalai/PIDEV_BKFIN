@@ -1,0 +1,50 @@
+<!-- Start Service -->
+<section class="section-padding bg-gray service-page">
+    <div class="container">
+        <div class="row">
+            <aside class="col-lg-4 mb-md-80">
+                <app-servicesidebar></app-servicesidebar>
+            </aside>
+            <div class="col-lg-8">
+                <div class="col-12">
+                    <div class="service-detail-sec bg-custom-white bx-wrapper">
+                        <div class="service-image mb-xl-30">
+                            <img src="assets/images/services1.jpg" class="image-fit" alt="img">
+                            <div class="overlay overlay-bg-black"></div>
+                            <div class="service-text-wrapper transform-center">
+                                <h3 class="text-custom-white">Social Media Posting Leads To Defense Verdict</h3>
+                                <a routerLink="/finance" class="btn-first btn-submit">Make Apply Today</a>
+                            </div>
+                        </div>
+                        <div class="service-meta mb-xl-40">
+                            <h2 class="text-custom-black fw-600">LOAN FIRM DEVOTED TO OUR CLIENTS</h2>
+                            <p class="text-light-white no-margin">Phasellus velit risus, euismod a lacus et, mattis condimentum augue. Vivamus fermentum ex quis imperdiet sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum massa vel enim</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6" *ngFor="let item of serviceblock | paginate: { itemsPerPage: 6, currentPage: page }">
+                            <div class="main-services-box p-relative mb-xl-30">
+                                <div class="main-service-wrapper padding-20">
+                                    <div class="icon-box"> <i class="{{item.icon}}"></i>
+                                    </div>
+                                    <h5 class="fw-700"><a routerLink="/service-detail/{{item.id}}"
+                                            class="text-custom-black">{{item.title}}</a></h5>
+                                    <p class="text-light-white no-margin">{{item.shortdesc}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <nav class="mt-3">
+                                <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Service -->
+<app-bookappointment></app-bookappointment>

@@ -1,0 +1,425 @@
+[
+    {
+        "id": 1,
+        "photo": "assets/images/blog/blog7.jpg",
+        "postdate": "25 January , 2021",
+        "title": "Bigger home still the goal?",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor13.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+        "id": 2,
+        "photo": "assets/images/blog/blog8.jpg",
+        "postdate": "25 January , 2021",
+        "title": "Choosing right education loan",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor11.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+        "id": 3,
+        "photo": "assets/images/blog/blog9.jpg",
+        "postdate": "25 January , 2021",
+        "title": "Bigger home still the goal?",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor12.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+        "id": 4,
+        "photo": "assets/images/blog/blog11.jpg",
+        "postdate": "25 January , 2021",
+        "title": "Choosing right education loan",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor15.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+        "id": 5,
+        "photo": "assets/images/blog/blog12.jpg",
+        "postdate": "25 January , 2021",
+        "title": "Choosing right education loan",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor13.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+        "id": 6,
+        "photo": "assets/images/blog/blog14.jpg",
+        "postdate": "25 January , 2021",
+        "title": "How Is Mediation Useful in Home Loan Cases?",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor11.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+        "id": 7,
+        "photo": "assets/images/blog/blog15.jpg",
+        "postdate": "25 January , 2021",
+        "title": "Choosing right education loan",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor12.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+        "id": 8,
+        "photo": "assets/images/blog/blog9.jpg",
+        "postdate": "25 January , 2021",
+        "title": "Choosing right education loan",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor14.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    },
+    {
+        "id": 9,
+        "photo": "assets/images/blog/blog10.jpg",
+        "postdate": "25 January , 2021",
+        "title": "How Is Mediation Useful in Home Loan Cases?",
+        "shortdesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's...",
+        "author": {
+            "authorphoto": "assets/images/doctors/doctor15.jpg",
+            "authorname": "Charles C. Pruitt"
+        },
+        "tags": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "reviews": [
+            {
+                "id": 1,
+                "img": "assets/images/doctors/doctor13.jpg",
+                "name": "Rosalina Pong",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "25 Jan 2021",
+                "replies": []
+            },
+            {
+                "id": 2,
+                "img": "assets/images/doctors/doctor14.jpg",
+                "name": "Brian Wright",
+                "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "commentdate": "20 Jan 2021",
+                "replies": [
+                    {
+                        "id": 1,
+                        "img": "assets/images/doctors/doctor15.jpg",
+                        "name": "Sarah Wright",
+                        "comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        "commentdate": "20 Jan 2021"
+                    }
+                ]
+            }
+        ],
+        "views": 33,
+        "comments": 33,
+        "longdescription": "<p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Why do we choose it?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p><blockquote class='mb-xl-20'><p class='text-custom-black fw-600'>@Sometimes by accident, sometimes on purpose with the release of letraset sheets containing lorem ipsum passages, and more recently with desktop publishing software like aldus page maker including versions of lorem ipsum. Sometimes by accident, sometimes on purpose.'</p></blockquote><h5 class='text-custom-black fw-600'>Where does it come from?</h5><p class='text-light-white'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><p class='text-light-white no-margin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"
+    }
+]

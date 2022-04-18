@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "photo": "assets/images/doctors/doctor6.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "David Smith",
+        "designation": "Marketing Manager"
+    },
+    {
+        "id": 2,
+        "photo": "assets/images/doctors/doctor2.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "Michael Jhonson",
+        "designation": "Engineering Officer"
+    },
+    {
+        "id": 3,
+        "photo": "assets/images/doctors/doctor3.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "Mark Lee",
+        "designation": "Contractor"
+    },
+    {
+        "id": 4,
+        "photo": "assets/images/doctors/doctor4.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "James Brown",
+        "designation": "Web Developer"
+    },
+    {
+        "id": 5,
+        "photo": "assets/images/doctors/doctor5.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "Maria Lopez",
+        "designation": "Sales Manager"
+    },
+    {
+        "id": 6,
+        "photo": "assets/images/doctors/doctor6.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "David Smith",
+        "designation": "Marketing Manager"
+    },
+    {
+        "id": 7,
+        "photo": "assets/images/doctors/doctor2.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "Michael Jhonson",
+        "designation": "Engineering Officer"
+    },
+    {
+        "id": 8,
+        "photo": "assets/images/doctors/doctor3.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "Mark Lee",
+        "designation": "Contractor"
+    },
+    {
+        "id": 9,
+        "photo": "assets/images/doctors/doctor4.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "James Brown",
+        "designation": "Web Developer"
+    },
+    {
+        "id": 10,
+        "photo": "assets/images/doctors/doctor5.jpg",
+        "title": "Very satisfied!",
+        "comment": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+        "name": "Maria Lopez",
+        "designation": "Sales Manager"
+    }
+]

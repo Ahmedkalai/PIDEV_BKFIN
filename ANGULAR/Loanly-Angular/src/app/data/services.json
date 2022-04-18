@@ -1,0 +1,138 @@
+[
+    {
+        "id": 1,
+        "icon": "flaticon-family",
+        "title": "Home Loan",
+        "shortdesc": "Lorem ipsum dolor sit amet consecte adipiscing elit sed do eiusincidunt.",
+        "slider":[
+            {
+                "img":"assets/images/services.jpg",
+                "text":"Choosing right education loan"
+            },
+            {
+                "img":"assets/images/services1.jpg",
+                "text":"Choosing right education loan"
+            }
+        ],
+        "longdescription":"<p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What we do ?.</h4><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What the procedure ?.</h4><p class='text-light-white no-margin'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p>"
+    },
+    {
+        "id": 2,
+        "icon": "flaticon-kidnapping",
+        "title": "Security Loan",
+        "shortdesc": "Lorem ipsum dolor sit amet consecte adipiscing elit sed do eiusincidunt.",
+        "slider":[
+            {
+                "img":"assets/images/services.jpg",
+                "text":"Choosing right education loan"
+            },
+            {
+                "img":"assets/images/services1.jpg",
+                "text":"Choosing right education loan"
+            }
+        ],
+        "longdescription":"<p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What we do ?.</h4><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What the procedure ?.</h4><p class='text-light-white no-margin'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p>"
+    },
+    {
+        "id": 3,
+        "icon": "flaticon-hook",
+        "title": "Real Estate Loan",
+        "shortdesc": "Lorem ipsum dolor sit amet consecte adipiscing elit sed do eiusincidunt.",
+        "slider":[
+            {
+                "img":"assets/images/services.jpg",
+                "text":"Choosing right education loan"
+            },
+            {
+                "img":"assets/images/services1.jpg",
+                "text":"Choosing right education loan"
+            }
+        ],
+        "longdescription":"<p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What we do ?.</h4><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What the procedure ?.</h4><p class='text-light-white no-margin'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p>"
+    },
+    {
+        "id": 4,
+        "icon": "flaticon-book",
+        "title": "Education Loan",
+        "shortdesc": "Lorem ipsum dolor sit amet consecte adipiscing elit sed do eiusincidunt.",
+        "slider":[
+            {
+                "img":"assets/images/services.jpg",
+                "text":"Choosing right education loan"
+            },
+            {
+                "img":"assets/images/services1.jpg",
+                "text":"Choosing right education loan"
+            }
+        ],
+        "longdescription":"<p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What we do ?.</h4><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What the procedure ?.</h4><p class='text-light-white no-margin'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p>"
+    },
+    {
+        "id": 5,
+        "icon": "flaticon-wounded",
+        "title": "Personal Loan",
+        "shortdesc": "Lorem ipsum dolor sit amet consecte adipiscing elit sed do eiusincidunt.",
+        "slider":[
+            {
+                "img":"assets/images/services.jpg",
+                "text":"Choosing right education loan"
+            },
+            {
+                "img":"assets/images/services1.jpg",
+                "text":"Choosing right education loan"
+            }
+        ],
+        "longdescription":"<p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What we do ?.</h4><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What the procedure ?.</h4><p class='text-light-white no-margin'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p>"
+    },
+    {
+        "id": 6,
+        "icon": "flaticon-auction",
+        "title": "Business Loan",
+        "shortdesc": "Lorem ipsum dolor sit amet consecte adipiscing elit sed do eiusincidunt.",
+        "slider":[
+            {
+                "img":"assets/images/services.jpg",
+                "text":"Choosing right education loan"
+            },
+            {
+                "img":"assets/images/services1.jpg",
+                "text":"Choosing right education loan"
+            }
+        ],
+        "longdescription":"<p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What we do ?.</h4><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What the procedure ?.</h4><p class='text-light-white no-margin'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p>"
+    },
+    {
+        "id": 7,
+        "icon": "flaticon-LOANLY",
+        "title": "Corporate Loan",
+        "shortdesc": "Lorem ipsum dolor sit amet consecte adipiscing elit sed do eiusincidunt.",
+        "slider":[
+            {
+                "img":"assets/images/services.jpg",
+                "text":"Choosing right education loan"
+            },
+            {
+                "img":"assets/images/services1.jpg",
+                "text":"Choosing right education loan"
+            }
+        ],
+        "longdescription":"<p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What we do ?.</h4><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What the procedure ?.</h4><p class='text-light-white no-margin'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p>"
+    },
+    {
+        "id": 8,
+        "icon": "flaticon-balance-scale",
+        "title": "Property Loan",
+        "shortdesc": "Lorem ipsum dolor sit amet consecte adipiscing elit sed do eiusincidunt.",
+        "slider":[
+            {
+                "img":"assets/images/services.jpg",
+                "text":"Choosing right education loan"
+            },
+            {
+                "img":"assets/images/services1.jpg",
+                "text":"Choosing right education loan"
+            }
+        ],
+        "longdescription":"<p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What we do ?.</h4><p class='text-light-white'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p><h4 class='text-custom-black fw-600'>What the procedure ?.</h4><p class='text-light-white no-margin'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla recusandae quia nemo possimus soluta dignissimos provident ipsum tenetur non ratione incidunt, debitis commodi similique maxime unde fugiat ab? Odio, eaque.</p>"
+    }
+]
