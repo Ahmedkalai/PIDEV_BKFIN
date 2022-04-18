@@ -68,10 +68,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
                 .antMatchers("/login").permitAll()
                 .antMatchers("/logout","/resources/**").permitAll()
                 //.antMatchers("/Admin/**").access("hasRole('ADMIN')")
-<<<<<<< Updated upstream
+
                 .antMatchers("/Credit/**").access("hasRole('ADMIN')")
-=======
->>>>>>> Stashed changes
+
+                .antMatchers("/Transaction/**").access("hasRole('ADMIN')")
+                .antMatchers("/Account/**").access("hasRole('ADMIN')")5
                 .anyRequest().permitAll()
                 .and();
     }           //.antMatchers("/Agent/**").access("hasRole('AGENT')")

@@ -39,7 +39,7 @@ import com.BKFIN.batch.Processor;
     	
     	
 	    @Bean
-	    public Job job(JobBuilderFactory jobBuilderFactory,
+	    public Job job1(JobBuilderFactory jobBuilderFactory,
 	                   StepBuilderFactory stepBuilderFactory,
 	                   ItemReader<Account> itemReader,
 	                   ItemProcessor<Account, Account> itemProcessor,
@@ -78,7 +78,7 @@ import com.BKFIN.batch.Processor;
 	    public FlatFileItemReader<Account> itemReader() {
 
 	        FlatFileItemReader<Account> flatFileItemReader = new FlatFileItemReader<>();
-	        flatFileItemReader.setResource(new FileSystemResource("src/main/resources/accounts.csv"));
+	        flatFileItemReader.setResource(new FileSystemResource("src/main/resources/Accounts.csv"));
 	        flatFileItemReader.setName("CSV-Reader");
 	        flatFileItemReader.setLinesToSkip(1);
 	        flatFileItemReader.setLineMapper(lineMapper());
@@ -93,7 +93,7 @@ import com.BKFIN.batch.Processor;
 
 	        lineTokenizer.setDelimiter(",");
 	        lineTokenizer.setStrict(false);
-	        lineTokenizer.setNames("id_account","open_date","sold","state","type_account");
+	        lineTokenizer.setNames("rib","open_date","sold","state","type_account");
 
 	        BeanWrapperFieldSetMapper<Account> fieldSetMapper = new BeanWrapperFieldSetMapper<>();
 	        fieldSetMapper.setConversionService(createConversionService());

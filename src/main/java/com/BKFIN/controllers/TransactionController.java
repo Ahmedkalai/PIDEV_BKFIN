@@ -27,7 +27,7 @@ public class TransactionController {
 	@Autowired
 	ITransactionService TransactionService ; 
 	
-	// http://localhost:8083/bkfin/Transaction/retrieve-all-Transactions
+	// http://localhost:8083/BKFIN/Transaction/retrieve-all-Transactions
 	@GetMapping("/retrieve-all-Transactions")
 	@ResponseBody
 	public List<Transaction> getTransactions() {
@@ -35,14 +35,21 @@ public class TransactionController {
 	return listTransactions;
 	}
 	
-	// http://localhost:8083/bkfin/Transaction/retrieve-Transaction/8
+	// http://localhost:8083/BKFIN/Transaction/retrieve-Transaction/8
 	@GetMapping("/retrieve-Transaction/{Transaction}")
 	@ResponseBody
 	public Transaction retrieveTransaction(@PathVariable("Transaction") Long TransactionId) {
 	return TransactionService.retrieveTransaction(TransactionId);
 	}
 	
-	// http://localhost:8083/bkfin/Transaction/add-Transaction/200
+	// http://localhost:8083/BKFIN/Transaction/retrieve-Transaction-by-rib/2830
+		@GetMapping("/retrieve-Transaction-by-rib/{rib}")
+		@ResponseBody
+		public List<Transaction> retrieveTransactionbyrib(@PathVariable("rib") String rib) {
+		return TransactionService.AllTransactionsEmisesByRib(rib);
+		}
+	
+	// http://localhost:8083/BKFIN/Transaction/add-Transaction/200
 	@PostMapping("/add-Transaction")
 	@ResponseBody
 	public int addTransaction(@RequestBody Transaction o ) throws MessagingException
@@ -52,7 +59,7 @@ public class TransactionController {
 	}
 	
 	
-	// http://localhost:8083/bkfin/Transaction/app-Transaction
+	// http://localhost:8083/BKFIN/Transaction/app-Transaction
 		@PostMapping("/app-Transaction")
 		@ResponseBody
 		public String approveTransaction(@RequestBody Transaction o  ) throws MessagingException
@@ -62,6 +69,7 @@ public class TransactionController {
 		}
 	
 	
+<<<<<<< Updated upstream
 	//http://localhost:8083/bkfin/Transaction/retrieve-TransactionsEmises/2831
 	@GetMapping("/retrieve-TransactionsEmises/{ribEmet}")
 	@ResponseBody
@@ -70,8 +78,17 @@ public class TransactionController {
 		return TransactionService.retrieveAllTransactionsEmisesByRib(rib) ; 
 	}
 	
+	//localhost:8083/BKFIN/Transaction/retrieve-Transaction-by-rib/2828
+		@GetMapping("/retrieve-Transaction-by-rib/{ribEmet}")
+		@ResponseBody
+		public List<Transaction> getTransactions (@PathVariable("rib") String rib)
+		{
+			return TransactionService.retrieveTransactions(rib) ; 
+		}
+=======
+>>>>>>> Stashed changes
 	
-	// http://localhost:8083/bkfin/Transaction/modify-Transaction
+	// http://localhost:8083/BKFIN/Transaction/modify-Transaction
 	//@PutMapping("/modify-Transaction")
 	//@ResponseBody
 	//public Transaction modifyTransaction(@RequestBody Transaction Transaction) {

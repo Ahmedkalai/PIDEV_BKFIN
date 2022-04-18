@@ -1,4 +1,4 @@
-package com.BKFIN.batch;
+/*package com.BKFIN.batch;
 
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,3 +23,4 @@ public class DbWriterKhadija implements ItemWriter<unemployedpopulation> {
 	}
 
 }
+*/

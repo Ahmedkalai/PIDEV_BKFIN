@@ -1,4 +1,4 @@
-package com.BKFIN.batch;
+/*package com.BKFIN.batch;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 import com.BKFIN.entities.Account;
@@ -27,3 +27,4 @@ public class ProcessorKhadija implements ItemProcessor<unemployedpopulation, une
 	
 
 }
+*/
