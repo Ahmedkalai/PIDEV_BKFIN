@@ -74,7 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 
                 .antMatchers("/Transaction/**").access("hasRole('ADMIN')")
 
-                .antMatchers("/Account/**").access("hasRole('ADMIN')")5
+                .antMatchers("/Account/**").access("hasRole('ADMIN')")
 
               //.antMatchers("/Notification/retrieve-all-notification").access("hasRole('ADMIN')")
               .antMatchers("/Notification/retrieve-notification/**").access("hasRole('ADMIN')")
