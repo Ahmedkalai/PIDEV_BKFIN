@@ -14,7 +14,7 @@ public interface NotificationRepository extends CrudRepository<Notification, Lon
 	
 	
 	
-	@Query("SELECT  n FROM Notification n  WHERE n.credit.client.cin= :cl")
+	@Query("SELECT  n FROM Notification n  WHERE n.credit.client.id= :cl")
 	List<Notification> getNotificationByClient(@Param("cl") Long idClient);
 }
 

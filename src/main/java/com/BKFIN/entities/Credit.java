@@ -45,6 +45,7 @@ public class Credit implements Serializable {
 	private Boolean Completed;
 	private String Reason;
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="credit")
+	
 	private Set<Notification> notifications ;
 	@ManyToOne
 	@JsonIgnore

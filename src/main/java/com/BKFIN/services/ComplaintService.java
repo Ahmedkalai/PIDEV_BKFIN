@@ -1,5 +1,6 @@
 package com.BKFIN.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -37,37 +38,9 @@ public class ComplaintService implements IComplaintService {
 	public Complaint addComplaint(Complaint c, Long clientcomp) {
 		Client cl =clientRepository.findById(clientcomp).orElse(null);
 		c.setClientcomp(cl);
-		 String text =c.getInformationText();
-		 
-		 String a =   
-			        "Fuck \n" +    
-			        "test \n" +   
-			        "\n" +   
-			        "quatre fossoyeurs\n" +   
-			        "hayawen\n" +   
-			        "msatek \n" +   
-			        "\n" +   
-			        "un raton laveur\n" +   
-			        "\n" +   
-			        "une douzaine d'huîtres un citron un pain\n" +   
-			        "un rayon de soleil\n" +   
-			        "une lame de fond\n" +   
-			        "six musiciens\n" +   
-			        "une porte avec son paillasson\n" +   
-			        "un monsieur décoré de la légion d'honneur\n" +   
-			        "\n" +   
-			        "un autre raton laveur" ;
-		 
-		 
-		 
-		 Pattern pattern = Pattern.compile(text) ; 
-		 Matcher matcher = pattern.matcher(a) ;
-		 //Matcher m = p.matcher("abc");
-		 while (matcher.find()) {  
-		    System.out.println("testtest") ; 
-		    return null;
-		    
-		 }
+		Date date = new Date();
+		c.setDateComplaint(date);
+		c.setState(false);
 		 complaintRepository.save(c)	;
      return c;
         
@@ -103,7 +76,7 @@ public class ComplaintService implements IComplaintService {
 
 	@Override
 	public void ChangeState(Long id) {
-		Complaint cmp= complaintRepository.findById(id) .orElse(null) ; 
+		Complaint cmp= complaintRepository.findById(id).orElse(null) ; 
 		if (cmp.getState()== false ) {
 			cmp.setState(true);
 		}

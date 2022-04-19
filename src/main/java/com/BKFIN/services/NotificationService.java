@@ -28,6 +28,7 @@ import com.BKFIN.repositories.NotificationRepository;
 
 
 @Service
+
 public class NotificationService implements INotificationService {
 
 	@Autowired
@@ -51,7 +52,7 @@ public class NotificationService implements INotificationService {
 	
 	
 	@Override
-	@Scheduled(cron="0 0 * * * *")
+	//@Scheduled(cron="10 * * * * *")
 	public void addNotification () {
 		
 		

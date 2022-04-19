@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Notification implements Serializable {
 	
@@ -42,8 +44,8 @@ public class Notification implements Serializable {
 	public void setObject(String object) {
 		this.object = object;
 	}
-	public Credit getCredit() {
-		return credit;
+	public long getCredit() {
+		return credit.getIdCredit();
 	}
 	public void setCredit(Credit credit) {
 		this.credit = credit;

@@ -3,6 +3,7 @@ package com.BKFIN.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +24,7 @@ import com.BKFIN.services.IComplaintService;
 
 
 @RestController
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/Complaint")
 public class ComplaintController {
 	
@@ -40,7 +41,7 @@ public class ComplaintController {
 	return listcom;
 	}
 	
-	// http://localhost:8084/BKFIN/Complaint/retrieve-complaint/1
+	// http://localhost:8083/BKFIN/Complaint/retrieve-complaint/1
 		@GetMapping("/retrieve-complaint/{complaint-id}")
 		@ResponseBody
 		public Complaint retrieveComplaint(@PathVariable("complaint-id") Long complaintId) {

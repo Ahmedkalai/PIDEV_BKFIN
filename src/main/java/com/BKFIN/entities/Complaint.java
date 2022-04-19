@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Complaint implements Serializable {
 	
@@ -24,6 +26,7 @@ public class Complaint implements Serializable {
 	 private Date dateComplaint ;
 	 private String object ; 
 	@ManyToOne
+	@JsonIgnore
      private Client clientcomp;
 	public long getIdComplaint() {
 		return idComplaint;
