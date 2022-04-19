@@ -68,13 +68,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
                 .antMatchers("/login").permitAll()
                 .antMatchers("/logout","/resources/**").permitAll()
                 //.antMatchers("/Admin/**").access("hasRole('ADMIN')")
-<<<<<<< Updated upstream
+
 
                 .antMatchers("/Credit/**").access("hasRole('ADMIN')")
 
                 .antMatchers("/Transaction/**").access("hasRole('ADMIN')")
+
                 .antMatchers("/Account/**").access("hasRole('ADMIN')")5
-=======
+
               //.antMatchers("/Notification/retrieve-all-notification").access("hasRole('ADMIN')")
               .antMatchers("/Notification/retrieve-notification/**").access("hasRole('ADMIN')")
               //.antMatchers("/Complaint/retrieve-all-complaint").access("hasRole('ADMIN')")
@@ -86,7 +87,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
               .antMatchers("/Complaint/add-complaint/**").access("hasRole('CLIENT')")
               
               
->>>>>>> Stashed changes
+
+                .antMatchers("/Account/**").access("hasRole('ADMIN')")
+
                 .anyRequest().permitAll()
                 .and();
     }           //.antMatchers("/Agent/**").access("hasRole('AGENT')")
