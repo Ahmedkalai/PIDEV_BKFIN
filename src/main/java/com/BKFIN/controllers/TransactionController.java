@@ -69,7 +69,7 @@ public class TransactionController {
 		}
 	
 	
-<<<<<<< Updated upstream
+
 	//http://localhost:8083/bkfin/Transaction/retrieve-TransactionsEmises/2831
 	@GetMapping("/retrieve-TransactionsEmises/{ribEmet}")
 	@ResponseBody
@@ -85,8 +85,7 @@ public class TransactionController {
 		{
 			return TransactionService.retrieveTransactions(rib) ; 
 		}
-=======
->>>>>>> Stashed changes
+
 	
 	// http://localhost:8083/BKFIN/Transaction/modify-Transaction
 	//@PutMapping("/modify-Transaction")

@@ -23,8 +23,8 @@ public interface TransactionRespository extends CrudRepository<Transaction, Long
 	/*@Query("SELECT t FROM Transaction t WHERE  t.RibRecipient= :rib1 and t.compte_bancaire.typeAccount="SAVINGSACCOUNT" ")
 	List<Transaction> getVersementByRibAccount(@Param("rib1") String rib);*/
 	
-	@Query("SELECT t FROM Transaction t WHERE t.RibRecipient= :rib OR t.RibRecipient= :RibEmetteur ")
-	List<Transaction> getTransactionByRibAccount(@Param("rib") String rib);
+	//@Query("SELECT t FROM Transaction t WHERE t.RibRecipient= :rib OR t.RibRecipient= :RibEmetteur ")
+	//List<Transaction> getTransactionByRibAccount(@Param("rib") String rib);
 	
 
 }

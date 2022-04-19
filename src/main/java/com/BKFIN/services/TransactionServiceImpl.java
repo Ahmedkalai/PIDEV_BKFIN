@@ -165,6 +165,12 @@ public class TransactionServiceImpl implements ITransactionService {
 	
 		return (List<Transaction>) transrepo.getTransactionByRibAccount(rib);
 	}
+
+	@Override
+	public List<Transaction> retrieveAllTransactionsEmisesByRib(Long rib) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	
