@@ -19,6 +19,15 @@ public interface CreditRepository extends CrudRepository<Credit, Long> {
 		@Query("SELECT c FROM Credit c WHERE c.client.id= :idclient and c.state = true ")
 		List<Credit> getApprovedCreditsByClient(@Param("idclient") Long idClient);
 		
+		
+		//Chercher si un client a un credit actif .
+		@Query("SELECT c FROM Credit c WHERE c.client.id= :idclient and c.state = true and c.Completed=false ")
+		Credit getActiveCreditsByClient(@Param("idclient") Long idClient);
+		
+		//Chercher si un client a un credit actif .
+		@Query(value="SELECT * FROM Credit c WHERE c.client_id=3 and c.state = true and c.completed =true limit 1 ",nativeQuery = true)
+		Credit getlastCreditsByClient(@Param("idclient") Long idClient);
+		
 		//selectionner le dernier credit complet pour tester son historique
 		@Query(value = "SELECT * FROM credit c WHERE c.client_id=?1 and c.state=true and c.completed=true ORDER BY obtaining_date DESC limit 1" , nativeQuery =true)
 		Credit getIDofLatestCompletedCreditsByClient(Long idClient);		

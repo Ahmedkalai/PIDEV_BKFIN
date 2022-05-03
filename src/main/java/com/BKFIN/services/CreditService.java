@@ -132,7 +132,7 @@ public class CreditService implements ICreditService {
 		     java.util.Date date=new java.util.Date(System.currentTimeMillis());
 			 credit.setObtainingDate(date);
 		     
-			 if(credit.getDifféré()==false) 
+			 if(credit.getdiffere()==false) 
 			 { //System.out.println(Calcul_mensualite(credit));
 				 credit.setMonthlyPaymentAmount(Calcul_mensualite(credit));
 				 credit.setReason(msg);
@@ -142,7 +142,7 @@ public class CreditService implements ICreditService {
 				 
 	        }
 			 //si credit avec différé
-			 else if(credit.getDifféré()==true)
+			 else if(credit.getdiffere()==true)
 			 {   credit.setAmount(credit.getAmount()+(1+(credit.getCreditPeriod()*credit.getInterestRate())));
 				 credit.setMonthlyPaymentAmount(Calcul_mensualite(credit));
 				 //changement de la date de paiement prevue selon la periode du differe
@@ -207,8 +207,12 @@ public class CreditService implements ICreditService {
 		
 			 
 		double interest=cr.getInterestRate()/12;
-        //System.out.println(interest);
+        System.out.println("intereeeeeeeeeeeettt");
+		System.out.println(cr.getInterestRate());
         int leng=(int) (cr.getCreditPeriod()*12);
+        System.out.println("perioddeeeeeeee");
+        System.out.println(cr.getCreditPeriod()*12);
+        System.out.println(leng);
         
 		Amortissement[] ListAmortissement =new Amortissement[leng];
 		
@@ -237,6 +241,40 @@ public class CreditService implements ICreditService {
 		
 		
 		return ListAmortissement;
+	}
+	
+	@Override
+	public Amortissement Simulateur(Credit credit)
+	
+	{   System.out.println(credit.getAmount());
+	     Amortissement simulator =new Amortissement();
+		//mnt total
+		simulator.setMontantR(0);
+       
+		//mnt interet
+		simulator.setInterest(0);
+		//mnt monthly
+		simulator.setMensualité(Calcul_mensualite(credit));
+		
+		Amortissement[] Credittab = TabAmortissement(credit);
+		float s=0;
+		float s1=0;
+		for (int i=0; i < Credittab.length; i++) {
+		    s1=(float) (s1+Credittab[i].getInterest());
+		}
+		//mnt interet
+		simulator.setInterest(s1);
+		 //mnt total
+		simulator.setAmortissement(credit.getAmount()+s1);
+		//mnt credit
+		simulator.setMontantR(credit.getAmount());
+		
+		
+		
+		
+		
+		return simulator;
+		
 	}
 
 	@Override
@@ -269,6 +307,31 @@ public class CreditService implements ICreditService {
 		credit.setState(false);
 		Crepo.save(credit);
 		return credit;
+	}
+
+
+
+	@Override
+	public Credit retrieveActiveCredit(Long clientid) {
+		
+		
+		Credit cr=Crepo.getActiveCreditsByClient(clientid) ;
+		if(cr==null)
+			cr= new Credit(999999, 0, 0);
+  
+	 return cr;
+		
+	}
+
+
+
+	@Override
+	public Credit retrievelastCredit(Long clientid) {
+		Credit cr=Crepo.getlastCreditsByClient(clientid) ;
+		if(cr==null)
+			cr= new Credit(999999, 0, 0);
+  
+	 return cr;
 	}
 
 

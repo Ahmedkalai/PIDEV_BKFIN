@@ -2,7 +2,9 @@ package com.BKFIN.controllers;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.BKFIN.entities.Garantor;
 import com.BKFIN.services.IGarantorService;
 
+
+@CrossOrigin
 @RestController
 @RequestMapping("/Garantor")
 public class GarantorController {
@@ -23,6 +27,7 @@ public class GarantorController {
 
 	@Autowired
 	IGarantorService Garantorservice;
+	
 	
 	// http://localhost:8083/BKFIN/Garantor/retrieve-all-Garantor
 	@GetMapping("/retrieve-all-Garantor")
@@ -48,14 +53,14 @@ public class GarantorController {
 	return Garantor;
 	}
 	
-	//http://localhost:8083/BKFIN/Garantor/modify-Garantor/1/1/1
+	//http://localhost:8083/BKFIN/Garantor/modify-Garantor
 	@PutMapping("/modify-Garantor")
 	@ResponseBody
 	public Garantor modifyGarantor(@RequestBody Garantor Garantor) {
 	return Garantorservice.updateGarantor(Garantor);
 	}
 	
-	//http://localhost:8083/BKFIN/Garantor/remove-Garantor/{Garantor-id}
+	//http://localhost:8083/BKFIN/Garantor/remove-Garantor/81
 	@DeleteMapping("/remove-Garantor/{Garantor-id}")
 	@ResponseBody
 	public void removeGarantor(@PathVariable("Garantor-id") Long GarantorId) {

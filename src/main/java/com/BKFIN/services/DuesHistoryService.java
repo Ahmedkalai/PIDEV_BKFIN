@@ -108,6 +108,13 @@ public class DuesHistoryService implements IDuesHistoryService {
 		float payed_amount=ListDH.size()*CRService.Calcul_mensualite(credit);
 		return payed_amount;
 	}
+	
+	
+
+	@Override
+	public List<DuesHistory> retrieveAllDuesHistory_byCredit(Long idCredit) {
+		return (List<DuesHistory>) DHrepo.getCredit_DuesHistory(idCredit);
+	}
 
 	
 
