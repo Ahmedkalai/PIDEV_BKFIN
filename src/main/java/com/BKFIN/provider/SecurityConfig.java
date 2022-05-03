@@ -73,9 +73,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
 
                 //.antMatchers("/Credit/**").access("hasRole('ADMIN')")
 
+
                 //.antMatchers("/Transaction/**").access("hasRole('ADMIN')")
 
                 //.antMatchers("/Account/**").access("hasRole('ADMIN')")
+
+               // .antMatchers("/Transaction/**").access("hasRole('ADMIN')")
+
+              //  .antMatchers("/Account/**").access("hasRole('ADMIN')")
+
 
               //.antMatchers("/Notification/retrieve-all-notification").access("hasRole('ADMIN')")
               //.antMatchers("/Notification/retrieve-notification/**").access("hasRole('ADMIN')")
@@ -90,6 +96,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
               
 
                 //.antMatchers("/Account/**").access("hasRole('ADMIN')")
+
+              //  .antMatchers("/Account/**").access("hasRole('ADMIN')")
+
 
                 .anyRequest().permitAll()
                 .and();

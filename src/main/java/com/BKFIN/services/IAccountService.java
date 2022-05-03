@@ -16,12 +16,13 @@ public interface IAccountService {
 	
 	void deleteAccount(String id);
 	public String GenerateRib() ; 
-	Account updateAccount(Account u);
+	Account updateAccount(Account u , String rib);
     Account retrieveAccount(String id);
 	//public List<Transaction> retrieveAllTransactionsEmisesByRib(Long rib) ;
 	//public List<Transaction> retrieveAllTransactionsRecuesByRib(Long rib) ;
     public Set<Transaction> retrieveAllTransactionsEmises1ByRib( String rib ); 
     public void GetInterestAmount();
-    
+     List<Account> retrieveAllaccountsByclient(Long id) ; 
+      void alimenteAcc ( String rib , float amount ) ; 
     
 }

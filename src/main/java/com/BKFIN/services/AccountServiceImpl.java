@@ -35,7 +35,8 @@ public class AccountServiceImpl implements IAccountService {
 	public List<Account> retrieveAllAccounts() {
 		return  (List<Account>)accountrepository.findAll();
 	}
-
+	
+	
 	
 	@Override
 		public Account addAccount (Account a, Long CINclient ) {
@@ -50,16 +51,27 @@ public class AccountServiceImpl implements IAccountService {
 	}
 
 	@Override
+	public
+	 void alimenteAcc ( String rib , float amount ) {
+	  Account c = accountrepository.findById(rib).orElse(null);
+     c.setSold(c.getSold()+amount);
+     accountrepository.save(c); 
+	
+}
+	@Override
 	public void deleteAccount(String id) {
 		accountrepository.deleteById(id);
 		
 	}
 
 	@Override
-	public Account updateAccount(Account u) {
+	public Account updateAccount(Account u , String rib) {
 		// TODO Auto-generated method stub
-		
-		accountrepository.save(u) ; 
+		Account  account = accountrepository.findById(rib).orElse(null);
+		account.setSold(u.getSold());
+		account.setState(u.getState());
+		account.setTypeAccount(u.getTypeAccount());
+		accountrepository.save(account) ; 
 		return u;
 	}
 
@@ -248,6 +260,13 @@ public class AccountServiceImpl implements IAccountService {
 	    	 System.out.println("testtttt"); 
 
 	    }
+	 
+
+	@Override
+	public List<Account> retrieveAllaccountsByclient(Long id) {
+		return  accountrepository.getlistAccCLIENT(id) ; 
+	}
+	
 	
   	
 	

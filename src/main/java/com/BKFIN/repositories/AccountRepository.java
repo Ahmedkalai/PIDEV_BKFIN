@@ -18,7 +18,8 @@ public interface AccountRepository extends JpaRepository<Account, String>{
 	
 	List<Account> findByTypeAccount(Typeaccount type);
 	
-	
+	@Query("SELECT c FROM Account c WHERE c.clientAcc.id= :id ")
+	List<Account> getlistAccCLIENT(@Param("id") Long id);
 	/*
 	@Query("SELECT c FROM Account c WHERE c.Transactions= :rib")
 	List<Transaction> getTransactionRecuesByRibRecipientAccount(@Param("rib") Long rib);

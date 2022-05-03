@@ -22,5 +22,5 @@ public interface ITransactionService {
 
 	public List<Transaction> AllTransactionsEmisesByRib(String rib) ; 
 	
-
+	public String  approveTransactionAng(Transaction s, Long code )throws MessagingException;
 }

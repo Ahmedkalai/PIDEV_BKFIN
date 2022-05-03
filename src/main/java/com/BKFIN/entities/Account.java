@@ -21,6 +21,8 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -43,13 +45,14 @@ public class Account implements Serializable {
 	@Enumerated(EnumType.STRING)
 	public Typeaccount typeAccount;
     
+	
 	@ManyToOne
-  
+	@JsonIgnore
 	private Client clientAcc;
-   
-   @OneToMany(mappedBy = "compte_bancaire")
-
-	private Set<Transaction> Transactions ;  
+    
+    @OneToMany(mappedBy = "compte_bancaire")
+    
+    private Set<Transaction> Transactions ;  
     
    public int getindex_interest() {
 		return index_interest;
@@ -101,6 +104,7 @@ public void setRib(String rib) {
 	public void setClientAcc(Client clientAcc) {
 		this.clientAcc = clientAcc;
 	}
+	@JsonIgnore
 	public Set<Transaction> getTransactions() {
 		return Transactions;
 	}
