@@ -13,7 +13,7 @@ public interface IComplaintService {
 
 	Complaint addComplaint (Complaint p, Long clientcomp);
 
-	Complaint updateComplaint (Complaint p);
+	Complaint updateComplaint (Complaint p,Long clientcomp );
 
 	Complaint retrieveComplaint(Long id); 
 //	void deleteComplaint(Long id);

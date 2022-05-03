@@ -59,10 +59,10 @@ public class ComplaintController {
 		}
 		
 		// http://localhost:8084/BKFIN/Complaint/modify-complaint
-		@PutMapping("/modify-complaint")
+		@PutMapping("/modify-complaint/{client-id}")
 		@ResponseBody
-		public Complaint modifyComplaint(@RequestBody Complaint p) {
-		return complaintservice.updateComplaint(p);
+		public Complaint modifyComplaint(@RequestBody Complaint p,@PathVariable("client-id") Long clientid) {
+		return complaintservice.updateComplaint(p,clientid);
 		}
 		
 		

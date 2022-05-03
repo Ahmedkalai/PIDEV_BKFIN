@@ -11,6 +11,6 @@ import com.BKFIN.entities.Complaint;
 
 @Repository
 public interface ComplaintRepository extends CrudRepository<Complaint,Long >  {
-	@Query("SELECT c FROM Complaint c WHERE c.clientcomp.cin= :cl")
+	@Query("SELECT c FROM Complaint c WHERE c.clientcomp.id= :cl")
 	List<Complaint> getComplaintByClient(@Param("cl") Long idClient);
 }

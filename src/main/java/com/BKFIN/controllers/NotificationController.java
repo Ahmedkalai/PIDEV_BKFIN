@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,14 +46,13 @@ public class NotificationController {
 				return notifservice.retrieveNotification(notifId);
 				}
 				
-				
+				//@Scheduled(fixedRate = 180000)
 				// http://localhost:8084/BKFIN/Notification/add-notification/1
 				@PostMapping("/add-notification")
 				@ResponseBody
-				public void addNotif() 
+				public Notification addNotif() 
 				{
-				 notifservice.addNotification();
-				
+				 return notifservice.addNotification();
 				}
 				
 				

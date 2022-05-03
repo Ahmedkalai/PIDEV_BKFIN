@@ -52,8 +52,10 @@ public class NotificationService implements INotificationService {
 	
 	
 	@Override
-	//@Scheduled(cron="10 * * * * *")
-	public void addNotification () {
+	//@Scheduled(cron="*/5 * * * * *")
+	public Notification addNotification () {
+		
+		 System.out.println("hola");
 		
 		
 		 
@@ -91,19 +93,23 @@ public class NotificationService implements INotificationService {
 			if (ChronoUnit.DAYS.between(localDate,localDate1)==2)	
 			{
 				Notification N = new Notification();
-				N.setObject("test");
+				N.setObject("you have two days left to pay your payment");
 				//System.out.println("test4");
 				N.setCredit(t);
 				N.setDateNotif(date);
 				 
 				 notificationRepository.save(N);
+				 return N ;
 				 
 				 //System.out.println("test5");	
-			}	
+			}
+			
 		 };
+		return null;
 		 
 		// N.setCredit(C); 
 		 //Date todaysDate = LocalDate.now();	
+		
 	}
 
 	@Override
