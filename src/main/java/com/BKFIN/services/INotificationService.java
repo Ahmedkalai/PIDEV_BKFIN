@@ -11,7 +11,7 @@ import com.BKFIN.entities.Notification;
 public interface INotificationService {
 	List<Notification> retrieveAllNotifications();
 
-	void addNotification();
+	Notification addNotification();
 
 	void deleteNotification(Long idNotification);
 

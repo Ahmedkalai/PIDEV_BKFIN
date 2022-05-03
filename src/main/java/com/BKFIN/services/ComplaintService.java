@@ -51,10 +51,14 @@ public class ComplaintService implements IComplaintService {
 	}
 
 	@Override
-	public Complaint updateComplaint(Complaint u)
+	public Complaint updateComplaint(Complaint u, Long idclient)
 	
 	{
 		if (u.getState()== false ) {
+			
+			Client client= clientRepository.findById(idclient).orElse(null);
+			u.setClientcomp(client);
+			
 		
 		
 		return complaintRepository.save(u);

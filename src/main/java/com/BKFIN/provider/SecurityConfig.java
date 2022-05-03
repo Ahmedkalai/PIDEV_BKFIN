@@ -77,14 +77,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
                 .antMatchers("/Account/**").access("hasRole('ADMIN')")
 
               //.antMatchers("/Notification/retrieve-all-notification").access("hasRole('ADMIN')")
-              .antMatchers("/Notification/retrieve-notification/**").access("hasRole('ADMIN')")
+              //.antMatchers("/Notification/retrieve-notification/**").access("hasRole('ADMIN')")
               //.antMatchers("/Complaint/retrieve-all-complaint").access("hasRole('ADMIN')")
-              .antMatchers("/Complaint/retrieve-complaint/**").access("hasRole('ADMIN')")
-              .antMatchers("/Complaint/modify-complaintState").access("hasRole('ADMIN')")
-              .antMatchers("/Complaint/retrieve-complaintByClient/**").access("hasRole('ADMIN')")
-              .antMatchers("/Complaint/retrieve-complaint/**").access("hasRole('ADMIN')")
-              .antMatchers("/Complaint/modify-complaint").access("hasRole('CLIENT')")
-              .antMatchers("/Complaint/add-complaint/**").access("hasRole('CLIENT')")
+              //.antMatchers("/Complaint/retrieve-complaint/**").access("hasRole('ADMIN')")
+              //.antMatchers("/Complaint/modify-complaintState").access("hasRole('ADMIN')")
+              //.antMatchers("/Complaint/retrieve-complaintByClient/**").access("hasRole('ADMIN')")
+              //.antMatchers("/Complaint/retrieve-complaint/**").access("hasRole('ADMIN')")
+              //.antMatchers("/Complaint/modify-complaint").access("hasRole('CLIENT')")
+              //.antMatchers("/Complaint/add-complaint/**").access("hasRole('CLIENT')")
               
               
 
