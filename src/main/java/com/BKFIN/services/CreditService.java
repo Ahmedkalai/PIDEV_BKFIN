@@ -221,9 +221,9 @@ public class CreditService implements ICreditService {
 		
 		
 		amort.setMontantR(cr.getAmount());
-		amort.setMensualité(Calcul_mensualite(cr));
+		amort.setMensualite(Calcul_mensualite(cr));
 		amort.setInterest(amort.getMontantR()*interest);
-		amort.setAmortissement(amort.getMensualité()-amort.getInterest());
+		amort.setAmortissement(amort.getMensualite()-amort.getInterest());
 		ListAmortissement[0]=amort;
 		
 		//System.out.println(ListAmortissement[0]);
@@ -232,8 +232,8 @@ public class CreditService implements ICreditService {
 			Amortissement amortNEW=new Amortissement() ;
 			amortNEW.setMontantR(amortPrecedant.getMontantR()-amortPrecedant.getAmortissement());
 			amortNEW.setInterest(amortNEW.getMontantR()*interest);
-			amortNEW.setMensualité(Calcul_mensualite(cr));
-			amortNEW.setAmortissement(amortNEW.getMensualité()-amortNEW.getInterest());
+			amortNEW.setMensualite(Calcul_mensualite(cr));
+			amortNEW.setAmortissement(amortNEW.getMensualite()-amortNEW.getInterest());
 			ListAmortissement[i]=amortNEW;
 			
 		}
@@ -254,7 +254,7 @@ public class CreditService implements ICreditService {
 		//mnt interet
 		simulator.setInterest(0);
 		//mnt monthly
-		simulator.setMensualité(Calcul_mensualite(credit));
+		simulator.setMensualite(Calcul_mensualite(credit));
 		
 		Amortissement[] Credittab = TabAmortissement(credit);
 		float s=0;
