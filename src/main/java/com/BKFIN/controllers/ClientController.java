@@ -3,6 +3,7 @@ package com.BKFIN.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 //import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.BKFIN.services.IClientService;
 import com.BKFIN.entities.*;
-//@CrossOrigin(origins = "http://localhost:8083")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/Client")
 public class ClientController {
@@ -39,7 +40,7 @@ public class ClientController {
 	//http://localhost:8083/BKFIN/Client/getClient/{id}
 	@GetMapping("/getClient/{id}")
 	@ResponseBody
-	public Client getClients( @PathVariable("id") Long idClient) {
+	public Client getClient( @PathVariable("id") Long idClient) {
 	Client c= ClientService.retrieveClient(idClient);
 	return c;
 	}	   

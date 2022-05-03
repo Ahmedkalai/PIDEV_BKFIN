@@ -46,16 +46,18 @@ public class Agent  implements Serializable,UserDetails{
 	private Double longitude;
 	private String performance;
 	private String potentiel;
-	private ClassEnum classification;
+	private ClassEnum classification ;
 	private Boolean state ; 
 	 @JsonIgnore
 	@ManyToMany()
 	private Set<Event> Event;
 	
 	
+
+
 	public Agent(Long idAgent, Long localisation, String name, String secondName, Long phoneNum, String email,
 			String adresse, String password, Set<Role> roles, String fullLocation, String ipAddress, Double latitude,
-			Double longitude, String performance, String potentiel,  ClassEnum classification, Boolean state,
+			Double longitude, String performance, String potentiel, ClassEnum classification, Boolean state,
 			Set<Client> client, Set<Event> event, Admin admin) {
 		super();
 		this.idAgent = idAgent;
@@ -79,7 +81,15 @@ public class Agent  implements Serializable,UserDetails{
 		this.event = event;
 		this.admin = admin;
 	}
-	
+
+	public ClassEnum getClassification() {
+		return classification;
+	}
+
+	public void setClassification(ClassEnum classification) {
+		this.classification = classification;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(IpAddress, admin, adresse, classification, client, email, event, fullLocation, idAgent,
@@ -118,12 +128,7 @@ public class Agent  implements Serializable,UserDetails{
 				+ client + ", event=" + event + ", admin=" + admin + "]";
 	}
 
-	public  ClassEnum getClassification() {
-		return classification;
-	}
-	public void setClassification( ClassEnum classification) {
-		this.classification = classification;
-	}
+	
 	public String getPerformance() {
 		return performance;
 	}
@@ -176,9 +181,10 @@ public class Agent  implements Serializable,UserDetails{
 	private Set<Event> event;
 	@ManyToOne
 	private Admin admin;
+
+
 	
-	
-	
+
 	public Long getIdAgent() {
 		return idAgent;
 	}

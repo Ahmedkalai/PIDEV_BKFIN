@@ -19,6 +19,8 @@ public interface IClientService {
 	
 	void removeClient(Long id);
 
-	UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+	
 	Client loadUser(String username);
+
+	UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 }

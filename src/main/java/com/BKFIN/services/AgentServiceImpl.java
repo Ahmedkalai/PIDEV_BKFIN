@@ -23,25 +23,30 @@ import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Agent;
 import com.BKFIN.entities.ClassEnum;
+
 import com.BKFIN.entities.Client;
 import com.BKFIN.entities.Role;
 //import com.BKFIN.entities.Client;
 import com.BKFIN.repositories.AgentRepository;
+
 import com.BKFIN.repositories.ClientRepository;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.exception.GeoIp2Exception;
 import com.maxmind.geoip2.model.CityResponse;
 
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Service
-public class AgentServiceImpl implements IAgentService,UserDetailsService {
+public class AgentServiceImpl implements IAgentService {
 
 	@Autowired
 	AgentRepository agentR;
 	@Autowired
 	ClientRepository clientR;
 	
+	 @Autowired
+	    private PasswordEncoder bcryptEncoder;
 	private final DatabaseReader databaseReader;
 	
     
@@ -59,7 +64,7 @@ public class AgentServiceImpl implements IAgentService,UserDetailsService {
 
 	@Override
 	public Agent addAgent(Agent a) {
-		
+		  a.setPassword(bcryptEncoder.encode(a.getPassword()));
 		agentR.save(a);
 		
 		return a;
@@ -109,9 +114,9 @@ public class AgentServiceImpl implements IAgentService,UserDetailsService {
 
 
     @Override
-    public Agent getIpLocation(String ip, HttpServletRequest request) throws IOException, GeoIp2Exception {
+    public Agent getIpLocation(String ip,Long id ) throws IOException, GeoIp2Exception {
 
-        Agent position = new Agent();
+        Agent position = agentR.findUserWithID(id);
         String location;
 
         InetAddress ipAddress = InetAddress.getByName(ip);
@@ -151,52 +156,70 @@ public class AgentServiceImpl implements IAgentService,UserDetailsService {
 		
 		if ((user.getPerformance().equals("below expected"))&&(user.getPotentiel().equals("low")))
 		{
-			user.setClassification(ClassEnum.Underperformer);
+		    user.setClassification(ClassEnum.Underperformer);
 			agentR.save(user);
 		}
 		else if ((user.getPerformance().equals("below expected"))&&(user.getPotentiel().equals("moderate")))
 		{
-			user.setClassification(ClassEnum.InconsistentPlayer);
-			agentR.save(user);
+			
+			
+			  user.setClassification(ClassEnum.InconsistentPlayer);
+				agentR.save(user);
 		}
 		else if ((user.getPerformance().equals("below expected"))&&(user.getPotentiel().equals("high")))
 		{
-			user.setClassification(ClassEnum.RoughDiamond);
-			agentR.save(user);
+		
+		
+			  user.setClassification(ClassEnum.RoughDiamond);
+				agentR.save(user);
 		}
 		else if ((user.getPerformance().equals("moderate"))&&(user.getPotentiel().equals("low")))
 		{
-			user.setClassification(ClassEnum.Underperformer);
-			agentR.save(user);
+			
+			
+			  user.setClassification(ClassEnum.EffectiveEmployee);
+				agentR.save(user);
 		}
 		else if ((user.getPerformance().equals("moderate"))&&(user.getPotentiel().equals("moderate")))
 		{
-			user.setClassification(ClassEnum.InconsistentPlayer);
-			agentR.save(user);
+			
+			
+			  user.setClassification(ClassEnum.CoreEmployee);
+				agentR.save(user);
 		}
 		else if ((user.getPerformance().equals("moderate"))&&(user.getPotentiel().equals("high")))
 		{
-			user.setClassification(ClassEnum.RoughDiamond);
-			agentR.save(user);
+
+
+			
+			  user.setClassification(ClassEnum.FutureStar);
+				agentR.save(user);
 		}
 		else if ((user.getPerformance().equals("above expected"))&&(user.getPotentiel().equals("low")))
 		{
-			user.setClassification(ClassEnum.Underperformer);
-			agentR.save(user);
+		
+			
+			  user.setClassification(ClassEnum.TrustedProfessionel);
+				agentR.save(user);
 		}
 		else if ((user.getPerformance().equals("above expected"))&&(user.getPotentiel().equals("moderate")))
 		{
-			user.setClassification(ClassEnum.InconsistentPlayer);
-			agentR.save(user);
-		}
+	
+		
+			  user.setClassification(ClassEnum.HighImpactStar);
+				agentR.save(user);		}
 		else if ((user.getPerformance().equals("above expected"))&&(user.getPotentiel().equals("high")))
 		{
-			user.setClassification(ClassEnum.RoughDiamond);
-			agentR.save(user);
+			
+		
+			  user.setClassification(ClassEnum.ConisitentStar);
+				agentR.save(user);
 		}
 		else
-		{user.setClassification(ClassEnum.notbeenTested);
-		agentR.save(user);
+		  
+		{
+				  user.setClassification(ClassEnum.notbeenTested);
+			agentR.save(user);
 			
 		}
 		return user.getClassification();
