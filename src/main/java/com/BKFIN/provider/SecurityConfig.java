@@ -100,6 +100,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter  {
               //  .antMatchers("/Account/**").access("hasRole('ADMIN')")
 
 
+
+                .antMatchers("/login").permitAll()
+                .antMatchers("/logout","/resources/**").permitAll()
+                //.antMatchers("/Admin/**").access("hasRole('ADMIN')")
+                //.antMatchers("/Investesment/**").access("hasRole('ADMIN')")
+                //.antMatchers("/Fund/**").access("hasRole('ADMIN')")
+               // .antMatchers("/load/**").access("hasRole('ADMIN')")
+              //  .antMatchers("/UPopulation/**").access("hasRole('ADMIN')")
+                //.antMatchers("/Event/**").access("hasRole('ADMIN')")
+                //.antMatchers("/Agent/**").access("hasRole('AGENT')")
                 .anyRequest().permitAll()
                 .and();
     }           //.antMatchers("/Agent/**").access("hasRole('AGENT')")

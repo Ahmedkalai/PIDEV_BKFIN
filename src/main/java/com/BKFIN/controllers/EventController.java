@@ -8,6 +8,7 @@ import javax.swing.plaf.synth.Region;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +20,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.BKFIN.entities.Event;
+import com.BKFIN.entities.Investesment;
 import com.BKFIN.entities.unemployedpopulation;
 import com.BKFIN.services.EventService;
 
 
 
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/Event")
 
@@ -68,13 +70,13 @@ public class EventController {
 		}
 		
 
-		// http://localhost:8083/BKFIN/Event/modify-event
-		@PutMapping("/modify-event")
+		// http://localhost:8083/BKFIN/Event/modify-event/7
+		@PutMapping("/modify-event/{idEvent}")
 		@ResponseBody
-		public Event modifyEvent(@RequestBody Event event) {
-		return eventService.updateEvent(event);
+		public Event modifyEvent(@RequestBody Event ev,@PathVariable("idEvent") Long eventId) {
+		return eventService.updateEvent(ev,eventId);
 		}
-
+		
 		// http://localhost:8083/BKFIN/Event/addagev/1/1
 		// AFFECTER UN evenement A UN agent 
 		//@EventListener(ApplicationReadyEvent.class)

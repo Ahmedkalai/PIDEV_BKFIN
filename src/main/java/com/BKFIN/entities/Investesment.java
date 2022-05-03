@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @SuppressWarnings("serial")
 @Entity
 public class Investesment  implements Serializable{
@@ -26,7 +28,6 @@ public class Investesment  implements Serializable{
 	 //j'ai ajouté un attribut 
 	 private String mailInvestesment;
 	 private float finalAmount;
-	 
 	 @ManyToOne
 	 private Fund fund;
 	 

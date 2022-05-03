@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,7 @@ import com.BKFIN.services.InvestesmentService;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/Investesment")
 public class InvestesmentController {
@@ -51,6 +53,14 @@ public class InvestesmentController {
 			}
 			
 			
+			// http://localhost:8083/BKFIN/Investesment/retrieve-investesments-by-fund/1
+						@GetMapping("/retrieve-investesments-by-fund/{Fund-id}")
+						@ResponseBody
+						public List<Investesment> getInvestesmentbyFund(@PathVariable("Fund-id") Long idFund) {
+						List<Investesment> listInvestesment = investesmentService.retrieveInvestesmentbyFund(idFund);
+						return listInvestesment;
+						} 
+			
 			// http://localhost:8083/BKFIN/Investesment/add_investesment/1
 			@PostMapping("/add_investesment/{Fund-id}")
 			@ResponseBody
@@ -61,11 +71,11 @@ public class InvestesmentController {
 			return investesment; 
 			}
 			
-			// http://localhost:8083/BKFIN/Investesment/modify-investesment/1
-						@PutMapping("/modify-investesment/{Fund-id}")
+			// http://localhost:8083/BKFIN/Investesment/modify-investesment/
+						@PutMapping("/modify-investesment")
 						@ResponseBody
-						public Investesment modifyInvestesment(@RequestBody Investesment investesment,@PathVariable("Fund-id") Long idFund) {
-						return investesmentService.updateInvestesment(investesment,idFund);}
+						public Investesment modifyInvestesment(@RequestBody Investesment i) {
+						return investesmentService.updateInvestesment(i);}
 			
 			 //http://localhost:8083/BKFIN/Investesment/export
 			@GetMapping("/export")
@@ -84,8 +94,8 @@ public class InvestesmentController {
 			// http://localhost:8083/BKFIN/Investesment/CalculateAmoutOfInves/1
 			@GetMapping("/CalculateAmoutOfInves/{Investesment-id}")
 			@ResponseBody
-						public float CalculateAmoutOfInves(@PathVariable("Investesment-id") Long idInvestesment) {
-						return investesmentService.CalculateAmoutOfInves(idInvestesment);
+						public void CalculateAmoutOfInves(@PathVariable("Investesment-id") Long idInvestesment) {
+						 investesmentService.CalculateAmoutOfInves(idInvestesment);
 						}
 			
 			// http://localhost:8083/BKFIN/Investesment/finalAmount
@@ -96,11 +106,16 @@ public class InvestesmentController {
 						}
 						
 			// http://localhost:8083/BKFIN/Investesment/CalculateRateOfInves/3/2
-			@GetMapping("/CalculateRateOfInves/{Investesment-id}/{Fund-id}")
+			@GetMapping("/CalculateRateOfInves/{Investesment-id}")
 			@ResponseBody
-						public float CalculateRateOfInves(@PathVariable("Investesment-id") Long idInvestesment,@PathVariable("Fund-id") Long idFund) {
-						return investesmentService.CalculateRateOfInves(idInvestesment,idFund);
+						public float CalculateRateOfInves(@PathVariable("Investesment-id") Long idInvestesment) {
+						return investesmentService.CalculateRateOfInves(idInvestesment);
 						}
-			
+			// http://localhost:8083/BKFIN/Investesment/Rate/8000
+						@GetMapping("/Rate/{amount}")
+						@ResponseBody
+									public double Rate(@PathVariable("amount") float AmountInvestestesment) {
+									return investesmentService.Rate(AmountInvestestesment);
+									}
 						
 }

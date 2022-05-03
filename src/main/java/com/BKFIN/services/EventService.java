@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import com.BKFIN.entities.Agent;
 import com.BKFIN.entities.Event;
+import com.BKFIN.entities.Investesment;
 import com.BKFIN.repositories.AgentRepository;
 import com.BKFIN.repositories.EventRepository;
 
@@ -53,11 +54,16 @@ public class EventService implements IEventService{
 	}
 
 	@Override
-	public Event updateEvent(Event ev) {
-		eventrepository.save(ev);
+	public Event updateEvent(Event ev,Long idEvent) {
+		Event event =eventrepository.findById(idEvent).orElse(null);
+		event.setNameEvent(ev.getNameEvent());
+		event.setDescription(ev.getDescription());
+		event.setDateEvent(ev.getDateEvent());
+		event.setRegion(ev.getRegion());
+		eventrepository.save(event);
 		return ev;
 	}
-
+	
 	@Override
 	public Event retrieveEvent(Long idEvent) {
 		return eventrepository.findById(idEvent).orElse(null);	

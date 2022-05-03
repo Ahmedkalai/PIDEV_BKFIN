@@ -12,7 +12,7 @@ Event addEvent(Event e);
 
 void deleteEvent(Long idEvent);
 
-Event updateEvent(Event ev);
+Event updateEvent(Event ev,Long idEvent);
 
 Event retrieveEvent(Long idEvent);
 

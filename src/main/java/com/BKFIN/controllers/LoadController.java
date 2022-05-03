@@ -20,7 +20,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-@CrossOrigin(origins="http://localhost:4200")
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/load")
 public class LoadController {
@@ -31,7 +32,8 @@ public class LoadController {
 	    JobLauncher jobLauncher;	 
 	 
 	 
-	    @Autowired
+
+	   @Autowired
 	    Job job;
 	    
 
@@ -39,7 +41,6 @@ public class LoadController {
 	 // http://localhost:8083/BKFIN/load
 	    @GetMapping
 	    public BatchStatus load() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
-
 
 	        Map<String, JobParameter> maps = new HashMap<>();
 	        maps.put("time", new JobParameter(System.currentTimeMillis()));
