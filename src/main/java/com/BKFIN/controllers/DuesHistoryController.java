@@ -3,6 +3,7 @@ package com.BKFIN.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.BKFIN.entities.DuesHistory;
 import com.BKFIN.services.IDuesHistoryService;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/DuesHistory")
 public class DuesHistoryController {
@@ -31,6 +33,15 @@ public class DuesHistoryController {
 	List<DuesHistory> listDuesHistorys = DuesHistoryservice.retrieveAllDuesHistorys();
 	return listDuesHistorys;
 	}
+	
+	// http://localhost:8083/BKFIN/DuesHistory/retrieve-all-DuesHistory-Credit/43
+		@GetMapping("/retrieve-all-DuesHistory-Credit/{idcredit}")
+		@ResponseBody
+		public List<DuesHistory> getDuesHistoryByCredit(@PathVariable("idcredit") Long idcredit) {
+		List<DuesHistory> listDuesHistorys = DuesHistoryservice.retrieveAllDuesHistory_byCredit(idcredit);
+		return listDuesHistorys;
+		}
+		
 	
 	//http://localhost:8083/BKFIN/DuesHistory/retrieve-DuesHistory/1
 	@GetMapping("/retrieve-DuesHistory/{DuesHistory-id}")

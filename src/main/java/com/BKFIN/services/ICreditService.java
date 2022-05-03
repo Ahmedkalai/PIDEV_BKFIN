@@ -18,6 +18,12 @@ public interface ICreditService  {
 	
 	Credit ArchiveCredit(Long idCredit);
 	
+	Amortissement Simulateur(Credit credit);
+	
+	Credit retrieveActiveCredit(Long clientid);
+	
+	Credit retrievelastCredit(Long clientid);
+	
 	public void DeleteCredit(Long id);
 	
 	float Calcul_mensualite(Credit cr);

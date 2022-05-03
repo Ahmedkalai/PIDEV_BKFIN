@@ -11,6 +11,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,16 +26,19 @@ import com.BKFIN.entities.Garantor;
 import com.BKFIN.services.Amortissement;
 import com.BKFIN.services.CreditService;
 import com.BKFIN.services.ICreditService;
+import com.BKFIN.services.IDuesHistoryService;
 
 
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/Credit")
 public class CreditController {
 	
 	@Autowired
 	CreditService creditservice;
+	@Autowired
+	IDuesHistoryService DuesHistoryservice;
 	
 	
 	
@@ -108,10 +112,17 @@ public class CreditController {
 			
 			return Credit;
 		}
-		//http://localhost:8083/BKFIN/Credit/export/excel
-		@GetMapping("/export/excel")
+		
+		
+		//http://localhost:8083/BKFIN/Credit/export/excel/1000/2/0.15
+		@GetMapping("/export/excel/{mnttotl}/{period}/{interst}")
 		@ResponseBody
-		public void exportToExcel(HttpServletResponse response,@RequestBody Credit cr) throws IOException {
+		public void exportToExcel(HttpServletResponse response,@PathVariable("mnttotl") float mnttotl,@PathVariable("period") float period
+				,@PathVariable("interst") float interst) throws IOException {
+			
+			Credit cr=new Credit(mnttotl,period,interst);
+			
+			
 			response.setContentType("application/octet-stream");
 			String headerKey = "Content-Disposition";
 			
@@ -124,6 +135,53 @@ public class CreditController {
 			exp.export(response);
 
 		}	
+		
+		//http://localhost:8083/BKFIN/Credit/simulate/1000/2/0.15
+		@GetMapping("/simulate/{mnttotl}/{period}/{interst}")
+		@ResponseBody
+		public Amortissement simulate(@PathVariable("mnttotl") float mnttotl,@PathVariable("period") float period
+				,@PathVariable("interst") float interst) {
+			Credit cr=new Credit(mnttotl,period,interst);
+			
+		return creditservice.Simulateur(cr);
+		
+		}
+		
+		//http://localhost:8083/BKFIN/Credit/tab/1000/2/0.15
+				@GetMapping("/tab/{mnttotl}/{period}/{interst}")
+				@ResponseBody
+				public Amortissement[]  tab(@PathVariable("mnttotl") float mnttotl,@PathVariable("period") float period
+						,@PathVariable("interst") float interst) {
+					Credit cr=new Credit(mnttotl,period,interst);
+					
+				return creditservice.TabAmortissement(cr);
+				
+				}
+		
+				
+				//http://localhost:8083/BKFIN/Credit/activeCredit/3
+				@GetMapping("/activeCredit/{client-id}")
+				@ResponseBody
+				public Credit retrieveActiveCredit(@PathVariable("client-id") Long clientid) {
+				Credit cr=creditservice.retrieveActiveCredit(clientid);
+				if (cr.getAmount()!=999999)
+					cr.setInterestRate(DuesHistoryservice.PayedAmount(cr.getIdCredit()));
+				return cr;
+					
+				}
+				
+				//http://localhost:8083/BKFIN/Credit/lastcredit/3
+				@GetMapping("/lastcredit/{client-id}")
+				@ResponseBody
+				public Credit retrievelastcompletedCredit(@PathVariable("client-id") Long clientid) {
+				Credit cr=creditservice.retrievelastCredit(clientid);
+				if (cr.getAmount()!=999999)
+					cr.setInterestRate(DuesHistoryservice.PayedAmount(cr.getIdCredit()));
+				return cr;
+					
+				}
+				
+				
 		
 		
 	

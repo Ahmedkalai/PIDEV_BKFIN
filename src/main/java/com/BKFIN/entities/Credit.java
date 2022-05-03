@@ -31,7 +31,7 @@ public class Credit implements Serializable {
 	private Date obtainingDate ;
 	private Boolean state;
 	//0 PAS DE DIFFERE 1 SI CREDIT A DIFFERE TOTAL
-	private Boolean différé; 
+	private Boolean differe; 
 	// PERIODE DE DIFFERE 
 	private float DIFF_period;
 	@Temporal (TemporalType.DATE)
@@ -50,10 +50,12 @@ public class Credit implements Serializable {
 	@ManyToOne
 	@JsonIgnore
 	private Client client;
+	@JsonIgnore
 	@ManyToOne
 	private Fund funds;
 	@OneToMany(mappedBy="credits")
 	private Set<DuesHistory> duesHistory ;
+	@JsonIgnore
 	@ManyToOne
     private Pack pack_credit;
 	@OneToOne(mappedBy="credit")
@@ -163,11 +165,11 @@ public class Credit implements Serializable {
 	public void setCompleted(Boolean completed) {
 		Completed = completed;
 	}
-	public Boolean getDifféré() {
-		return différé;
+	public Boolean getdiffere() {
+		return differe;
 	}
-	public void setDifféré(Boolean différé) {
-		this.différé = différé;
+	public void setdiffere(Boolean différé) {
+		this.differe = différé;
 	}
 	public float getDIFF_period() {
 		return DIFF_period;
@@ -190,7 +192,7 @@ public class Credit implements Serializable {
 		this.dateDemande = dateDemande;
 		this.obtainingDate = obtainingDate;
 		this.state = state;
-		this.différé = différé;
+		this.differe = différé;
 		DIFF_period = dIFF_period;
 		this.monthlyPaymentDate = monthlyPaymentDate;
 		this.monthlyPaymentAmount = monthlyPaymentAmount;
@@ -205,6 +207,11 @@ public class Credit implements Serializable {
 		this.duesHistory = duesHistory;
 		this.pack_credit = pack_credit;
 		this.garantor = garantor;
+	}
+	public Credit(float amount, float period, float interst) {
+		this.amount=amount;
+		this.creditPeriod=period;
+		this.interestRate=interst;
 	}
 	public String getReason() {
 		return Reason;
