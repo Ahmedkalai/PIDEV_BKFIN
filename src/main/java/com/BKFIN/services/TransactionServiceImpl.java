@@ -102,6 +102,7 @@ public class TransactionServiceImpl implements ITransactionService {
 	 {
 		acc_emet.setSold(acc_emet.getSold()-s.getAmount());
 		s.setCompte_Bancaire(acc_emet);
+		
 		// SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");  
 		 //   Date date = new Date();  
 		  //  formatter.format(date);
@@ -121,6 +122,7 @@ public class TransactionServiceImpl implements ITransactionService {
 	@Override
 	public String  approveTransaction(Transaction s ) throws MessagingException {
 		
+		
 		if((addTransaction(s)==code))
 		{
 		transrepo.save(s);
@@ -130,8 +132,25 @@ public class TransactionServiceImpl implements ITransactionService {
 		{
 		return "Transaction non approuvée" ; 		 
 	    }
-	} 
+	   
+		
 	
+	}
+	
+	
+	@Override
+	public String  approveTransactionAng(Transaction s, Long code ) throws MessagingException {
+		
+		if(this.code==code)
+		{
+		transrepo.save(s);
+		return "transaction approuvee " ; 
+		}
+		else 
+		{
+		return "Transaction non approuvée" ; 		 
+	    }
+	}
     
 	@Override
 	public Transaction retrieveTransaction(Long id) {

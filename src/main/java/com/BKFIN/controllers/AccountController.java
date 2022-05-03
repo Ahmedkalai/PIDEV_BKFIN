@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.bind.annotation.CrossOrigin;
 //import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,7 @@ import com.BKFIN.services.IAccountService;
 import com.lowagie.text.DocumentException;
 
 @EnableScheduling
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping("/Account")
 public class AccountController {
@@ -45,6 +47,14 @@ public class AccountController {
 		List <Account> list=AccSercice.retrieveAllAccounts();
 		return list ; 
 	} 
+	//http://localhost:8083/BKFIN/Account/Listaccountsclient/1
+		@GetMapping("/Listaccountsclient/{id}")
+		@ResponseBody
+		public List<Account> getAllAcountsbyid(@PathVariable ("id")  Long id) {
+			List <Account> list=AccSercice.retrieveAllaccountsByclient(id);
+			return list ; 
+		} 
+		
 	//http://localhost:8083/BKFIN/Account/AddAccount
 	@PostMapping("/AddAccount/{cinClient}")
 	@ResponseBody
@@ -53,12 +63,28 @@ public class AccountController {
 		return AccSercice.addAccount(a,cinClient) ;
 	}
 	
+	//http://localhost:8083/BKFIN/Account/alimente-acc
+		@PostMapping("/alimente-acc/{rib}/{amount}")
+		@ResponseBody
+		public void alimenter (@PathVariable ("rib")  String rib ,@PathVariable ("amount")  float amount)
+		{
+			 AccSercice.alimenteAcc(rib,amount) ;
+		}
+	
 	//http://localhost:8083/BKFIN/Account/DeleteAccount/1
 	@DeleteMapping("/DeleteAccount/{idacc}")
 	@ResponseBody
 	public void deleteAcc (@PathVariable("idacc") String idacc ) {
 		AccSercice.deleteAccount(idacc);
 	}
+	
+	//http://localhost:8083/BKFIN/Account/modify-Account/2828
+	@PutMapping("/modify-Account/{rib}")
+	@ResponseBody
+	public void upAcc (@RequestBody Account a ,@PathVariable("rib") String rib ) {
+		AccSercice.updateAccount(a,rib);
+	}
+	
 	/*
 	//http://localhost:8083/BKFIN/Account/retrieve-TransactionsEmises/1
 	@GetMapping("/retrieve-TransactionsEmises/{RibEmet}")
@@ -81,12 +107,6 @@ public class AccountController {
 		}
 		
 		
-	    // http://localhost:8083/BKFIN/Account/modify-Account
-		@PutMapping("/modify-Account")
-		@ResponseBody
-		public Account modifyAccount(@RequestBody Account account) {
-		return AccSercice.updateAccount(account);
-		}
 		
 		//http://localhost:8083/BKFIN/Account/jereb/""
 		
@@ -130,6 +150,8 @@ public class AccountController {
 		AccountPdfExporter exporter = new AccountPdfExporter(c);
 		exporter.export(response);
 		}
+		
+		
 
 		
 }
