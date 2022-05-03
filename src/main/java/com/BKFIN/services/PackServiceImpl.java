@@ -1,5 +1,6 @@
 package com.BKFIN.services;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -11,11 +12,13 @@ import org.springframework.stereotype.Service;
 import com.BKFIN.entities.Pack;
 import com.BKFIN.entities.Product;
 import com.BKFIN.repositories.PackRepository;
+import com.BKFIN.repositories.ProductRepository;
 @Service
 public class PackServiceImpl implements IPackService  {
 	@Autowired
 	PackRepository PackRepository;
-	
+	@Autowired
+	ProductRepository prdrepo;
 	@Override
 	public List<Pack> retrieveAllPacks() {
 		List<Pack> packs = (List<Pack>) PackRepository.findAll();
@@ -53,10 +56,14 @@ public class PackServiceImpl implements IPackService  {
 		return pack ;
 	}
 	@Override
-	public Pack setState(Long id,Boolean val) {
+	public Pack setState(Long id){
 		Pack pack= PackRepository.findById(id) .orElse(null) ; 
-		if( pack.getStatePack()!=val) {
-			pack.setStatePack(val);}
+		if( pack.getStatePack()==null  ) {
+			pack.setStatePack(false);}
+		else if (pack.getStatePack()==false) {
+			pack.setStatePack(true);
+		}
+		else pack.setStatePack(false);
 		 return PackRepository.save(pack);
 	}
 	
@@ -77,7 +84,54 @@ public class PackServiceImpl implements IPackService  {
 			
 			}
 		}
+	@Override
+	public Pack createandaffect(Pack pr, List<Long> p) {
+		Set<Product> prod=new HashSet<Product>();
+		float price=0;
+		for(Long idp:p) {
+			Product product= prdrepo.findById(idp).orElse(null) ;
+			prod.add(product);
+			
+		}
+		pr.setProduct_pack(prod);
+		for (Product produit:prod) {
+			if(produit.getValueProduct()<100)
+				price=price + produit.getValueProduct()*93/100;
+			else if ((produit.getValueProduct()<1000) && (produit.getValueProduct()>100))
+				price = price + produit.getValueProduct()*95/100;
+			else {
+				price= price + produit.getValueProduct()*97/100;
+		}}
+		pr.setPriceP(price);
+		
+		 return PackRepository.save(pr);
+		  
+		
 	}
+	@Override
+	public Pack updateandaffect(Pack pr, List<Long> p) {
+		Set<Product> prod=new HashSet<Product>();
+		float price=0;
+		for(Long idp:p) {
+			Product product= prdrepo.findById(idp).orElse(null) ;
+			prod.add(product);
+			
+		}
+		pr.setProduct_pack(prod);
+		for (Product produit:prod) {
+			if(produit.getValueProduct()<100)
+				price=price + produit.getValueProduct()*93/100;
+			else if ((produit.getValueProduct()<1000) && (produit.getValueProduct()>100))
+				price = price + produit.getValueProduct()*95/100;
+			else {
+				price= price + produit.getValueProduct()*97/100;
+		}}
+		pr.setPriceP(price);
+		
+		 return PackRepository.save(pr);
+		  
+	}
+}
 	
 	
 

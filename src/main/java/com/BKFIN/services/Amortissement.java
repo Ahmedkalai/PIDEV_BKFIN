@@ -5,7 +5,7 @@ public class Amortissement {
 	double montantR;
 	double interest;
 	double amortissement;
-	double mensualité;
+	double mensualite;
 	public double getMontantR() {
 		return montantR;
 	}
@@ -24,18 +24,18 @@ public class Amortissement {
 	public void setAmortissement(double amortissement) {
 		this.amortissement = amortissement;
 	}
-	public double getMensualité() {
-		return mensualité;
+	public double getMensualite() {
+		return mensualite;
 	}
-	public void setMensualité(double mensualité) {
-		this.mensualité = mensualité;
+	public void setMensualite(double mensualite) {
+		this.mensualite = mensualite;
 	}
-	public Amortissement(double montantR, double interest, double amortissement, double mensualité) {
+	public Amortissement(double montantR, double interest, double amortissement, double mensualite) {
 		super();
 		this.montantR = montantR;
 		this.interest = interest;
 		this.amortissement = amortissement;
-		this.mensualité = mensualité;
+		this.mensualite = mensualite;
 	}
 	public Amortissement() {
 		super();
@@ -44,7 +44,7 @@ public class Amortissement {
 	@Override
 	public String toString() {
 		return "Amortissement [montantR=" + montantR + ", interest=" + interest + ", amortissement=" + amortissement
-				+ ", mensualité=" + mensualité + "]";
+				+ ", mensualité=" + mensualite + "]";
 	}
 	
 	

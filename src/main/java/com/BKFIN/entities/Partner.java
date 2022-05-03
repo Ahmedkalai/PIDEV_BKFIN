@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Partner implements Serializable {
 	
@@ -33,6 +35,7 @@ public class Partner implements Serializable {
 	public void setEmailPartner(String emailPartner) {
 		this.emailPartner = emailPartner;
 	}
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="partner_product")
 		private Set<Product> products;
 	public long getIdPartner() {

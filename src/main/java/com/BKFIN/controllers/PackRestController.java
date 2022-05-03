@@ -1,8 +1,10 @@
 package com.BKFIN.controllers;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,7 @@ import com.BKFIN.entities.Pack;
 
 import com.BKFIN.services.PackServiceImpl;
 
+@CrossOrigin("http://localhost:4200/")
 @RestController
 @RequestMapping("/Pack")
 public class PackRestController {
@@ -64,10 +67,10 @@ public Pack updatePack(@RequestBody Pack p) {
 	return pack;
 }
 //state 
-@PutMapping("/statepack/{idPack}/{statePack}")
+@PutMapping("/statepack/{idPack}")
 @ResponseBody
-public Pack statePack(@PathVariable("idPack") Long id,@PathVariable("statePack") Boolean valeur ) {
-	Pack pack =PCI.setState(id, valeur);
+public Pack statePack(@PathVariable("idPack") Long id ) {
+	Pack pack =PCI.setState(id);
 	return pack;
 	
 }
@@ -78,6 +81,17 @@ public void affecter() {
 PCI.prixPack();
 	
 }
+@PostMapping("/addPack/{idProduct}")
+public Pack createandaffect (@RequestBody Pack pack,@PathVariable("idProduct")List<Long> id) {
+return	PCI.createandaffect(pack, id);
+
+	}
+@PutMapping("/modifPack/{idProduct}")
+@ResponseBody
+public Pack modifPack(@RequestBody Pack pack,@PathVariable("idProduct")List<Long> id) {
+	return	PCI.updateandaffect(pack, id);}
+
+
 
 
 }

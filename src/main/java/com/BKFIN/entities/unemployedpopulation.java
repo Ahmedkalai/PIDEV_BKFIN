@@ -54,8 +54,8 @@ public class unemployedpopulation  {
 		@Column(name="Unemployment_rate")
 		private float Unemployment_rate;
 		
-		@Column(name="Unemployed_Néant")
-		private Long Unemployed_Néant;
+		@Column(name="Unemployed_Neant")
+		private Long Unemployed_Neant;
 		
 		@Column(name="Unemployed_Primary")
 		private Long Unemployed_Primary;
@@ -126,7 +126,7 @@ public class unemployedpopulation  {
 					"Population_id", "Regions", "environment", "Sexe",
 			    	"Distribution_of_population","number_houses","less_than_1Km","Between_1KM_2Km",
 			    	"Plus2Km","Population_aged_15_and_plus","active_Population_Occupied","Inactive_Population",
-			    	 "activity_rate","Unemployment_rate","Unemployed_Néant",
+			    	 "activity_rate","Unemployment_rate","Unemployed_Neant",
 			    		"Unemployed_Primary","Unemployed_Secondary","Unemployed_faculty","Unemployed_Agriculture_fishing",
 			    		"Unemployed_Mines_energy","Unemployed_manufacturing_Industry","Unemployed_Building_public_works",
 			    		"Unemployed_Commerce","Unemployed_Transport","Unemployed_Education_health_administrative_services",
@@ -141,7 +141,7 @@ public class unemployedpopulation  {
 		public unemployedpopulation(Long population_id, String regions, String environment, String sexe,
 				Long distribution_of_population, Long number_houses, Long less_than_1Km, Long between_1km_2Km,
 				Long plus2Km, Long population_aged_15_and_plus, Long active_Population_Occupied,
-				Long inactive_Population, float activity_rate, float unemployment_rate, Long unemployed_Néant,
+				Long inactive_Population, float activity_rate, float unemployment_rate, Long unemployed_Neant,
 				Long unemployed_Primary, Long unemployed_Secondary, Long unemployed_faculty,
 				Long unemployed_Agriculture_fishing, Long unemployed_Mines_energy,
 				Long unemployed_manufacturing_Industry, Long unemployed_Building_public_works, Long unemployed_Commerce,
@@ -165,7 +165,7 @@ public class unemployedpopulation  {
 			Inactive_Population = inactive_Population;
 			this.activity_rate = activity_rate;
 			Unemployment_rate = unemployment_rate;
-			Unemployed_Néant = unemployed_Néant;
+			Unemployed_Neant = unemployed_Neant;
 			Unemployed_Primary = unemployed_Primary;
 			Unemployed_Secondary = unemployed_Secondary;
 			Unemployed_faculty = unemployed_faculty;
@@ -305,12 +305,12 @@ public class unemployedpopulation  {
 			Unemployment_rate = unemployment_rate;
 		}
 
-		public Long getUnemployed_Néant() {
-			return Unemployed_Néant;
+		public Long getUnemployed_Neant() {
+			return Unemployed_Neant;
 		}
 
-		public void setUnemployed_Néant(Long unemployed_Néant) {
-			Unemployed_Néant = unemployed_Néant;
+		public void setUnemployed_Neant(Long unemployed_Neant) {
+			Unemployed_Neant = unemployed_Neant;
 		}
 
 		public Long getUnemployed_Primary() {
@@ -491,7 +491,7 @@ public class unemployedpopulation  {
 					+ Between_1KM_2Km + ", Plus2Km=" + Plus2Km + ", Population_aged_15_and_plus="
 					+ Population_aged_15_and_plus + ", active_Population_Occupied=" + active_Population_Occupied
 					+ ", Inactive_Population=" + Inactive_Population + ", activity_rate=" + activity_rate
-					+ ", Unemployment_rate=" + Unemployment_rate + ", Unemployed_Néant=" + Unemployed_Néant
+					+ ", Unemployment_rate=" + Unemployment_rate + ", Unemployed_Neant=" + Unemployed_Neant
 					+ ", Unemployed_Primary=" + Unemployed_Primary + ", Unemployed_Secondary=" + Unemployed_Secondary
 					+ ", Unemployed_faculty=" + Unemployed_faculty + ", Unemployed_Agriculture_fishing="
 					+ Unemployed_Agriculture_fishing + ", Unemployed_Mines_energy=" + Unemployed_Mines_energy
