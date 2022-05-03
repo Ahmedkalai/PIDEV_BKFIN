@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Product implements Serializable {
 	@Id
@@ -26,6 +28,7 @@ public class Product implements Serializable {
 	public void setValueEXC(Float valueEXC) {
 		this.valueEXC = valueEXC;
 	}
+	@JsonIgnore
 	@ManyToMany(mappedBy="product_pack", cascade = CascadeType.ALL)
 	 private Set<Pack> packs;
 	 @ManyToOne

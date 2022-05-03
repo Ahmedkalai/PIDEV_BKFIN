@@ -31,7 +31,7 @@ public class Credit implements Serializable {
 	private Date obtainingDate ;
 	private Boolean state;
 	//0 PAS DE DIFFERE 1 SI CREDIT A DIFFERE TOTAL
-	private Boolean différé; 
+	private Boolean differe; 
 	// PERIODE DE DIFFERE 
 	private float DIFF_period;
 	@Temporal (TemporalType.DATE)
@@ -163,11 +163,11 @@ public class Credit implements Serializable {
 	public void setCompleted(Boolean completed) {
 		Completed = completed;
 	}
-	public Boolean getDifféré() {
-		return différé;
+	public Boolean getDiffere() {
+		return differe;
 	}
-	public void setDifféré(Boolean différé) {
-		this.différé = différé;
+	public void setDiffere(Boolean differe) {
+		this.differe = differe;
 	}
 	public float getDIFF_period() {
 		return DIFF_period;
@@ -180,7 +180,7 @@ public class Credit implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Credit(Long idCredit, float amount, Date dateDemande, Date obtainingDate, Boolean state, Boolean différé,
+	public Credit(Long idCredit, float amount, Date dateDemande, Date obtainingDate, Boolean state, Boolean differe,
 			float dIFF_period, Date monthlyPaymentDate, float monthlyPaymentAmount, float interestRate,
 			float creditPeriod, float risk, Boolean completed, String reason, Set<Notification> notifications,
 			Client client, Fund funds, Set<DuesHistory> duesHistory, Pack pack_credit, Garantor garantor) {
@@ -190,7 +190,7 @@ public class Credit implements Serializable {
 		this.dateDemande = dateDemande;
 		this.obtainingDate = obtainingDate;
 		this.state = state;
-		this.différé = différé;
+		this.differe = differe;
 		DIFF_period = dIFF_period;
 		this.monthlyPaymentDate = monthlyPaymentDate;
 		this.monthlyPaymentAmount = monthlyPaymentAmount;

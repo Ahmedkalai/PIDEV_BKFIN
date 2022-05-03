@@ -132,7 +132,7 @@ public class CreditService implements ICreditService {
 		     java.util.Date date=new java.util.Date(System.currentTimeMillis());
 			 credit.setObtainingDate(date);
 		     
-			 if(credit.getDifféré()==false) 
+			 if(credit.getDiffere()==false) 
 			 { //System.out.println(Calcul_mensualite(credit));
 				 credit.setMonthlyPaymentAmount(Calcul_mensualite(credit));
 				 credit.setReason(msg);
@@ -142,7 +142,7 @@ public class CreditService implements ICreditService {
 				 
 	        }
 			 //si credit avec différé
-			 else if(credit.getDifféré()==true)
+			 else if(credit.getDiffere()==true)
 			 {   credit.setAmount(credit.getAmount()+(1+(credit.getCreditPeriod()*credit.getInterestRate())));
 				 credit.setMonthlyPaymentAmount(Calcul_mensualite(credit));
 				 //changement de la date de paiement prevue selon la periode du differe
@@ -217,9 +217,9 @@ public class CreditService implements ICreditService {
 		
 		
 		amort.setMontantR(cr.getAmount());
-		amort.setMensualité(Calcul_mensualite(cr));
+		amort.setMensualite(Calcul_mensualite(cr));
 		amort.setInterest(amort.getMontantR()*interest);
-		amort.setAmortissement(amort.getMensualité()-amort.getInterest());
+		amort.setAmortissement(amort.getMensualite()-amort.getInterest());
 		ListAmortissement[0]=amort;
 		
 		//System.out.println(ListAmortissement[0]);
@@ -228,8 +228,8 @@ public class CreditService implements ICreditService {
 			Amortissement amortNEW=new Amortissement() ;
 			amortNEW.setMontantR(amortPrecedant.getMontantR()-amortPrecedant.getAmortissement());
 			amortNEW.setInterest(amortNEW.getMontantR()*interest);
-			amortNEW.setMensualité(Calcul_mensualite(cr));
-			amortNEW.setAmortissement(amortNEW.getMensualité()-amortNEW.getInterest());
+			amortNEW.setMensualite(Calcul_mensualite(cr));
+			amortNEW.setAmortissement(amortNEW.getMensualite()-amortNEW.getInterest());
 			ListAmortissement[i]=amortNEW;
 			
 		}

@@ -99,7 +99,7 @@ public class UserExcelExporter {
 			createCell(row, columnCount++,stu.getMontantR(), style);
 			createCell(row, columnCount++, stu.getInterest(),style);
 			createCell(row, columnCount++,stu.getAmortissement(), style);
-			createCell(row, columnCount++,stu.getMensualité(), style);
+			createCell(row, columnCount++,stu.getMensualite(), style);
 		}
 	}
 	

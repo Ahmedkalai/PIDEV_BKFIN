@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Pack implements Serializable {
 	
@@ -36,6 +38,7 @@ public class Pack implements Serializable {
 	private String imagePack; 
 	 @OneToMany(cascade = CascadeType.ALL, mappedBy="pack_credit")
 		private Set<Credit> credit;
+	 
 	 @ManyToMany(cascade = CascadeType.ALL)
 	 private Set<Product> product_pack;
 	public long getIdPack() {
