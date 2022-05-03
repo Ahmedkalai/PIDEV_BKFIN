@@ -125,6 +125,7 @@ public class Admin implements Serializable,UserDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	public Admin(long idAdmin, String name, String secondName, Date birthDay, Long phoneNum, String email,
 			String password, Set<Role> roles, Set<Agent> agent) {
 		super();

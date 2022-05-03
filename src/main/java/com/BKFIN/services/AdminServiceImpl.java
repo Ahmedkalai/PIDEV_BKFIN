@@ -14,6 +14,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -24,10 +25,12 @@ import com.BKFIN.entities.Role;
 import com.BKFIN.repositories.AdminRepository;
 
 @Service
-public class AdminServiceImpl implements IAdminService ,UserDetailsService{
+public class AdminServiceImpl implements IAdminService {
 
 	@Autowired
 	AdminRepository adminR;
+	 @Autowired
+	    private PasswordEncoder bcryptEncoder;
 	@Override
 	public List<Admin> retrieveAllAdmin() {
 		
@@ -36,7 +39,7 @@ public class AdminServiceImpl implements IAdminService ,UserDetailsService{
 
 	@Override
 	public Admin addAdmin(Admin ad) {
-		
+		 ad.setPassword(bcryptEncoder.encode(ad.getPassword()));
 		adminR.save(ad);
 		return ad;
 	}

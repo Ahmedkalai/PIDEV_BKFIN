@@ -14,6 +14,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -26,13 +27,14 @@ import com.BKFIN.repositories.ClientRepository;
 
 @Service
 
-public class ClientServiceImpl implements IClientService,UserDetailsService {
+public class ClientServiceImpl implements IClientService {
 
 	@Autowired
 	ClientRepository clientR;
 	@Autowired
 	AgentRepository agentR;
-	
+	 @Autowired
+	    private PasswordEncoder bcryptEncoder;
 	@Override
 	public List<Client> retrieveAllClient() {
 		
@@ -44,6 +46,7 @@ public class ClientServiceImpl implements IClientService,UserDetailsService {
 	public Client addClient(Client c, Long idAgent) {
 		Agent a = agentR.findById(idAgent).orElse(null);
 		c.setAgent(a);
+		 c.setPassword(bcryptEncoder.encode(c.getPassword()));
 		//c.setRole();
 		clientR.save(c);
 		return c ;
@@ -91,5 +94,7 @@ public class ClientServiceImpl implements IClientService,UserDetailsService {
 		 List<GrantedAuthority> grantedAuthorities = new ArrayList<>(roles);
 		 return grantedAuthorities;
 		 }
+
+	
 
 }

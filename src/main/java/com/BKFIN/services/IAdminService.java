@@ -2,6 +2,9 @@ package com.BKFIN.services;
 
 import java.util.List;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import com.BKFIN.entities.Admin;
 import com.BKFIN.entities.Agent;
 
@@ -16,4 +19,6 @@ public interface IAdminService {
 
 	void removeAdmin(Long id);
 	 public Admin loadUser(String username);
+
+	UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
 }
