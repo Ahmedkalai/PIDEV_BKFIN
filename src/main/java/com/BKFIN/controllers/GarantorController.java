@@ -20,8 +20,7 @@ import com.BKFIN.services.IGarantorService;
 
 
 
-@CrossOrigin("http://localhost:4200/")
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/Garantor")
 public class GarantorController {

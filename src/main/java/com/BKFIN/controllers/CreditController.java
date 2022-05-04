@@ -30,7 +30,7 @@ import com.BKFIN.services.IDuesHistoryService;
 
 
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/Credit")
 public class CreditController {

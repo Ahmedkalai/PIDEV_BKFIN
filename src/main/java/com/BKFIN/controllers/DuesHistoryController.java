@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.BKFIN.entities.DuesHistory;
 import com.BKFIN.services.IDuesHistoryService;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/DuesHistory")
 public class DuesHistoryController {
