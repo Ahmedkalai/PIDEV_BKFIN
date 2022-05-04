@@ -81,6 +81,7 @@ public class PackServiceImpl implements IPackService  {
 		c=0;
 		}
 		}
+	
 	@Override
 	public Pack createandaffect(Pack pr, List<Long> p) {
 		Set<Product> prod=new HashSet<Product>();
