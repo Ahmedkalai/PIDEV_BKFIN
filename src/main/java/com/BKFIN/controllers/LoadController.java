@@ -1,4 +1,4 @@
-package com.BKFIN.controllers;
+/*package com.BKFIN.controllers;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
@@ -57,3 +57,4 @@ public class LoadController {
 	        return jobExecution.getStatus();
 	    }
 }
+*/
