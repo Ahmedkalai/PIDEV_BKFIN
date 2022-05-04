@@ -2,6 +2,8 @@ package com.BKFIN.services;
 
 import java.util.List;
 
+import javax.mail.MessagingException;
+
 import com.BKFIN.entities.Product;
 
 
@@ -16,6 +18,6 @@ public interface IProductService {
 	Product updateProduct (Product pr, Long partnerid);
 	
 	Product retrieveProduct (Long id);
-	void affecterproductpack(Long productid, Long packid);
+	void affecterproductpack(Long productid, Long packid) throws MessagingException;
 	void supprimerproductpack(Long productid, Long packid);
 }

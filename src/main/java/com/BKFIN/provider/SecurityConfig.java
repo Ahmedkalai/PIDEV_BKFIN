@@ -70,7 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .antMatchers("/Admin/**").access("hasRole('ADMIN')")
       //.antMatchers("/Agent/**").access("hasRole('ADMIN')")
       .antMatchers("/Agent/AddAgent").access("hasRole('ADMIN')")
-      .antMatchers("/Client/insertClient/**").access("hasRole('AGENT')")
+      //.antMatchers("/Client/insertClient/**").access("hasRole('AGENT')")
       .antMatchers("/Client/getClients").access("hasRole('CLIENT')")
       .anyRequest().permitAll().and()
       .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint)

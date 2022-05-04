@@ -168,7 +168,7 @@ public class Credit implements Serializable {
 	public Boolean getdiffere() {
 		return differe;
 	}
-	public void setdiffere(Boolean différé) {
+	public void setdiffere(Boolean differe) {
 		this.differe = differe;}
 
 

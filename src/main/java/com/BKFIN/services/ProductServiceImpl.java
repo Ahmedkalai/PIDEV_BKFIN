@@ -83,6 +83,7 @@ public class ProductServiceImpl implements IProductService {
 	pack.setPriceP(pack.getPriceP()+p.getValueProduct());
 	PackRepository.save(pack);
 	String em=p.getPartner_product().getEmailPartner();
+	
 	emsender.sendSimpleEmail(em, "Votre produit "+p.getNameProduct()+" est désormais dans un nouvau pack "+pack.getPackType(),"Bonjour "+p.getPartner_product().getNamePartner()+" , Nouveau pack !");
 
 	}
