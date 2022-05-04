@@ -73,7 +73,7 @@ public class EventService implements IEventService{
 //	@Override	
 	@Autowired
 	private JavaMailSender mailSender;
-	public void affectereventtoagent(Long evntid, Long agentid,String toEmail,String subject,String body,String attachment) throws MessagingException {
+	public void affectereventtoagent(Long evntid, Long agentid,String toEmail,String subject,String body) throws MessagingException {
 		Event e = eventrepository.findById(evntid).get();
 		Agent a= ar.findById(agentid).get();
 		Set<Agent> la=e.getAgenT();
@@ -98,8 +98,6 @@ public class EventService implements IEventService{
 		mimeMessageHealper.setText(body);
 		mimeMessageHealper.setSubject(subject);
 		//ajouté l'invitation de l'event 
-		FileSystemResource fileSystem = new FileSystemResource(new File(attachment));
-		mimeMessageHealper.addAttachment(fileSystem.getFilename(), fileSystem);
 		mailSender.send(mimeMessage);
 		System.out.println("Mail sent successfully ! ");
 		}

@@ -53,6 +53,7 @@ public class Credit implements Serializable {
 	@JsonIgnore
 	@ManyToOne
 	private Fund funds;
+	@JsonIgnore
 	@OneToMany(mappedBy="credits")
 	private Set<DuesHistory> duesHistory ;
 	@JsonIgnore

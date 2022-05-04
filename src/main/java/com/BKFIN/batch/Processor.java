@@ -1,4 +1,4 @@
-/*package com.BKFIN.batch;
+package com.BKFIN.batch;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +29,7 @@ public class Processor implements ItemProcessor<Account, Account> {
 	@Override
 	public Account process(Account item) throws Exception {
 	 
-		
+		/*
 		boolean status=item.getState() ; 
 		boolean accStatus=AccStatus.get(item.getState());
 		item.setState(accStatus);
@@ -38,11 +38,10 @@ public class Processor implements ItemProcessor<Account, Account> {
 		Typeaccount type= item.getTypeAccount(); 
 		Typeaccount Type=AccType.get(type); 
 		item.setTypeAccount(Type);
-		
+		*/
 		
 		
 		return item;
 	}
 
 }
-*/

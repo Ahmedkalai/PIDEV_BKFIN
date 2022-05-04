@@ -1,4 +1,4 @@
-/*package com.BKFIN.batch;
+package com.BKFIN.batch;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,4 +21,3 @@ public class DbWriter implements ItemWriter<Account> {
     }
 
 }
-*/
