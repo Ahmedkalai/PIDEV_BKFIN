@@ -9,14 +9,14 @@ public interface IInvestesmentService {
 	List<Investesment> retrieveAllInvestesments();
 
 	Investesment addInvestesment(Investesment i , Long idFund);
-
-	Investesment updateInvestesment(Investesment inv, Long idFund);
+	
+	Investesment updateInvestesment(Investesment i);
 
 	Investesment retrieveInvestesment(Long cinInvestesment);
 	
-	float CalculateAmoutOfInves(Long idInvestissement);
+	void CalculateAmoutOfInves(Long idInvestesment);
 	
-	float CalculateRateOfInves(Long idInvestissement,Long idFund);
+	float CalculateRateOfInves(Long idInvestissement);
 
 	void finalAmount();
 }

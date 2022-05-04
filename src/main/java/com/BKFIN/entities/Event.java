@@ -13,6 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Event implements Serializable {
 
@@ -25,6 +27,7 @@ public class Event implements Serializable {
 	 private Date dateEvent ;
 	 private String region ;
 	 private String description ;
+	 @JsonIgnore
 	@ManyToMany()
 	private Set<Agent> agenT;
 	public long getIdEvent() {

@@ -19,6 +19,8 @@ import javax.persistence.OneToMany;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Agent  implements Serializable,UserDetails{
 	
@@ -35,6 +37,7 @@ public class Agent  implements Serializable,UserDetails{
 	private String email;
 	private String adresse;
 	private String password;
+	@JsonIgnore
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	 private Set<Role> roles;
 	private String fullLocation;
@@ -45,7 +48,9 @@ public class Agent  implements Serializable,UserDetails{
 	private String potentiel;
 	private ClassEnum classification;
 	private Boolean state ; 
-	
+	 @JsonIgnore
+	@ManyToMany()
+	private Set<Event> Event;
 	
 	
 	public Agent(Long idAgent, Long localisation, String name, String secondName, Long phoneNum, String email,

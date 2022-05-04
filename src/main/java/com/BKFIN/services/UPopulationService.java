@@ -16,7 +16,6 @@ public class UPopulationService implements IUPopulationService{
 	@Override
 	public List<String> getRegionByEnvironmentF() {
 		return ( List<String>) UPRepo.getRegionByEnvironment("Rural");
-	
 	}
 
 	@Override

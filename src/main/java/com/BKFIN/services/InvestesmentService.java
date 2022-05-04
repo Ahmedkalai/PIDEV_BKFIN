@@ -66,10 +66,19 @@ le fund sera automatiquement mis à jour (montant + taux)
 	
 //mise à jour de l'inves
 	@Override
-	public Investesment updateInvestesment(Investesment inv, Long idFund) {
-		Fund f = fundRepository.findById(idFund).orElse(null);
-		inv.setFund(f);
-		investesmentRepository.save(inv);
+	public Investesment updateInvestesment(Investesment i) {
+		 
+		 float Amount = i.getAmoutInvestesment();
+		 double Rate = 0.12*(1- Math.exp(-(Amount)/10000));
+		 
+		 i.setNameInvestesment(i.getNameInvestesment());
+		 i.setSecondnnameInvestesment(i.getSecondnnameInvestesment());
+		 i.setAmoutInvestesment(Amount);
+		 i.setTauxInves((float) Rate);
+		 i.setCinInvestesment(i.getCinInvestesment());
+		 i.setMailInvestesment(i.getMailInvestesment());
+		 i.setProfessionInvestesment(i.getProfessionInvestesment());
+		 Investesment inv =  investesmentRepository.save(i);
 		return inv;
 	}
 
@@ -80,19 +89,27 @@ le fund sera automatiquement mis à jour (montant + taux)
 		return inves;
 	}
 	
+	
+	
+//Afficher une liste d inves par l id du Fund 
+	public List<Investesment> retrieveInvestesmentbyFund(Long idFund) {
+		return (List<Investesment>) investesmentRepository.retrieveInvestesmentbyFund(idFund);
+	}
+	
+	
 	//Calcul annuel 
 //	@Scheduled(cron = "0 0 0 31 12 *" )
 	
 	//Calcul du Montant recu par l'investisseur apres avoir investit (Montant initial + gain ) 
 	float finalA;
 	@Override
-	public float CalculateAmoutOfInves(Long idInvestissement) {
+	public void CalculateAmoutOfInves(Long idInvestissement) {
 		Investesment inves =  investesmentRepository.findById(idInvestissement).orElse(null);
-			finalA=(inves.getAmoutInvestesment()+(inves.getAmoutInvestesment()*inves.getTauxInves()));
-		return finalA;
+		inves.setFinalAmount(inves.getAmoutInvestesment()+(inves.getAmoutInvestesment()*inves.getTauxInves()));
+			investesmentRepository.save(inves);
 	}
 	//test
-	//@Scheduled(cron = "0 0 0 4 * *" )
+	//@Scheduled(cron = "10 * * * * *" )
 	@Scheduled(cron = "0 0 0 31 12 *" )
 	@Override
 	public void finalAmount() {
@@ -102,19 +119,24 @@ le fund sera automatiquement mis à jour (montant + taux)
 			inv.setFinalAmount((inv.getAmoutInvestesment()*(1+inv.getTauxInves())));
 			investesmentRepository.save(inv);
 		}
+	//	System.out.println("scheduled okay");
 	}
-	
 //Calcul rate d'investissement  
 		float Rate;
 		@Override
-		public float CalculateRateOfInves(Long idInvestissement, Long idFund) {
+		public float CalculateRateOfInves(Long idInvestissement) {
 			Investesment inves =  investesmentRepository.findById(idInvestissement).orElse(null);
-			Fund f = fundRepository.findById(idFund).orElse(null);
+			//Fund f = fundRepository.findById(idFund).orElse(null);
 			float Amount = inves.getAmoutInvestesment();
 			double Rate = 0.12*(1- Math.exp(-(Amount)/10000));
 			inves.setTauxInves((float) Rate);
 			return (float) Rate;
 		}		
+		
+		public double Rate(float AmountInvestestesment) {
+			double Rate = 0.12*(1- Math.exp(-(AmountInvestestesment)/10000));
+			return  Rate;
+		}
 /*Calcul rate économique (invalide)
 float finalrate;
 	float pib=(float) 39.24;
