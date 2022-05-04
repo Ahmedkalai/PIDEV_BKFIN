@@ -82,7 +82,7 @@ public class EventController {
 		//@EventListener(ApplicationReadyEvent.class)
 		@PostMapping("/addagev/{idEvent}/{idAgent}")
 		public void assignagev(@PathVariable("idEvent") Long eventid ,@PathVariable("idAgent")Long agentid) throws MessagingException {
-			eventService.affectereventtoagent(eventid, agentid,"khadija.azzouz@esprit.tn", "BKfIN Team", "Thank you for your participation,you will find your invitation attached ","C:\\Users\\Asus\\Downloads\\BKFINinvi.png");
+			eventService.affectereventtoagent(eventid, agentid,"khadija.azzouz@esprit.tn", "BKfIN Team", "Thank you for your participation,you will find your invitation attached ","‪C:\\Users\\PC\\Downloads\\BKFINinvi.png");
 		//	eventService.sendEmail("khadija.azzouz@esprit.tn", "BKfIN Team", "Thank you for your participation","C:\\Users\\Asus\\Desktop\\PI\\BKFIN.png");
 			
 		}

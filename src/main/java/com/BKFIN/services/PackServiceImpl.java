@@ -71,18 +71,15 @@ public class PackServiceImpl implements IPackService  {
 		List<Pack> pc=(List<Pack>) PackRepository.findAll();
 		float c=0;
 		for (Pack pack2 : pc) {
-			Set<Product> p=pack2.getProduct_pack();
-			for(Product pr:p) {
-				c=c+pr.getValueProduct();
-				}
-			pack2.setPriceP(c);
-			PackRepository.save(pack2);
-			c=0;
-			
-				 
-			
-			
-			}
+		c=c+pack2.getPriceP();
+		Set<Product> p=pack2.getProduct_pack();
+		for(Product pr:p) {
+		c=c+pr.getValueProduct();
+		}
+		pack2.setPriceP(c);
+		PackRepository.save(pack2);
+		c=0;
+		}
 		}
 	@Override
 	public Pack createandaffect(Pack pr, List<Long> p) {
